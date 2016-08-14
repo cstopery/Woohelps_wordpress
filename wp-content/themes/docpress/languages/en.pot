@@ -1,0 +1,210 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: DocPress\n"
+"POT-Creation-Date: 2016-03-19 17:22+0530\n"
+"PO-Revision-Date: 2015-12-18 18:20+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: _e;__;_x\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: comments.php:75
+msgid "Name"
+msgstr ""
+
+#: comments.php:76
+msgid "Email"
+msgstr ""
+
+#: comments.php:77
+msgid "Website"
+msgstr ""
+
+#: comments.php:81
+msgid "Comment"
+msgstr ""
+
+#: content-none.php:3
+msgid "Nothing found"
+msgstr ""
+
+#: content-none.php:6
+msgid ""
+"The page you were looking for doesn&rsquo;t exist. Sasquatch, on the other "
+"hand, just might."
+msgstr ""
+
+#: content-none.php:7
+msgid "But hey, you can always use our search form:"
+msgstr ""
+
+#: content-page.php:10 content-single.php:10
+msgid "Pages:"
+msgstr ""
+
+#: functions.php:49
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:70
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:79
+msgid "Footer One"
+msgstr ""
+
+#: functions.php:88
+msgid "Footer Two"
+msgstr ""
+
+#: functions.php:97
+msgid "Footer Three"
+msgstr ""
+
+#: functions.php:106
+msgid "Footer Four"
+msgstr ""
+
+#: functions.php:134
+msgid "Proudly powered by"
+msgstr ""
+
+#: functions.php:149
+msgid "Pingback:"
+msgstr ""
+
+#: functions.php:149 functions.php:173
+msgid "(Edit)"
+msgstr ""
+
+#: functions.php:161
+#, php-format
+msgid "<span>%s </span><span class=\"says\">says:</span>"
+msgstr ""
+
+#: functions.php:164
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:169
+msgid "l, F j, Y, g:i a"
+msgstr ""
+
+#: functions.php:170
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: header.php:16
+msgid "Toggle navigation"
+msgstr ""
+
+#: header.php:41 inc/customizer.php:78
+msgid "Need Help? Try me!"
+msgstr ""
+
+#: header.php:42 inc/customizer.php:91
+msgid "Your answer is just one search away!"
+msgstr ""
+
+#: inc/admin/welcome-screen/content/content.php:25
+msgid ""
+"<strong>New Homepage:</strong> A new homepage which makes DocPress look "
+"truly like a documentation theme."
+msgstr ""
+
+#: inc/admin/welcome-screen/content/content.php:26
+msgid ""
+"<strong>Welcome Panel:</strong> This version adds a Welcome Panel to the "
+"theme which tells you everything that you need to know about the theme."
+msgstr ""
+
+#: inc/admin/welcome-screen/content/content.php:51
+msgid ""
+"Found an issue with the theme? You can get support <a href=\"https://"
+"wordpress.org/support/theme/docpress\" target=\"_blank\">at this link</a>. "
+"Or would you like to translate DocPress into your language? <a href="
+"\"https://translate.wordpress.org/projects/wp-themes/docpress\" target="
+"\"_blank\">Get involved</a>! Also, don't forget to <a href=\"https://"
+"wordpress.org/support/view/theme-reviews/docpress\" target=\"_blank\">leave "
+"a review</a>."
+msgstr ""
+
+#: inc/admin/welcome-screen/content/content.php:57
+msgid ""
+"If you like this theme and if it helped you with your business then please "
+"consider supporting the development <a target=\"_blank\" href=\"http://www."
+"hardeepasrani.com/donate/\">by donating some money</a>. <a target=\"_blank\" "
+"href=\"http://www.hardeepasrani.com/donate/\">Any amount, even $1.00, is "
+"appreciated :)</a>"
+msgstr ""
+
+#: inc/admin/welcome-screen/welcome-screen.php:24
+msgid "Get started with DocPress"
+msgstr ""
+
+#: inc/customizer.php:23
+#, php-format
+msgid ""
+"If you like this theme and if it helped you with your business then please "
+"consider supporting the development %1$sby donating some money%2$s."
+msgstr ""
+
+#: inc/customizer.php:32
+msgid ""
+"To edit footer credits, you need to purchase the $5 <a href=\"https://goo.gl/"
+"ySDdIw\" target=\"_blank\">Footer Credits Extension</a>."
+msgstr ""
+
+#: inc/customizer.php:39
+msgid "Header"
+msgstr ""
+
+#: inc/customizer.php:40
+msgid "This section allows you to customize theme's header."
+msgstr ""
+
+#: inc/customizer.php:49
+msgid "Do You Like This Theme?"
+msgstr ""
+
+#: inc/customizer.php:54
+msgid "Text"
+msgstr ""
+
+#: inc/customizer.php:60
+msgid "Search"
+msgstr ""
+
+#: inc/customizer.php:66
+msgid "Footer Credits"
+msgstr ""
+
+#: inc/customizer.php:84
+msgid "Title"
+msgstr ""
+
+#: inc/customizer.php:97
+msgid "Subtitle"
+msgstr ""
+
+#: inc/customizer.php:109
+msgid "Disable Search Bar"
+msgstr ""
+
+#: searchform.php:4
+msgid "Search for:"
+msgstr ""
+
+#: template-home.php:20
+msgid "Browse"
+msgstr ""
