@@ -14,11 +14,11 @@
 ------------------------------------------------------- */
 
 
-.navbar {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 700;
-	background: rgba(255, 255, 255, 0);
-}
+/*.navbar {*/
+	/*font-family: 'Open Sans', sans-serif;*/
+	/*font-weight: 700;*/
+	/*background: rgba(255, 255, 255, 0);*/
+/*}*/
 
 .navbar-default .navbar-nav > li > a {
 	color: #ffffff;
