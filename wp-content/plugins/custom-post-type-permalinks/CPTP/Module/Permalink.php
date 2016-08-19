@@ -71,8 +71,13 @@ class CPTP_Module_Permalink extends CPTP_Module {
 		}
 
 		$post_type = $post->post_type;
-		$permalink = $wp_rewrite->get_extra_permastruct( $post_type );
 		$pt_object = get_post_type_object( $post_type );
+
+		if ( false === $pt_object->rewrite ) {
+			return $post_link;
+		}
+
+		$permalink = $wp_rewrite->get_extra_permastruct( $post_type );
 
 		$permalink = str_replace( '%post_id%', $post->ID, $permalink );
 		$permalink = str_replace( '%' . $post_type . '_slug%', $pt_object->rewrite['slug'], $permalink );
@@ -269,6 +274,13 @@ class CPTP_Module_Permalink extends CPTP_Module {
 		if ( ! $post_parent ) {
 			return $link;
 		}
+
+		$pt_object = get_post_type_object( $post_parent->post_type );
+
+		if ( false === $pt_object->rewrite ) {
+			return $link;
+		}
+
 		$permalink   = CPTP_Util::get_permalink_structure( $post_parent->post_type );
 		$post_type   = get_post_type_object( $post_parent->post_type );
 

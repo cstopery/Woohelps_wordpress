@@ -5,6 +5,7 @@
  * Happy Blogging!
 */
 
+
 require_once( trailingslashit( get_template_directory() ) . "/inc/customizer.php" );
 require_once( trailingslashit( get_template_directory() ) . "/inc/wp_bootstrap_navwalker.php" );
 if ( is_admin() ) {
