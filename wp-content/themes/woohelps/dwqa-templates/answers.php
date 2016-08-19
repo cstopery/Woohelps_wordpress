@@ -7,7 +7,6 @@
  */
 ?>
 
-displaying answers
 <div class="dwqa-answers">
 	<?php do_action( 'dwqa_before_answers' ) ?>
 	<?php if ( dwqa_has_answers() ) : ?>
