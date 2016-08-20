@@ -242,6 +242,7 @@ add_action( 'admin_head', 'dwqa_add_guide_menu_icons_styles' );
 
 function dwqa_load_template( $name, $extend = false, $include = true ){
 	global $dwqa;
+
 	$dwqa->template->load_template( $name, $extend, $include );
 }
 

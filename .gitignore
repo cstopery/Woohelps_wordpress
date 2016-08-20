@@ -1,7 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### WordPress template
 *.log
-wp-config.php
+#wp-config.php
 wp-config-sample.php
 wp-content/advanced-cache.php
 wp-content/backup-db/
