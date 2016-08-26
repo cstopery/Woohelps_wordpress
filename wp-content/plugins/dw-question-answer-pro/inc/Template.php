@@ -684,8 +684,8 @@ function dwqa_get_template( $template = false ) {
 		'index.php',
 	) );
 
-	if ( isset( $template ) && file_exists( trailingslashit( get_template_directory() ) . $template ) ) {
-		return trailingslashit( get_template_directory() ) . $template;
+	if ( isset( $template ) && file_exists( trailingslashit( get_stylesheet_directory() ) . $template ) ) {
+		return trailingslashit( get_stylesheet_directory() ) . $template;
 	}
 
 	$old_template = $template;
@@ -693,8 +693,8 @@ function dwqa_get_template( $template = false ) {
 		if ( $template == $old_template ) {
 			continue;
 		}
-		if ( file_exists( trailingslashit( get_template_directory() ) . $template ) ) {
-			return trailingslashit( get_template_directory() ) . $template;
+		if ( file_exists( trailingslashit( get_stylesheet_directory() ) . $template ) ) {
+			return trailingslashit( get_stylesheet_directory() ) . $template;
 		}
 	}
 	return false;
@@ -744,6 +744,8 @@ class DWQA_Template {
 		add_action( 'dwqa_after_page', array( $this, 'end_wrapper_content' ) );
 
 		add_filter( 'option_thread_comments', array( $this, 'disable_thread_comment' ) );
+
+		$this->page_template = get_stylesheet_directory() . $this->page_template;
 	}
 
 	public function start_wrapper_content() {
@@ -794,7 +796,7 @@ class DWQA_Template {
 
 	public function question_content( $template ) {
 		$dwqa_options = get_option( 'dwqa_options' );
-		$template_folder = trailingslashit( get_template_directory() );
+		$template_folder = trailingslashit( get_stylesheet_directory() );
 		if ( isset( $dwqa_options['pages']['archive-question'] ) ) {
 			$page_template = get_post_meta( $dwqa_options['pages']['archive-question'], '_wp_page_template', true );
 		}
