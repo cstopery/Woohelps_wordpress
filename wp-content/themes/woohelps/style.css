@@ -12,14 +12,239 @@
 
 /* =Theme customization starts here
 ------------------------------------------------------- */
-
-
 /*.navbar {*/
 	/*font-family: 'Open Sans', sans-serif;*/
 	/*font-weight: 700;*/
 	/*background: rgba(255, 255, 255, 0);*/
 /*}*/
 
+.container {
+	padding: 0;
+}
+
+.row {
+	margin: 0;
+}
+
 .navbar-default .navbar-nav > li > a {
 	color: #ffffff;
+}
+
+.navbar .register-button {
+	line-height: 21px;
+	padding: 4px 20px;
+	font-size: 13px;
+	font-weight: 700;
+	margin-top: 6px;
+}
+
+.navbar .register-button:hover {
+	background: #ffffff !important;
+	color: #e99002 !important;
+}
+
+.with-radius {
+	-webkit-border-radius: 8px !important;
+	-moz-border-radius: 8px !important;
+	border-radius: 8px !important;
+}
+
+.woo-button {
+	font-size: 13px;
+	padding: 4px 20px;
+}
+
+.section-divider {
+	background: #f7f7f7;
+	padding: 20px 12px 1px 12px;
+	min-height: 120px;
+}
+
+.section-divider .inner {
+	max-width: 750px;
+}
+
+.category-list {
+	margin-top: 20px;
+}
+
+.category-list ul li {
+	list-style-type: none;
+	display: inline;
+}
+
+.category-list ul li a, .category-list ul li a:focus {
+	display: inline-block;
+	border: 1px solid #cacaca;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	min-width: 80px;
+	text-align: center;
+	font-size: 13px;
+	padding: 4px 12px;
+	text-decoration: none;
+}
+
+.category-list ul li a:hover {
+	border: 1px solid #acacac;
+	color: #00b0ea;
+}
+
+/*
+============================================
+dw qa layout
+============================================
+*/
+
+.dwqa-home {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.dwqa-home .dwqa-status {
+	font-size: 11px;
+}
+
+.dwqa-home .dwqa-questions-list {
+	border: none;
+}
+
+.dwqa-home .dwqa-questions-list .dwqa-question-item {
+	padding: 15px 20px 15px 80px;
+	width: 49%;
+	display: inline-block;
+	vertical-align: top;
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
+	border-top: 1px solid #eee;
+}
+
+@media (max-width: 600px) {
+	.dwqa-home .dwqa-questions-list .dwqa-question-item {
+		width: 100%;
+	}
+}
+
+@media (max-width: 480px) {
+	.dwqa-home .dwqa-questions-list .dwqa-question-item .avatar {
+		position: absolute;
+		top: 40px;
+		width: auto;
+		height: auto;
+	}
+}
+
+.dwqa-home .dwqa-questions-list .dwqa-question-item .avatar {
+	top: 40px;
+}
+
+/*
+============================================
+local service grids layout
+============================================
+*/
+
+.adverts-flexbox {
+	-webkit-column-count: 1;
+	-webkit-column-gap: 10px;
+	-webkit-column-fill: auto;
+	-moz-column-count: 1;
+	-moz-column-gap: 10px;
+	-moz-column-fill: auto;
+	column-count: 1;
+	column-gap: 15px;
+	column-fill: auto;
+	margin-bottom: 30px;
+}
+
+@media (min-width: 600px) {
+	.adverts-flexbox {
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
+	}
+}
+
+@media (min-width: 800px) {
+	.adverts-flexbox {
+		-webkit-column-count: 3;
+		-moz-column-count: 3;
+		column-count: 3;
+	}
+}
+
+@media (min-width: 960px) {
+	.adverts-flexbox {
+		-webkit-column-count: 4;
+		-moz-column-count: 4;
+		column-count: 4;
+	}
+}
+
+.adverts-flexbox-item {
+	display: inline-block;
+	background: #FEFEFE;
+	border: 2px solid #FAFAFA;
+	margin: 15px 2px 0;
+	width: 100%;
+	-webkit-column-break-inside: avoid;
+	-moz-column-break-inside: avoid;
+	column-break-inside: avoid;
+	padding: 15px 15px 5px;
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	transition: all .2s ease;
+}
+
+.adverts-flexbox-item:hover {
+	border: 2px solid #eeeeee;
+}
+
+.adverts-category-all-main {
+	font-size: 16px;
+}
+
+.adverts-category-all-main a, .adverts-category-all-main a:focus {
+	display: block;
+	margin: 5px 0 5px;
+	color: #3a3a3a;
+}
+
+.adverts-category-all-main a:hover {
+	color: #737373;
+}
+
+.adverts-flexbox-list a, adverts-flexbox-list a:focus {
+	font-size: 13px;
+}
+
+.adverts-flexbox-list li {
+	display: inline-block;
+	width: 31%;
+	margin-bottom: 5px;
+	vertical-align: top;
+}
+
+.adverts-flexbox-list li:last-child {
+	display: none;
+}
+
+/*
+============================================
+google maps layout
+============================================
+*/
+
+.gmap {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	min-height: 480px;
+}
+
+.locations-list {
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
