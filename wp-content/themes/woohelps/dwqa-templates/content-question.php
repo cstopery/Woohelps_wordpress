@@ -5,12 +5,10 @@
  * @package DW Question & Answer
  * @since DW Question & Answer 1.4.2
  */
-
 ?>
 <div class="<?php echo dwqa_post_class(); ?>">
-	<header class="dwqa-question-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></header>
+	<header class="dwqa-question-title"><?php dwqa_question_print_status() ?><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></header>
 	<div class="dwqa-question-meta">
-		<?php dwqa_question_print_status() ?>
 		<?php
 			global $post;
 			$user_id = get_post_field( 'post_author', get_the_ID() ) ? get_post_field( 'post_author', get_the_ID() ) : false;
@@ -18,6 +16,8 @@
 			$text = __( 'asked', 'dwqa' );
 			$latest_answer = dwqa_get_latest_answer();
 			if ( $latest_answer ) {
+				var_dump($latest_answer);
+
 				$time = human_time_diff( strtotime( $latest_answer->post_date ) );
 				$text = __( 'answered', 'dwqa' );
 			}

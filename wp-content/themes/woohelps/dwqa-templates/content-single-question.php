@@ -6,7 +6,6 @@
  * @since DW Question & Answer 1.4.2
  */
 ?>
-
 <?php do_action( 'dwqa_before_single_question_content' ); ?>
 <div class="dwqa-question-item">
 	<div class="dwqa-question-vote" data-nonce="<?php echo wp_create_nonce( '_dwqa_question_vote_nonce' ) ?>" data-post="<?php the_ID(); ?>">

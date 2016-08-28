@@ -1,8 +1,5 @@
 <?php get_header(); ?>
 
-<?php get_header('bar'); ?>
-
-
 	<div class="doc-main">
 		<div class="container">
 			<div class="row">
@@ -29,4 +26,3 @@
 			</div>
 		</div>
 	</div>
-

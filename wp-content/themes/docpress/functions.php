@@ -123,7 +123,7 @@ function docpress_scripts() {
 	wp_enqueue_style( 'docpress_font_awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
 	wp_enqueue_style( 'docpress_style', get_stylesheet_uri());
 	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
-	wp_enqueue_script( 'docpress_bootstrap_js', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array( 'jquery' ),'',true);
+	wp_enqueue_script( 'docpress_bootstrap_js', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js');
 	if( is_page_template( 'template-home.php' ) ) wp_enqueue_script( 'docpress_matchheight_js', get_template_directory_uri() . '/assets/js/jquery.matchHeight.js', array( 'jquery' ),'',true);
 	if( is_page_template( 'template-home.php' ) ) wp_enqueue_script( 'docpress_scripts_js', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ),'',true);
 }
