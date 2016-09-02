@@ -41,6 +41,15 @@
 	color: #e99002 !important;
 }
 
+.user-badge a {
+	padding: 7px 15px !important;
+}
+
+.user-badge img {
+	max-width: 32px !important;
+	margin: 0 10px !important;
+}
+
 .with-radius {
 	-webkit-border-radius: 8px !important;
 	-moz-border-radius: 8px !important;
