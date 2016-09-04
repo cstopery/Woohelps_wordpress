@@ -10,3 +10,12 @@ function woohelps_footer_credits() {
 }
 
 add_action('woohelps_credits', 'woohelps_footer_credits');
+
+add_filter( 'dwqa_prepare_answers', 'dwqa_theme_order_answer_vote' );
+function dwqa_theme_order_answer_vote( $args ) {
+    $args['orderby'] = 'meta_value_num id';
+    $args['meta_key'] = '_dwqa_votes';
+    $args['order']	= 'DESC';
+
+    return $args;
+}
