@@ -72,8 +72,6 @@ function dwqa_get_the_best_answer( $question_id = false ) {
 
 	$user_vote = get_post_meta( $question_id, '_dwqa_best_answer', true );
 
-
-
 	if ( $user_vote && get_post( $user_vote ) ) {
 		return $user_vote;
 	}
