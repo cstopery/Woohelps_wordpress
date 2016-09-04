@@ -44,6 +44,7 @@
             <div class="modal-content">
 
 				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-close"></i></span></button>
 					<strong>登录</strong>
 				</div>
 
@@ -81,6 +82,7 @@
             <div class="modal-content">
 
 				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-close"></i></span></button>
 					<strong>注册</strong>
 				</div>
 
