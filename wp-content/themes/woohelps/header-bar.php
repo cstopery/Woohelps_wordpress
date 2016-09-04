@@ -26,15 +26,26 @@
 					</div>
 				</form>
 
-				<ul class="nav navbar-nav navbar-right">
-					<?php if (!is_user_logged_in()): ?>
+				<?php if (!is_user_logged_in()): ?>
+					<ul class="nav navbar-nav navbar-right">
 						<li><a class="btn btn-warning register-button with-radius" href="#" data-toggle="modal" data-target="#registerModal">注册</a></li>
 						<li><a href="#" data-toggle="modal" data-target="#loginModal">登录</a></li>
+					</ul>
 					<?php else: ?>
 						<?php $user = wp_get_current_user(); ?>
-						<li class="user-badge"><a href="/wp-admin/"><?=get_avatar($user->ID, 128, '', '', ['class' => 'img-response']);?><?=$user->display_name?></a></li>
+						<ul class="nav navbar-nav navbar-right">
+							<li class="dropdown user-badge">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?=get_avatar($user->ID, 128, '', '', ['class' => 'img-response']);?><?=$user->display_name?> <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="<?=bp_loggedin_user_domain()?>">我的主页</a></li>
+									<li><a href="<?=bp_loggedin_user_domain() . bp_get_messages_slug()?>">我的私信</a></li>
+									<li><a href="<?=bp_loggedin_user_domain() . bp_get_settings_slug()?>">设置</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="<?php echo wp_logout_url( home_url() ); ?>">退出</a></li>
+								</ul>
+							</li>
+						</ul>
 					<?php endif; ?>
-				</ul>
 			</div>
 		</div>
 	</nav>
