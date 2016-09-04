@@ -1077,6 +1077,7 @@ class DWQA_Template {
 		if ( ! $include ) {
 			return $template;
 		}
+		//var_dump($template);
 		include $template;
 	}
 }
