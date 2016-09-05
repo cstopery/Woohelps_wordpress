@@ -257,3 +257,58 @@ google maps layout
 	margin-top: 30px;
 	margin-bottom: 30px;
 }
+
+/*
+============================================
+dw qa sections layout
+============================================
+*/
+
+.page-content .dwqa-question-item {
+	border-left: none;
+	border-right: none;
+	padding-right: 0;
+}
+
+.page-content .dwqa-status {
+	font-size: 10px;
+	padding: 2px 5px;
+}
+
+.page-content .best-answer-excerpt {
+	margin: 15px 0;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	overflow: hidden;
+	max-height: 6em;
+	line-height: 1.5em;
+}
+
+.page-content .dwqa-questions-list .dwqa-question-item .avatar {
+	top: 35px;
+}
+
+/*
+============================================
+page sections layout
+============================================
+*/
+
+div.page-content {
+	margin-top: 120px;
+	margin-bottom: 40px;
+}
+
+div.sidebar {
+	margin-top: 40px;
+}
+
+div.footer {
+
+}
+
+/*
+============================================
+helpers
+============================================
+*/

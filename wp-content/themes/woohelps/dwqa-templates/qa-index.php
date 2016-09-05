@@ -25,8 +25,6 @@
         $text = __( 'asked', 'dwqa' );
         $latest_answer = dwqa_get_latest_answer();
         if ( $latest_answer ) {
-            var_dump($latest_answer);
-
             $time = human_time_diff( strtotime( $latest_answer->post_date ) );
             $text = __( 'answered', 'dwqa' );
         }

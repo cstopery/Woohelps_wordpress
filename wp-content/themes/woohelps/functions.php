@@ -2,7 +2,7 @@
 
 /* Disable WordPress Admin Bar for all users but admins. */
 
-show_admin_bar(true);
+//show_admin_bar(true);
 
 // Added footer credits
 function woohelps_footer_credits() {
