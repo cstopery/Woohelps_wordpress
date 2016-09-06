@@ -312,6 +312,10 @@ div.page-content {
 	margin-bottom: 40px;
 }
 
+div.doc-main .container {
+	padding: 0 15px;
+}
+
 div.sidebar {
 	margin-top: 40px;
 }
