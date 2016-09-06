@@ -256,6 +256,21 @@ google maps layout
 	margin-bottom: 30px;
 }
 
+.wpgmp_tabs_container {
+	padding: 0 5px !important;
+	right: 10px !important;
+}
+
+.wpgmp_toggle_container {
+	width: 50px !important;
+	right: 0 !important;
+	left: auto !important;
+}
+
+.wpgmp_tabs {
+	display: none !important;
+}
+
 /*
 ============================================
 dw qa sections layout
