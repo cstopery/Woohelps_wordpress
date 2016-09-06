@@ -15,28 +15,40 @@
 			$time = human_time_diff( get_post_time( 'U' ) );
 			$text = __( 'asked', 'dwqa' );
 			$latest_answer = dwqa_get_latest_answer();
-			if ( $latest_answer ) {
-				var_dump($latest_answer);
 
+			if ( $latest_answer ) {
 				$time = human_time_diff( strtotime( $latest_answer->post_date ) );
 				$text = __( 'answered', 'dwqa' );
+			}
+
+			// fetch and display one answer data
+			// by mogita
+			$args = [
+				'post_type' => 'dwqa-answer', // get answer
+				'posts_per_page' => 1, // show 5 answer
+				'orderby' => 'meta_value_num id',
+				'meta_key' => '_dwqa_votes',
+				'order'	=> 'DESC',
+				'meta_query' => [
+					'key' => '_question',
+					'value' => [get_the_ID()],
+					'compare' => 'IN'
+				]
+			];
+
+			$best_answers = get_posts($args);
+			if (is_array($best_answers) && count($best_answers) > 0) {
+				$best_answer = $best_answers[0]->post_content;
+				if (mb_strlen($best_answer, 'utf8') > 150) $best_answer = mb_substr($best_answer, 0, 150, 'utf8') . '...';
+				?>
+				<div class="best-answer-excerpt">
+					<?=$best_answer?>
+				</div>
+				<?php
 			}
 		?>
 		<?php printf( __( '<span><a href="%s">%s%s</a> %s %s ago</span>', 'dwqa' ), dwqa_get_author_link( $user_id ), get_avatar( $user_id, 48 ), dwqa_get_author(), $text, $time ) ?>
 		<?php echo get_the_term_list( get_the_ID(), 'dwqa-question_category', '<span class="dwqa-question-category">' . __( '&nbsp;&bull;&nbsp;', 'dwqa' ), ', ', '</span>' ); ?>
 	</div>
-	<div class="dwqa-question-stats">
-		<span class="dwqa-views-count">
-			<?php $views_count = dwqa_question_views_count() ?>
-			<?php printf( __( '<strong>%1$s</strong> views', 'dwqa' ), $views_count ); ?>
-		</span>
-		<span class="dwqa-answers-count">
-			<?php $answers_count = dwqa_question_answers_count(); ?>
-			<?php printf( __( '<strong>%1$s</strong> answers', 'dwqa' ), $answers_count ); ?>
-		</span>
-		<span class="dwqa-votes-count">
-			<?php $vote_count = dwqa_vote_count() ?>
-			<?php printf( __( '<strong>%1$s</strong> votes', 'dwqa' ), $vote_count ); ?>
-		</span>
-	</div>
+
 </div>
