@@ -12,11 +12,9 @@
 
 /* =Theme customization starts here
 ------------------------------------------------------- */
-/*.navbar {*/
-	/*font-family: 'Open Sans', sans-serif;*/
-	/*font-weight: 700;*/
-	/*background: rgba(255, 255, 255, 0);*/
-/*}*/
+.navbar {
+	background: #616db3;
+}
 
 .container {
 	padding: 0;
