@@ -1,9 +1,10 @@
 <?php get_header(); ?>
+<?php get_header('bar'); ?>
 
-	<div class="doc-main">
+	<div class="page-content doc-main">
 		<div class="container">
 			<div class="row">
-				<div class="main-content page col-sm-8 col-md-8">
+				<div class="main-content page col-xs-12 col-md-8">
 					<?php if ( have_posts() ) : ?>
 						<?php while ( have_posts() ) : the_post(); ?>
 							<?php get_template_part( 'content', 'page' ); ?>
@@ -17,12 +18,9 @@
 							<?php get_template_part( 'content', 'none' ); ?>
 					<?php endif; ?>
 				</div>
-				<?php get_sidebar(); ?>
-				<?php if ( is_active_sidebar( 'sidebar-widgets' ) ) : ?>
-				<div class="content-area col-sm-4 col-md-4">
-				<?php else: ?>
-				<div class="content-area col-sm-4 col-sm-offset-2 col-md-4 col-md-offset-2">
-				<?php endif; ?>
+				<div class="col-md-4 col-xs-12">
+				    <?php get_sidebar(); ?>
+				</div>
 			</div>
 		</div>
 	</div>

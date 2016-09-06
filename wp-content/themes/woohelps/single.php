@@ -1,25 +1,21 @@
 <?php get_header(); ?>
+<?php get_header('bar'); ?>
 
-	<div class="doc-main">
+	<div class="page-content doc-main">
 		<div class="container">
 			<div class="row">
-				<?php get_sidebar(); ?>
-				<?php if ( is_active_sidebar( 'sidebar-widgets' ) ) : ?>
-				<div class="content-area col-sm-8 col-md-8">
-				<?php else: ?>
-				<div class="content-area col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
-				<?php endif; ?>
+				<div class="content-area col-xs-12 col-md-8">
 					<div class="main-content single">
-					<?php if ( have_posts() ) : ?> 	
-						<?php while ( have_posts() ) : the_post(); ?>
-							<?php get_template_part( 'content', 'single' ); ?>
+						<?php if ( have_posts() ) : ?>
+							<?php while ( have_posts() ) : the_post(); ?>
+								<?php get_template_part( 'content', 'single' ); ?>
 							<?php endwhile; ?>
 							<div class="pagination">
-								<div class="clearfix">
-									<span class="left"><?php previous_post_link(); ?></span>
-									<span class="right"><?php next_post_link(); ?></span>
+									<div class="clearfix">
+										<span class="left"><?php previous_post_link(); ?></span>
+										<span class="right"><?php next_post_link(); ?></span>
+									</div>
 								</div>
-							</div>
 							<?php
 							if ( comments_open() || get_comments_number() ) :
 								comments_template();
@@ -27,7 +23,12 @@
 							?>
 						<?php else : ?>
 							<?php get_template_part( 'content', 'none' ); ?>
-					<?php endif; ?>
+						<?php endif; ?>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-xs-12">
+				    <?php get_sidebar(); ?>
 				</div>
 			</div>
 		</div>
