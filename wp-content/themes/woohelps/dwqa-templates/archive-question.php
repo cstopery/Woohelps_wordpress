@@ -8,7 +8,7 @@
 ?>
 
 <?php
-if( is_user_logged_in() ){
+if( is_user_logged_in() && dwqa_current_user_can('post_question')){
 	$ask_link =  dwqa_get_ask_link();
 	$answer_link = get_option('siteurl') . '/dwqa-questions/?filter=unanswered';
 } else {
@@ -46,21 +46,6 @@ if( is_user_logged_in() ){
 		</div>
 		<div class="dwqa-questions-footer">
 			<?php dwqa_question_paginate_link() ?>
-			<?php if ( dwqa_current_user_can( 'post_question' ) ) : ?>
-				<div class="dwqa-ask-question">
-					<?php
-					 if( is_user_logged_in() ){
-					?>
-						<a href="<?php echo dwqa_get_ask_link(); ?>"><?php _e( 'Ask Question', 'dwqa' ); ?></a>
-					<?php
-						} else {
-					?>
-						 <a href=<?php get_option( 'siteurl' ) ?>"/register/"><?php _e( 'Ask Question', 'dwqa' ); ?></a>
-					<?php
-					 }
-					?>
-				</div>
-			<?php endif; ?>
 		</div>
 
 	<?php do_action( 'dwqa_after_questions_archive' ); ?>
