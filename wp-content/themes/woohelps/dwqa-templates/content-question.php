@@ -38,7 +38,7 @@
 
 			$best_answers = get_posts($args);
 			if (is_array($best_answers) && count($best_answers) > 0) {
-				$best_answer = $best_answers[0]->post_content;
+				$best_answer = strip_tags($best_answers[0]->post_content);
 				if (mb_strlen($best_answer, 'utf8') > 150) $best_answer = mb_substr($best_answer, 0, 150, 'utf8') . '...';
 				?>
 				<div class="best-answer-excerpt">
