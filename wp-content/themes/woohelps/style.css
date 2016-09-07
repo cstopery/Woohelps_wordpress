@@ -329,3 +329,7 @@ div.footer {
 helpers
 ============================================
 */
+
+.margin-bottom {
+	margin-bottom: 20px;
+}

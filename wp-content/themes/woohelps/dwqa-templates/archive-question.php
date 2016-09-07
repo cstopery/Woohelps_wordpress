@@ -7,10 +7,22 @@
  */
 ?>
 
-
+<?php
+if( is_user_logged_in() ){
+	$ask_link =  dwqa_get_ask_link();
+	$answer_link = get_option('siteurl') . '/dwqa-questions/?filter=unanswered';
+} else {
+	$ask_link = $answer_link = get_option( 'siteurl' ) . "/wp-login.php";
+}
+?>
 
 <div class="dwqa-questions-archive">
-	<?php do_action( 'dwqa_before_questions_archive' ) ?>
+	<div class="row">
+		<div class="btn-group pull-right margin-bottom" role="group" aria-label="dw-qa-buttons">
+			<a class="btn btn-default btn-lg" href="<?=$ask_link?>"><i class="glyphicon glyphicon-question-sign"></i> 提问</a>
+			<a class="btn btn-default btn-lg" href="<?=$answer_link?>"><i class="glyphicon glyphicon-edit"></i> 回答</a>
+		</div>
+	</div>
 		<div class="dwqa-questions-list">
 		<?php do_action( 'dwqa_before_question_stickies' ); ?>
 		<?php if ( dwqa_has_question_stickies() && 'all' == dwqa_current_filter() ) : ?>
