@@ -429,7 +429,7 @@ class DWQA_Filter {
 		$user = isset( $_GET['user'] ) && !empty( $_GET['user'] ) ? urldecode( $_GET['user'] ) : false;
 		$filter = isset( $_GET['filter'] ) && !empty( $_GET['filter'] ) ? $_GET['filter'] : 'all';
 		$search_text = isset( $_GET['qs'] ) ? $_GET['qs'] : false;
-		$sort = isset( $_GET['sort'] ) ? $_GET['sort'] : '';
+		$sort = isset( $_GET['sort'] ) ? $_GET['sort'] : 'answers';
 		$query = array(
 			'post_type' => 'dwqa-question',
 			'posts_per_page' => $posts_per_page,
