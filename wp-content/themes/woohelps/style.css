@@ -297,8 +297,22 @@ dw qa sections layout
 	line-height: 1.5em;
 }
 
+.page-content .best-answer-author {
+	font-size: 10px;
+	background: #1ba1e2;
+	color: #fff;
+	padding: 2px 5px;
+	border-radius: 3px;
+	margin-right: 5px;
+}
+
+.page-content .best-answer-author a, .page-content .best-answer-author a:focus, .page-content .best-answer-author a:hover {
+	color: #ffffff;
+	text-decoration: none !important;
+}
+
 .page-content .dwqa-questions-list .dwqa-question-item .avatar {
-	top: 35px;
+	top: 40px;
 }
 
 /*

@@ -433,7 +433,12 @@ class DWQA_Filter {
 		$query = array(
 			'post_type' => 'dwqa-question',
 			'posts_per_page' => $posts_per_page,
-			'orderby'	=> 'modified'
+			'orderby'	=> 'modified',
+            'meta_query' => [
+                'key' => '_dwqa_status',
+                'value' => ['answered'],
+                'compare' => 'IN'
+            ]
 		);
 		$page_text = dwqa_is_front_page() ? 'page' : 'paged';
 		$paged = get_query_var( $page_text );
