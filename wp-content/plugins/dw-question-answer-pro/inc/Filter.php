@@ -429,11 +429,22 @@ class DWQA_Filter {
 		$user = isset( $_GET['user'] ) && !empty( $_GET['user'] ) ? urldecode( $_GET['user'] ) : false;
 		$filter = isset( $_GET['filter'] ) && !empty( $_GET['filter'] ) ? $_GET['filter'] : 'all';
 		$search_text = isset( $_GET['qs'] ) ? $_GET['qs'] : false;
-		$sort = isset( $_GET['sort'] ) ? $_GET['sort'] : '';
-		$query = array(
+		$sort = isset( $_GET['sort'] ) ? $_GET['sort'] : 'answers';
+
+        $meta_query = [];
+        if ($filter == 'all') {
+            $meta_query = [
+                'key' => '_dwqa_status',
+                'value' => ['answered'],
+                'compare' => 'IN'
+            ];
+        }
+
+        $query = array(
 			'post_type' => 'dwqa-question',
 			'posts_per_page' => $posts_per_page,
-			'orderby'	=> 'modified'
+			'orderby'	=> 'modified',
+            'meta_query' => $meta_query
 		);
 		$page_text = dwqa_is_front_page() ? 'page' : 'paged';
 		$paged = get_query_var( $page_text );

@@ -50,3 +50,69 @@ if( is_user_logged_in() && dwqa_current_user_can('post_question')){
 
 	<?php do_action( 'dwqa_after_questions_archive' ); ?>
 </div>
+<div class="to-top" id="toTop">
+	<div class="inner">
+		<i class="fa fa-arrow-up"></i>
+	</div>
+</div>
+<script>
+	var $ = jQuery;
+	$(function() {
+		var offset = 250;
+		var duration = 300;
+		var elToTop = $('#toTop');
+
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > offset) {
+				elToTop.fadeIn(duration);
+			}
+			else {
+				elToTop.fadeOut(duration);
+			}
+		});
+
+		elToTop.on('click', function(e) {
+			e.preventDefault();
+			$('html, body').animate({
+				scrollTop: 0
+			}, duration);
+
+			return false;
+		});
+
+		$('.subscribe-button').on('click',function(e){
+			e.preventDefault();
+			var t = $(this);
+
+			if (t.hasClass('processing')) {
+				return false;
+			}
+
+			t.addClass('processing');
+
+			var data = {
+				action: 'dwqa-follow-question',
+				nonce: t.data('nonce'),
+				post: t.data('post')
+			};
+
+			$.ajax({
+				url: '/wp-admin/admin-ajax.php',
+				data: data,
+				type: 'POST',
+				dataType: 'json',
+				success: function(data){
+					t.removeClass('processing');
+					if (data.success && data.success == true) {
+						if (data.data.code == 'unfollowed') {
+							t.html('关注问题');
+						}
+						else if (data.data.code == 'followed') {
+							t.html('已关注');
+						}
+					}
+				}
+			});
+		});
+	});
+</script>

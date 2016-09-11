@@ -297,8 +297,60 @@ dw qa sections layout
 	line-height: 1.5em;
 }
 
+.page-content .best-answer-author {
+	font-size: 10px;
+	background: #1ba1e2;
+	color: #fff;
+	padding: 2px 5px;
+	border-radius: 3px;
+	margin-right: 5px;
+}
+
+.page-content .best-answer-author a, .page-content .best-answer-author a:focus, .page-content .best-answer-author a:hover {
+	color: #ffffff;
+	text-decoration: none !important;
+}
+
 .page-content .dwqa-questions-list .dwqa-question-item .avatar {
-	top: 35px;
+	top: 40px;
+}
+
+.page-content .dwqa-question-footer {
+	width: 100%;
+}
+
+.page-content .dwqa-question-footer span {
+	font-size: 11px;
+	color: #939393;
+}
+
+.page-content .dwqa-question-footer .subscribe-button {
+	margin-top: 4px;
+	float: right;
+	cursor: pointer;
+}
+
+.page-content .dwqa-question-footer .subscribe-button.processing {
+	color: #cecece;
+}
+
+.to-top {
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+	z-index: 199;
+	cursor: pointer;
+	display: none;
+}
+
+.to-top .inner {
+	padding: 2px 9px;
+	background: #cdcdcd;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	color: #919191;
+	font-size: 20px;
 }
 
 /*
