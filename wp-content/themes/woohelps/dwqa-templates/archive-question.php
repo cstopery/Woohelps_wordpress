@@ -79,5 +79,40 @@ if( is_user_logged_in() && dwqa_current_user_can('post_question')){
 
 			return false;
 		});
+
+		$('.subscribe-button').on('click',function(e){
+			e.preventDefault();
+			var t = $(this);
+
+			if (t.hasClass('processing')) {
+				return false;
+			}
+
+			t.addClass('processing');
+
+			var data = {
+				action: 'dwqa-follow-question',
+				nonce: t.data('nonce'),
+				post: t.data('post')
+			};
+
+			$.ajax({
+				url: '/wp-admin/admin-ajax.php',
+				data: data,
+				type: 'POST',
+				dataType: 'json',
+				success: function(data){
+					t.removeClass('processing');
+					if (data.success && data.success == true) {
+						if (data.data.code == 'unfollowed') {
+							t.html('关注问题');
+						}
+						else if (data.data.code == 'followed') {
+							t.html('已关注');
+						}
+					}
+				}
+			});
+		});
 	});
 </script>

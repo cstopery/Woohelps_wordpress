@@ -315,9 +315,23 @@ dw qa sections layout
 	top: 40px;
 }
 
+.page-content .dwqa-question-footer {
+	width: 100%;
+}
+
 .page-content .dwqa-question-footer span {
 	font-size: 11px;
 	color: #939393;
+}
+
+.page-content .dwqa-question-footer .subscribe-button {
+	margin-top: 4px;
+	float: right;
+	cursor: pointer;
+}
+
+.page-content .dwqa-question-footer .subscribe-button.processing {
+	color: #cecece;
 }
 
 .to-top {
