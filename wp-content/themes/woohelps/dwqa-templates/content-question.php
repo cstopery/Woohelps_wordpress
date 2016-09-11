@@ -48,5 +48,15 @@ if (is_array($best_answers) && count($best_answers) > 0) :
             <?=$best_answer?>
         </div>
 	</div>
+
+    <footer class="dwqa-question-footer">
+        <span>
+            <?=dwqa_question_answers_count()?> 个回答
+        </span>
+         ·
+        <span>
+            <?=count(get_post_meta(get_the_ID(), '_dwqa_followers'));?> 人关注
+        </span>
+    </footer>
 </div>
 <?php endif; ?>

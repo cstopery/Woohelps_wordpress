@@ -315,6 +315,11 @@ dw qa sections layout
 	top: 40px;
 }
 
+.page-content .dwqa-question-footer span {
+	font-size: 11px;
+	color: #939393;
+}
+
 .to-top {
 	position: fixed;
 	bottom: 40px;
