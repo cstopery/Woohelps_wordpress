@@ -5,6 +5,7 @@
  * @package DW Question & Answer
  * @since DW Question & Answer 1.4.2
  */
+$has_answer = false;
 
 // fetch and display one answer data
 // by mogita
@@ -24,16 +25,19 @@ $args = [
 $best_answers = get_posts($args);
 
 // display only questions with at least one answer
-if (is_array($best_answers) && count($best_answers) > 0) :
+if (is_array($best_answers) && count($best_answers) > 0) {
 
     $answer_id = $best_answers[0]->ID;
     $user_id = $best_answers[0]->post_author;
     $best_answer = strip_tags($best_answers[0]->post_content);
     if (mb_strlen($best_answer, 'utf8') > 150) $best_answer = mb_substr($best_answer, 0, 150, 'utf8') . '...';
 
+    $has_answer = true;
+}
 ?>
 
 <div class="<?php echo dwqa_post_class(); ?>">
+    <?php if ($has_answer && isset($user_id) && isset($answer_id)) {?>
     <div class="question-meta">
         <?php printf( __( '<span><a href="%s">%s</a>', 'dwqa' ), dwqa_get_author_link( $user_id ), get_avatar( $user_id, 48 ) ) ?>
         <a href="<?=dwqa_get_author_link($user_id)?>"><span class="best-answer-author"><?=dwqa_get_author($answer_id)?></span></a>
@@ -41,13 +45,17 @@ if (is_array($best_answers) && count($best_answers) > 0) :
             <?php echo get_the_term_list( get_the_ID(), 'dwqa-question_category', '<span class="dwqa-question-category">' . __( '&nbsp;', 'dwqa' ), ', ', '</span>' ); ?>
         </span>
     </div>
+    <?php } ?>
 
 	<header class="dwqa-question-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></header>
+
+    <?php if ($has_answer) { ?>
 	<div class="dwqa-question-meta">
         <div class="best-answer-excerpt">
-            <?=$best_answer?>
+            <?php if (isset($best_answer)) echo $best_answer; ?>
         </div>
 	</div>
+    <?php } ?>
 
     <footer class="dwqa-question-footer">
         <span>
@@ -59,4 +67,3 @@ if (is_array($best_answers) && count($best_answers) > 0) :
         </span>
     </footer>
 </div>
-<?php endif; ?>
