@@ -315,6 +315,25 @@ dw qa sections layout
 	top: 40px;
 }
 
+.to-top {
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+	z-index: 199;
+	cursor: pointer;
+	display: none;
+}
+
+.to-top .inner {
+	padding: 2px 9px;
+	background: #cdcdcd;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	color: #919191;
+	font-size: 20px;
+}
+
 /*
 ============================================
 page sections layout

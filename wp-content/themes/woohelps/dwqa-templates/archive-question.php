@@ -50,3 +50,34 @@ if( is_user_logged_in() && dwqa_current_user_can('post_question')){
 
 	<?php do_action( 'dwqa_after_questions_archive' ); ?>
 </div>
+<div class="to-top" id="toTop">
+	<div class="inner">
+		<i class="fa fa-arrow-up"></i>
+	</div>
+</div>
+<script>
+	var $ = jQuery;
+	$(function() {
+		var offset = 250;
+		var duration = 300;
+		var elToTop = $('#toTop');
+
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > offset) {
+				elToTop.fadeIn(duration);
+			}
+			else {
+				elToTop.fadeOut(duration);
+			}
+		});
+
+		elToTop.on('click', function(e) {
+			e.preventDefault();
+			$('html, body').animate({
+				scrollTop: 0
+			}, duration);
+
+			return false;
+		});
+	});
+</script>
