@@ -45,7 +45,8 @@ if( is_user_logged_in() && dwqa_current_user_can('post_question')){
 		<?php do_action( 'dwqa_after_questions_list' ) ?>
 		</div>
 		<div class="dwqa-questions-footer">
-			<?php dwqa_question_paginate_link() ?>
+			<button class="btn btn-default btn-block" id="loadMore">载入更多问题</button>
+			<?php // dwqa_question_paginate_link() ?>
 		</div>
 
 	<?php do_action( 'dwqa_after_questions_archive' ); ?>
@@ -57,6 +58,8 @@ if( is_user_logged_in() && dwqa_current_user_can('post_question')){
 </div>
 <script>
 	var $ = jQuery;
+	var page = 1;
+
 	$(function() {
 		var offset = 250;
 		var duration = 300;
@@ -114,5 +117,44 @@ if( is_user_logged_in() && dwqa_current_user_can('post_question')){
 				}
 			});
 		});
+
+		$('#loadMore').on('click', function (e) {
+			e.preventDefault();
+
+			var _this = $(this);
+
+			if (_this.hasClass('disabled')) {
+				return false;
+			}
+
+			_this.addClass('disabled');
+			_this.html('正在载入...');
+
+			var newPage = parseInt(page) + 1;
+
+			$.ajax({
+				url: '/dwqa-questions/page/' + newPage,
+				type: 'GET',
+				dataType: 'html',
+				success: function(data) {
+					var list = $(data).find('.dwqa-questions-list').html();
+					if (~list.indexOf('dwqa-question-item')) {
+						$(list).appendTo($('.dwqa-questions-list'));
+						page++;
+						_this.removeClass('disabled');
+						_this.html('载入更多问题');
+					}
+					else {
+						_this.html('没有更多内容了');
+					}
+				},
+				fail: function() {
+					_this.html('没有更多内容了');
+				},
+				complete: function() {
+
+				}
+			});
+		})
 	});
 </script>
