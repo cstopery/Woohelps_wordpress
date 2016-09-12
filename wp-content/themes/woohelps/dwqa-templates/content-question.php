@@ -66,6 +66,7 @@ if (is_array($best_answers) && count($best_answers) > 0) {
             <?=count(get_post_meta(get_the_ID(), '_dwqa_followers'));?> 人关注
         </span>
 
+        <?php if (is_user_logged_in()) {?>
         <span class="subscribe-button" id="subscribe" data-nonce="<?=wp_create_nonce( '_dwqa_follow_question' )?>" data-post="<?=get_the_ID()?>">
             <?php if (dwqa_is_followed()) { ?>
                 已关注
@@ -73,5 +74,6 @@ if (is_array($best_answers) && count($best_answers) > 0) {
                 关注问题
             <?php } ?>
         </span>
+        <?php } ?>
     </footer>
 </div>
