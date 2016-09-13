@@ -7,20 +7,11 @@
  */
 ?>
 
-<?php
-if( is_user_logged_in() && dwqa_current_user_can('post_question')){
-	$ask_link =  dwqa_get_ask_link();
-	$answer_link = get_option('siteurl') . '/dwqa-questions/?filter=unanswered';
-} else {
-	$ask_link = $answer_link = get_option( 'siteurl' ) . "/wp-login.php";
-}
-?>
-
 <div class="dwqa-questions-archive">
 	<div class="row">
 		<div class="btn-group pull-right margin-bottom" role="group" aria-label="dw-qa-buttons">
-			<a class="btn btn-default btn-lg" href="<?=$ask_link?>"><i class="glyphicon glyphicon-question-sign"></i> 提问</a>
-			<a class="btn btn-default btn-lg" href="<?=$answer_link?>"><i class="glyphicon glyphicon-edit"></i> 回答</a>
+			<button class="btn btn-default btn-lg" id="askButton"><i class="glyphicon glyphicon-question-sign"></i> 提问</button>
+			<button class="btn btn-default btn-lg" id="answerButton"><i class="glyphicon glyphicon-edit"></i> 回答</button>
 		</div>
 	</div>
 		<div class="dwqa-questions-list">
@@ -59,6 +50,7 @@ if( is_user_logged_in() && dwqa_current_user_can('post_question')){
 <script>
 	var $ = jQuery;
 	var page = 1;
+	var user_logged_in = <?=(is_user_logged_in())? 'true' : 'false' ?>;
 
 	$(function() {
 		var offset = 250;
@@ -83,9 +75,38 @@ if( is_user_logged_in() && dwqa_current_user_can('post_question')){
 			return false;
 		});
 
+		$('#askButton').on('click', function(e) {
+			e.preventDefault();
+			var t = $(this);
+
+			if (!user_logged_in) {
+				$('#loginModal').modal('show');
+			}
+			else {
+				$('#newQuestionModal').modal('show');
+			}
+		});
+
+		$('#answerButton').on('click', function(e) {
+			e.preventDefault();
+			var t = $(this);
+
+			if (!user_logged_in) {
+				$('#loginModal').modal('show');
+			}
+			else {
+				window.location.href = "/dwqa-questions/?filter=unanswered";
+			}
+		});
+
 		$('.subscribe-button').on('click',function(e){
 			e.preventDefault();
 			var t = $(this);
+
+			if (!user_logged_in) {
+				$('#loginModal').modal('show');
+				return false;
+			}
 
 			if (t.hasClass('processing')) {
 				return false;
@@ -132,8 +153,14 @@ if( is_user_logged_in() && dwqa_current_user_can('post_question')){
 
 			var newPage = parseInt(page) + 1;
 
+			var param = '';
+			if (queryString) {
+				console.log(queryString);
+				param = '/?' + queryString;
+			}
+
 			$.ajax({
-				url: '/dwqa-questions/page/' + newPage,
+				url: currentLocation + 'page/' + newPage + param,
 				type: 'GET',
 				dataType: 'html',
 				success: function(data) {
@@ -157,4 +184,7 @@ if( is_user_logged_in() && dwqa_current_user_can('post_question')){
 			});
 		})
 	});
+
+	var currentLocation = (window.location.href.split('?')[0] || window.location);
+	var queryString = (window.location.search.split('?')[1] || '');
 </script>

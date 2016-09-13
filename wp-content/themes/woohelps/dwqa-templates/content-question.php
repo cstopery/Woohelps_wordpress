@@ -69,13 +69,17 @@ if (is_array($best_answers) && count($best_answers) > 0) {
         </span>
 
         <?php if (is_user_logged_in()) {?>
-        <span class="subscribe-button" id="subscribe" data-nonce="<?=wp_create_nonce( '_dwqa_follow_question' )?>" data-post="<?=get_the_ID()?>">
-            <?php if (dwqa_is_followed()) { ?>
-                已关注
-            <?php } else { ?>
+            <span class="subscribe-button" data-nonce="<?=wp_create_nonce( '_dwqa_follow_question' )?>" data-post="<?=get_the_ID()?>">
+                <?php if (dwqa_is_followed()) { ?>
+                    已关注
+                <?php } else { ?>
+                    关注问题
+                <?php } ?>
+            </span>
+        <?php } else { ?>
+            <span class="subscribe-button">
                 关注问题
-            <?php } ?>
-        </span>
+            </span>
         <?php } ?>
     </footer>
 </div>
