@@ -41,6 +41,9 @@ if (is_array($best_answers) && count($best_answers) > 0) {
 <div class="<?php echo dwqa_post_class(); ?>">
     <?php if ($has_answer && isset($user_id) && isset($answer_id)) {?>
     <div class="question-meta">
+        <div class="view-count" title="查看次数">
+            <?=dwqa_question_views_count()?>
+        </div>
         <?php printf( __( '<span><a href="%s">%s</a>', 'dwqa' ), dwqa_get_author_link( $user_id ), get_avatar( $user_id, 48 ) ) ?>
         <a href="<?=dwqa_get_author_link($user_id)?>"><span class="best-answer-author"><?=dwqa_get_author($answer_id)?></span></a>
         <span class="pull-right">
