@@ -19,13 +19,6 @@
 				</div>
 				<div class="clearfix"></div>
 				<div class="category-list text-right">
-					<ul>
-						<li><a href="#">租车</a></li>
-						<li><a href="#">家庭旅馆</a></li>
-						<li><a href="#">翻译</a></li>
-						<li><a href="#">搬家</a></li>
-						<li><a href="#">活动</a></li>
-					</ul>
 				</div>
 			</div>
 		</div>
