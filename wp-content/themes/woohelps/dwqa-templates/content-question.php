@@ -44,8 +44,8 @@ if (is_array($best_answers) && count($best_answers) > 0) {
         <div class="view-count" title="查看次数">
             <?=dwqa_question_views_count()?>
         </div>
-        <?php printf( __( '<span><a href="%s">%s</a>', 'dwqa' ), dwqa_get_author_link( $user_id ), get_avatar( $user_id, 48 ) ) ?>
-        <a href="<?=dwqa_get_author_link($user_id)?>"><span class="best-answer-author"><?=dwqa_get_author($answer_id)?></span></a>
+        <?php printf( __( '<span><a href="%s">%s</a>', 'dwqa' ), bp_core_get_user_domain($user_id), get_avatar( $user_id, 48 ) ) ?>
+        <a href="<?=bp_core_get_user_domain($user_id)?>"><span class="best-answer-author"><?=dwqa_get_author($answer_id)?></span></a>
         <span class="pull-right">
             <?php echo get_the_term_list( get_the_ID(), 'dwqa-question_category', '<span class="dwqa-question-category">' . __( '&nbsp;', 'dwqa' ), ', ', '</span>' ); ?>
         </span>
