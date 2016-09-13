@@ -12,6 +12,11 @@
 
 /* =Theme customization starts here
 ------------------------------------------------------- */
+/*
+============================================
+woohelps Global
+============================================
+*/
 .navbar {
 	background: #616db3;
 }
@@ -96,6 +101,40 @@
 .category-list ul li a:hover {
 	border: 1px solid #acacac;
 	color: #00b0ea;
+}
+/* Added by Martin */
+
+.dwqa-question-footer {
+	width: 100%;
+}
+
+.dwqa-question-footer span {
+	font-size: 11px;
+	color: #939393;
+}
+
+.dwqa-question-footer .subscribe-button {
+	margin-top: 4px;
+	float: right;
+	cursor: pointer;
+}
+
+.dwqa-question-footer .subscribe-button.processing {
+	color: #cecece;
+}
+
+.best-answer-author {
+	font-size: 10px;
+	background: #1ba1e2;
+	color: #fff;
+	padding: 2px 5px;
+	border-radius: 3px;
+	margin-right: 5px;
+}
+
+.best-answer-author a, .page-content .best-answer-author a:focus, .page-content .best-answer-author a:hover {
+	color: #ffffff;
+	text-decoration: none !important;
 }
 
 /*

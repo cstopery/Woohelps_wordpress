@@ -30,8 +30,10 @@ if (is_array($best_answers) && count($best_answers) > 0) {
     $answer_id = $best_answers[0]->ID;
     $user_id = $best_answers[0]->post_author;
     $best_answer = strip_tags($best_answers[0]->post_content);
-    if (mb_strlen($best_answer, 'utf8') > 150) $best_answer = mb_substr($best_answer, 0, 150, 'utf8') . '...';
 
+    if (mb_strlen($best_answer, 'utf8') > 200) $best_answer = mb_substr($best_answer, 0, 150, 'utf8') . '... ';
+
+    $best_answer = $best_answer . '<a class="" href="' . get_permalink() . '" target="_blank">   查看详细 </a>';
     $has_answer = true;
 }
 ?>

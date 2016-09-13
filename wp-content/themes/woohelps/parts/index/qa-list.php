@@ -43,7 +43,7 @@
 						<?php if (dwqa_has_question()) : ?>
 							<?php while (dwqa_has_question()) : dwqa_the_question(); ?>
 								<?php if (get_post_status() == 'publish' || (get_post_status() == 'private' && dwqa_current_user_can('edit_question', get_the_ID()))) : ?>
-									<?php dwqa_load_template('qa', 'index') ?>
+									<?php dwqa_load_template('content', 'question') ?>
 								<?php endif; ?>
 							<?php endwhile; ?>
 						<?php else : ?>
