@@ -31,7 +31,8 @@ if (is_array($best_answers) && count($best_answers) > 0) {
     $user_id = $best_answers[0]->post_author;
     $best_answer = strip_tags($best_answers[0]->post_content);
 
-    if (mb_strlen($best_answer, 'utf8') > 200) $best_answer = mb_substr($best_answer, 0, 150, 'utf8') . '... ';
+    // trim answer preview content
+    if (mb_strlen($best_answer, 'utf8') > 150) $best_answer = mb_substr($best_answer, 0, 150, 'utf8') . '... ';
 
     $best_answer = $best_answer . '<a class="" href="' . get_permalink() . '" target="_blank">   查看详细 </a>';
     $has_answer = true;
@@ -41,8 +42,11 @@ if (is_array($best_answers) && count($best_answers) > 0) {
 <div class="<?php echo dwqa_post_class(); ?>">
     <?php if ($has_answer && isset($user_id) && isset($answer_id)) {?>
     <div class="question-meta">
-        <?php printf( __( '<span><a href="%s">%s</a>', 'dwqa' ), dwqa_get_author_link( $user_id ), get_avatar( $user_id, 48 ) ) ?>
-        <a href="<?=dwqa_get_author_link($user_id)?>"><span class="best-answer-author"><?=dwqa_get_author($answer_id)?></span></a>
+        <div class="view-count" title="查看次数">
+            <?=dwqa_question_views_count()?>
+        </div>
+        <?php printf( __( '<span><a href="%s">%s</a>', 'dwqa' ), bp_core_get_user_domain($user_id), get_avatar( $user_id, 48 ) ) ?>
+        <a href="<?=bp_core_get_user_domain($user_id)?>"><span class="best-answer-author"><?=dwqa_get_author($answer_id)?></span></a>
         <span class="pull-right">
             <?php echo get_the_term_list( get_the_ID(), 'dwqa-question_category', '<span class="dwqa-question-category">' . __( '&nbsp;', 'dwqa' ), ', ', '</span>' ); ?>
         </span>
@@ -69,13 +73,17 @@ if (is_array($best_answers) && count($best_answers) > 0) {
         </span>
 
         <?php if (is_user_logged_in()) {?>
-        <span class="subscribe-button" id="subscribe" data-nonce="<?=wp_create_nonce( '_dwqa_follow_question' )?>" data-post="<?=get_the_ID()?>">
-            <?php if (dwqa_is_followed()) { ?>
-                已关注
-            <?php } else { ?>
+            <span class="subscribe-button" data-nonce="<?=wp_create_nonce( '_dwqa_follow_question' )?>" data-post="<?=get_the_ID()?>">
+                <?php if (dwqa_is_followed()) { ?>
+                    已关注
+                <?php } else { ?>
+                    关注问题
+                <?php } ?>
+            </span>
+        <?php } else { ?>
+            <span class="subscribe-button">
                 关注问题
-            <?php } ?>
-        </span>
+            </span>
         <?php } ?>
     </footer>
 </div>

@@ -7,20 +7,11 @@
  */
 ?>
 
-<?php
-if( is_user_logged_in() && dwqa_current_user_can('post_question')){
-	$ask_link =  dwqa_get_ask_link();
-	$answer_link = get_option('siteurl') . '/dwqa-questions/?filter=unanswered';
-} else {
-	$ask_link = $answer_link = get_option( 'siteurl' ) . "/wp-login.php";
-}
-?>
-
 <div class="dwqa-questions-archive">
 	<div class="row">
 		<div class="btn-group pull-right margin-bottom" role="group" aria-label="dw-qa-buttons">
-			<a class="btn btn-default btn-lg" href="<?=$ask_link?>"><i class="glyphicon glyphicon-question-sign"></i> 提问</a>
-			<a class="btn btn-default btn-lg" href="<?=$answer_link?>"><i class="glyphicon glyphicon-edit"></i> 回答</a>
+			<button class="btn btn-default btn-lg" id="askButton"><i class="glyphicon glyphicon-question-sign"></i> 提问</button>
+			<button class="btn btn-default btn-lg" id="answerButton"><i class="glyphicon glyphicon-edit"></i> 回答</button>
 		</div>
 	</div>
 		<div class="dwqa-questions-list">
@@ -56,9 +47,79 @@ if( is_user_logged_in() && dwqa_current_user_can('post_question')){
 		<i class="fa fa-arrow-up"></i>
 	</div>
 </div>
+
+<div class="modal fade" id="newQuestionModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				提问
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			</div>
+			<div class="modal-body">
+				<form method="post" class="dwqa-content-edit-form">
+					<p>
+						<label for="question_title"><?php _e('Title', 'dwqa') ?></label>
+						<?php $title = isset($_POST['question-title']) ? $_POST['question-title'] : ''; ?>
+						<input type="text" data-nonce="<?php echo wp_create_nonce('_dwqa_filter_nonce') ?>" id="question-title" name="question-title" value="<?php echo $title ?>" tabindex="1">
+					</p>
+					<?php $content = isset($_POST['question-content']) ? $_POST['question-content'] : ''; ?>
+					<p><?php dwqa_init_tinymce_editor(array('content' => $content, 'textarea_name' => 'question-content', 'id' => 'question-content')) ?></p>
+					<?php global $dwqa_general_settings; ?>
+					<?php if (isset($dwqa_general_settings['enable-private-question']) && $dwqa_general_settings['enable-private-question']) : ?>
+						<p>
+						<label for="question-status"><?php _e('Status', 'dwqa') ?></label>
+						<select class="dwqa-select" id="question-status" name="question-status">
+							<optgroup label="<?php _e('Who can see this?', 'dwqa') ?>">
+								<option value="publish"><?php _e('Public', 'dwqa') ?></option>
+								<option value="private"><?php _e('Only Me &amp; Admin', 'dwqa') ?></option>
+							</optgroup>
+						</select>
+					</p>
+					<?php endif; ?>
+					<p>
+						<label for="question-category"><?php _e('Category', 'dwqa') ?></label>
+						<?php
+						wp_dropdown_categories(array(
+												   'name' => 'question-category',
+												   'id' => 'question-category',
+												   'taxonomy' => 'dwqa-question_category',
+												   'show_option_none' => __('Select question category', 'dwqa'),
+												   'hide_empty' => 0,
+												   'quicktags' => array('buttons' => 'strong,em,link,block,del,ins,img,ul,ol,li,code,spell,close'),
+												   'selected' => isset($_POST['question-category']) ? $_POST['question-category'] : false,
+											   ));
+						?>
+					</p>
+					<p>
+						<label for="question-tag"><?php _e('Tag', 'dwqa') ?></label>
+						<?php $tags = isset($_POST['question-tag']) ? $_POST['question-tag'] : ''; ?>
+						<input type="text" class="" name="question-tag" value="<?php echo $tags ?>">
+					</p>
+					<?php if (dwqa_current_user_can('post_question') && !is_user_logged_in()) : ?>
+						<p>
+						<label for="_dwqa_anonymous_email"><?php _e('Your Email', 'dwqa') ?></label>
+							<?php $email = isset($_POST['_dwqa_anonymous_email']) ? $_POST['_dwqa_anonymous_email'] : ''; ?>
+							<input type="email" class="" name="_dwqa_anonymous_email" value="<?php echo $email ?>">
+					</p>
+						<p>
+						<label for="_dwqa_anonymous_name"><?php _e('Your Name', 'dwqa') ?></label>
+							<?php $name = isset($_POST['_dwqa_anonymous_name']) ? $_POST['_dwqa_anonymous_name'] : ''; ?>
+							<input type="text" class="" name="_dwqa_anonymous_name" value="<?php echo $name ?>">
+					</p>
+					<?php endif; ?>
+					<?php wp_nonce_field('_dwqa_submit_question') ?>
+					<?php dwqa_load_template('captcha', 'form'); ?>
+					<input type="submit" name="dwqa-question-submit" value="<?php _e('Submit', 'dwqa') ?>">
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
 <script>
 	var $ = jQuery;
 	var page = 1;
+	var user_logged_in = <?=(is_user_logged_in())? 'true' : 'false' ?>;
 
 	$(function() {
 		var offset = 250;
@@ -83,9 +144,41 @@ if( is_user_logged_in() && dwqa_current_user_can('post_question')){
 			return false;
 		});
 
+		$('#askButton').on('click', function(e) {
+			e.preventDefault();
+
+			if (!user_logged_in) {
+				$('#loginModal').modal('show');
+			}
+			else {
+				$('#newQuestionModal').modal('show');
+			}
+		});
+
+		$('#newQuestionModal').on('hidden.bs.modal', function(){
+			$(this).find('iframe').html('');
+			$(this).find('iframe').attr('src', '');
+		});
+
+		$('#answerButton').on('click', function(e) {
+			e.preventDefault();
+
+			if (!user_logged_in) {
+				$('#loginModal').modal('show');
+			}
+			else {
+				window.location.href = "/dwqa-questions/?filter=unanswered";
+			}
+		});
+
 		$('.subscribe-button').on('click',function(e){
 			e.preventDefault();
 			var t = $(this);
+
+			if (!user_logged_in) {
+				$('#loginModal').modal('show');
+				return false;
+			}
 
 			if (t.hasClass('processing')) {
 				return false;
@@ -132,8 +225,14 @@ if( is_user_logged_in() && dwqa_current_user_can('post_question')){
 
 			var newPage = parseInt(page) + 1;
 
+			var param = '';
+			if (queryString) {
+				console.log(queryString);
+				param = '/?' + queryString;
+			}
+
 			$.ajax({
-				url: '/dwqa-questions/page/' + newPage,
+				url: currentLocation + 'page/' + newPage + param,
 				type: 'GET',
 				dataType: 'html',
 				success: function(data) {
@@ -157,4 +256,7 @@ if( is_user_logged_in() && dwqa_current_user_can('post_question')){
 			});
 		})
 	});
+
+	var currentLocation = (window.location.href.split('?')[0] || window.location);
+	var queryString = (window.location.search.split('?')[1] || '');
 </script>
