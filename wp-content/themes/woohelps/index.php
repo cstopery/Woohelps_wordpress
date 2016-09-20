@@ -4,7 +4,7 @@
 
 
 <?php get_template_part('parts/index/qa', 'list');  ?>
-<?php get_template_part('parts/index/localservice', 'list'); ?>
+<?php //get_template_part('parts/index/localservice', 'list'); ?>
 <?php get_template_part('parts/index/map', 'google'); ?>
 
 <?php get_footer(); ?>
