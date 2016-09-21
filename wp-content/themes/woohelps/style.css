@@ -453,6 +453,12 @@ bp groups sections layout
 ============================================
 */
 
+.bp-group-item {
+	display: block;
+	margin: 0 0 50px 0;
+	overflow: hidden;
+}
+
 .bp-group-item-inner {
 	position: relative;
 }
