@@ -40,9 +40,11 @@
 				<div class="dwqa-questions-archive">
 					<div class="dwqa-questions-list">
 					<?php do_action('dwqa_before_questions_list') ?>
-						<?php if (dwqa_has_question()) : ?>
+						<?php if (dwqa_has_question()) : $count = 0; ?>
 							<?php while (dwqa_has_question()) : dwqa_the_question(); ?>
+								<?php if ($count >= 8) break; ?>
 								<?php if (get_post_status() == 'publish' || (get_post_status() == 'private' && dwqa_current_user_can('edit_question', get_the_ID()))) : ?>
+									<?php $count++; ?>
 									<?php dwqa_load_template('content', 'question') ?>
 								<?php endif; ?>
 							<?php endwhile; ?>
