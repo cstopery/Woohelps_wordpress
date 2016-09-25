@@ -40,6 +40,10 @@ do_action('bp_before_groups_loop'); ?>
 							'object_dir' => 'groups',
 							'item_id' => bp_get_group_id(),
 						));
+
+						if (!$group_cover_image_url) {
+							$group_cover_image_url = default_cover_image(bp_get_group_id());
+						}
 						?>
 						<img src="<?=$group_cover_image_url;?>" alt="group-<?=bp_get_group_id();?>">
 						<div class="bp-group-meta">

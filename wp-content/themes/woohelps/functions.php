@@ -28,3 +28,23 @@ function bb_cover_image( $settings = array() ) {
 }
 add_filter( 'bp_before_xprofile_cover_image_settings_parse_args', 'bb_cover_image', 10, 1 );
 add_filter( 'bp_before_groups_cover_image_settings_parse_args', 'bb_cover_image', 10, 1 );
+
+// check or generate default group cover image
+function default_cover_image($group_id = 0) {
+    if ($group_id == 0 || $group_id < 0 || strlen($group_id) <= 0) return false;
+
+    $image_folder = 'wp-content/uploads/default_group_cover';
+    $image_path = ABSPATH . $image_folder;
+    if (!file_exists($image_path)) mkdir($image_path, 0757, true);
+    $image_name = '/cover_' . $group_id . '.jpg';
+    $image_file = $image_path . $image_name;
+
+    if (!file_exists($image_file)) {
+        $im = imagecreatetruecolor (720, 480);
+        $bg = imagecolorallocate($im, rand(100, 255), rand(100, 255), 114);
+        imagefill($im, 0, 0, $bg);
+        imagejpeg($im, $image_file, 80);
+    }
+
+    return '/' . $image_folder . $image_name;
+}
