@@ -80,6 +80,10 @@ function bp_get_options_nav( $parent_slug = '' ) {
         if ($subnav_item->slug == 'forum') {
             array_unshift($secondary_nav_items, $secondary_nav_items[$key]);
         }
+
+		if ($subnav_item->slug == 'home') {
+			$secondary_nav_items[$key]->name = '微博';
+		}
     }
 
 	// Loop through each navigation item.
