@@ -461,6 +461,13 @@ bp groups sections layout
 
 .bp-group-item-inner {
 	position: relative;
+	height: 180px;
+}
+
+.bp-group-item-inner img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 .bp-group-meta {

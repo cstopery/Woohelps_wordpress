@@ -13,8 +13,22 @@
  */
 do_action( 'bp_before_group_header' ); ?>
 
+<?php
+$real_cover_image_url = bp_attachments_get_attachment('url', array(
+	'object_dir' => 'groups',
+	'item_id' => bp_get_group_id(),
+));
+
+if (!$real_cover_image_url) {
+	$bg_style = 'style="background: url(\'' . default_cover_image(bp_get_group_id()) . '\') no-repeat"';
+}
+else {
+	$bg_style = '';
+}
+?>
+
 <div id="cover-image-container">
-	<a id="header-cover-image" href="<?php echo esc_url( bp_get_group_permalink() ); ?>"></a>
+	<a id="header-cover-image" href="<?php echo esc_url( bp_get_group_permalink() ); ?>" <?=$bg_style?>></a>
 
 	<div id="item-header-cover-image">
 		<?php if ( ! bp_disable_group_avatar_uploads() ) : ?>
@@ -70,7 +84,7 @@ do_action( 'bp_before_group_header' ); ?>
 
 			<?php if ( bp_group_is_visible() ) : ?>
 
-				<h3><?php _e( 'Group Admins', 'buddypress' ); ?></h3>
+				<h4><?php _e( 'Group Admins', 'buddypress' ); ?></h4>
 
 				<?php bp_group_list_admins();
 
@@ -90,7 +104,7 @@ do_action( 'bp_before_group_header' ); ?>
 					 */
 					do_action( 'bp_before_group_menu_mods' ); ?>
 
-					<h3><?php _e( 'Group Mods' , 'buddypress' ); ?></h3>
+					<h4><?php _e( 'Group Mods' , 'buddypress' ); ?></h4>
 
 					<?php bp_group_list_mods();
 

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bbPress\n"
 "Report-Msgid-Bugs-To: https://bbpress.trac.wordpress.org\n"
 "POT-Creation-Date: 2016-09-21 23:54+0800\n"
-"PO-Revision-Date: 2016-09-22 00:09+0800\n"
+"PO-Revision-Date: 2016-09-25 20:51+0800\n"
 "Last-Translator: yanghua <nmimi@126.com>\n"
 "Language-Team: mogita <me@mogita.com>\n"
 "Language: zh_CN\n"
@@ -724,7 +724,7 @@ msgid ""
 "custom header, etc."
 msgstr ""
 "<strong>特色图片</strong> - 允许给你的论坛关联一张图片。当你的主题支持特色图"
-"像，将会在首页显示主题的缩略图，如自定义标题。"
+"像，将会在微博页面显示主题的缩略图，如自定义标题。"
 
 #: includes/admin/forums.php:203 includes/admin/forums.php:243
 msgid "Forum Attributes"
@@ -1202,7 +1202,7 @@ msgid ""
 "custom header, etc."
 msgstr ""
 "<strong>特色图片</strong> - 允许给你的回复关联一张图片。当你的主题支持特色图"
-"像，将会在首页显示主题的缩略图，如自定义标题。"
+"像，将会在微博页面显示主题的缩略图，如自定义标题。"
 
 #: includes/admin/replies.php:217 includes/admin/replies.php:255
 msgid "Reply Attributes"
@@ -2506,7 +2506,7 @@ msgid ""
 "custom header, etc."
 msgstr ""
 "<strong>特色图片</strong> - 允许您关联一张图像到你的话题。当你的话题支持特色"
-"图像，将会在首页显示话题的缩略图，如自定义标题。"
+"图像，将会在微博页面显示话题的缩略图，如自定义标题。"
 
 #: includes/admin/topics.php:218 includes/admin/topics.php:255
 msgid "Topic Attributes"
@@ -2873,7 +2873,7 @@ msgstr "无可用"
 
 #: includes/common/template.php:2138
 msgid "Home"
-msgstr "首页"
+msgstr "微博"
 
 #: includes/common/template.php:2208
 msgid "(Edit)"
@@ -4708,7 +4708,7 @@ msgstr "缩略名："
 
 #: templates/default/bbpress/form-topic-tag.php:45
 msgid "Update"
-msgstr "动态"
+msgstr "微博"
 
 #: templates/default/bbpress/form-topic-tag.php:62
 msgid "Merging tags together cannot be undone."

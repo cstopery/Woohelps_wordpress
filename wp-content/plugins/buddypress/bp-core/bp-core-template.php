@@ -75,11 +75,27 @@ function bp_get_options_nav( $parent_slug = '' ) {
 		}
 	}
 
+    // move forum item to the first in place
+	foreach ($secondary_nav_items as $key => $subnav_item) {
+        if ($subnav_item->slug == 'forum') {
+            array_unshift($secondary_nav_items, $secondary_nav_items[$key]);
+        }
+
+		if ($subnav_item->slug == 'home') {
+			$secondary_nav_items[$key]->name = '微博';
+		}
+    }
+
 	// Loop through each navigation item.
+    $has_forum = false;
+
 	foreach ( $secondary_nav_items as $subnav_item ) {
 		if ( empty( $subnav_item->user_has_access ) ) {
 			continue;
 		}
+
+		if ($has_forum && $subnav_item->slug == 'forum') continue;
+        if ($subnav_item->slug == 'forum') $has_forum = true;
 
 		// If the current action or an action variable matches the nav item id, then add a highlight CSS class.
 		if ( $subnav_item->slug === $selected_item ) {
