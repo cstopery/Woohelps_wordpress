@@ -84,7 +84,7 @@ else {
 
 			<?php if ( bp_group_is_visible() ) : ?>
 
-				<h3><?php _e( 'Group Admins', 'buddypress' ); ?></h3>
+				<h4><?php _e( 'Group Admins', 'buddypress' ); ?></h4>
 
 				<?php bp_group_list_admins();
 
@@ -104,7 +104,7 @@ else {
 					 */
 					do_action( 'bp_before_group_menu_mods' ); ?>
 
-					<h3><?php _e( 'Group Mods' , 'buddypress' ); ?></h3>
+					<h4><?php _e( 'Group Mods' , 'buddypress' ); ?></h4>
 
 					<?php bp_group_list_mods();
 
