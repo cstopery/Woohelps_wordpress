@@ -494,3 +494,9 @@ bp groups sections layout
 	font-size: 10px;
 	margin: 0 0 10px 0;
 }
+
+.attendee-list img {
+	width: 36px;
+	height: 36px;
+	margin-right: 5px;
+}
