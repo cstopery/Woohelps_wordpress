@@ -66,7 +66,7 @@ function default_cover_image($group_id = 0) {
 
 // featured group function, which in chinese means 置顶群组
 //it's important to check if the Groups component is active
-if (bp_is_active('groups')) :
+if (bp_is_active('groups')) {
     /**
      * This is a quick and dirty class to illustrate "bpgmq"
      * bpgmq stands for BuddyPress Group Meta Query...
@@ -88,20 +88,20 @@ if (bp_is_active('groups')) :
             add_action('bp_groups_admin_meta_boxes', array($this, 'admin_ui_edit_featured'));
             /* The groups loop uses bp_ajax_querystring( 'groups' ) to filter the groups
    depending on the selected option */
-            add_filter( 'bp_ajax_querystring', array( $this, 'filter_ajax_querystring' ), 20, 2 );
+            add_filter('bp_ajax_querystring', array($this, 'filter_ajax_querystring'), 20, 2);
             // Once the group is saved you store a groupmeta in db, the one you will search for in your group meta query
             add_action('bp_group_admin_edit_after', array($this, 'admin_ui_save_featured'), 10, 1);
 
             /* finally you create your options in the different select boxes */
             // you need to do it for the Groups directory
-            add_action( 'bp_groups_directory_order_options', array( $this, 'featured_option' ) );
+            add_action('bp_groups_directory_order_options', array($this, 'featured_option'));
             // and for the groups tab of the user's profile
-            add_action( 'bp_member_group_order_options', array( $this, 'featured_option' ) );
+            add_action('bp_member_group_order_options', array($this, 'featured_option'));
         }
 
         public function featured_option() {
             ?>
-            <option value="featured"><?php _e( '特色群组' ); ?></option>
+            <option value="featured"><?php _e('特色群组'); ?></option>
             <?php
         }
 
@@ -158,44 +158,46 @@ if (bp_is_active('groups')) :
             return true;
         }
 
-        public function filter_ajax_querystring( $querystring = '', $object = '' ) {
+        public function filter_ajax_querystring($querystring = '', $object = '') {
 
             /* bp_ajax_querystring is also used by other components, so you need
             to check the object is groups, else simply return the querystring and stop the process */
-            if( $object != 'groups' )
+            if ($object != 'groups') {
                 return $querystring;
+            }
 
             // Let's rebuild the querystring as an array to ease the job
             $defaults = array(
-                'type'            => 'active',
-                'action'          => 'active',
-                'scope'           => 'all',
-                'page'            => 1,
-                'user_id'         => 0,
-                'search_terms'    => '',
-                'exclude'         => false
+                'type' => 'active',
+                'action' => 'active',
+                'scope' => 'all',
+                'page' => 1,
+                'user_id' => 0,
+                'search_terms' => '',
+                'exclude' => false
             );
 
-            $bpgmq_querystring = wp_parse_args( $querystring, $defaults );
+            $bpgmq_querystring = wp_parse_args($querystring, $defaults);
 
             /* if your featured option has not been requested
             simply return the querystring to stop the process
             */
-            if( $bpgmq_querystring['type'] != 'featured' )
+            if ($bpgmq_querystring['type'] != 'featured') {
                 return $querystring;
+            }
 
             /* this is your meta_query */
             $bpgmq_querystring['meta_query'] = array(
                 array(
-                    'key'     => '_bpgmq_featured_group',
-                    'value'   => 1,
-                    'type'    => 'numeric',
+                    'key' => '_bpgmq_featured_group',
+                    'value' => 1,
+                    'type' => 'numeric',
                     'compare' => '='
                 )
             );
 
             // using a filter will help other plugins to eventually extend this feature
-            return apply_filters( 'bpgmq_filter_ajax_querystring', $bpgmq_querystring, $querystring );
+            return apply_filters('bpgmq_filter_ajax_querystring', $bpgmq_querystring, $querystring);
         }
 
     }
@@ -217,4 +219,69 @@ if (bp_is_active('groups')) :
 
     add_action('bp_init', 'bpgmq_feature_group');
 
-endif;
+}
+// end of featured groups
+
+/*
+ * bbPress custom fields
+ * should include:
+ * 日期，时间，发起人，限制人数，报名截止日，费用，地址，标题，内容，参加人数
+ */
+add_action('bbp_theme_before_topic_form_content', 'bbp_extra_fields');
+
+function bbp_extra_fields() {
+    $value = get_post_meta(bbp_get_topic_id(), 'date_and_time', true);
+    echo '<label for="bbp_extra_field1">日期和时间</label><br>';
+    echo "<input type='text' name='date_and_time' value='" . $value . "'>";
+
+    $value = get_post_meta(bbp_get_topic_id(), 'organizer', true);
+    echo '<label for="bbp_extra_field1">发起人</label><br>';
+    echo "<input type='text' name='organizer' value='" . $value . "'>";
+
+    $value = get_post_meta(bbp_get_topic_id(), 'attendee_count_limit', true);
+    echo '<label for="bbp_extra_field1">限制人数</label><br>';
+    echo "<input type='text' name='attendee_count_limit' value='" . $value . "'>";
+
+    $value = get_post_meta(bbp_get_topic_id(), 'enroll_deadline', true);
+    echo '<label for="bbp_extra_field1">报名截止日</label><br>';
+    echo "<input type='text' name='enroll_deadline' value='" . $value . "'>";
+
+    $value = get_post_meta(bbp_get_topic_id(), 'fee', true);
+    echo '<label for="bbp_extra_field1">费用</label><br>';
+    echo "<input type='text' name='fee' value='" . $value . "'>";
+
+    $value = get_post_meta(bbp_get_topic_id(), 'location', true);
+    echo '<label for="bbp_extra_field1">地址</label><br>';
+    echo "<input type='text' name='location' value='" . $value . "'>";
+
+    $value = get_post_meta(bbp_get_topic_id(), 'attendee_count', true);
+    echo '<label for="bbp_extra_field1">参加人数</label><br>';
+    echo "<input type='text' name='attendee_count' value='" . $value . "'>";
+}
+
+add_action('bbp_new_topic', 'bbp_save_extra_fields', 10, 1);
+add_action('bbp_edit_topic', 'bbp_save_extra_fields', 10, 1);
+
+function bbp_save_extra_fields($topic_id = 0) {
+    if (isset($_POST) && $_POST['date_and_time'] != '') {
+        update_post_meta($topic_id, 'date_and_time', $_POST['date_and_time']);
+    }
+    if (isset($_POST) && $_POST['organizer'] != '') {
+        update_post_meta($topic_id, 'organizer', $_POST['organizer']);
+    }
+    if (isset($_POST) && $_POST['attendee_count_limit'] != '') {
+        update_post_meta($topic_id, 'attendee_count_limit', $_POST['attendee_count_limit']);
+    }
+    if (isset($_POST) && $_POST['enroll_deadline'] != '') {
+        update_post_meta($topic_id, 'enroll_deadline', $_POST['enroll_deadline']);
+    }
+    if (isset($_POST) && $_POST['fee'] != '') {
+        update_post_meta($topic_id, 'fee', $_POST['fee']);
+    }
+    if (isset($_POST) && $_POST['location'] != '') {
+        update_post_meta($topic_id, 'location', $_POST['location']);
+    }
+    if (isset($_POST) && $_POST['attendee_count'] != '') {
+        update_post_meta($topic_id, 'attendee_count', $_POST['attendee_count']);
+    }
+}

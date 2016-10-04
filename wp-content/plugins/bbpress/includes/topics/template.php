@@ -3327,7 +3327,7 @@ function bbp_single_topic_description( $args = '' ) {
 		$retstr = $r['before'] . $retstr . $r['after'];
 
 		// Return filtered result
-		return apply_filters( 'bbp_get_single_topic_description', $retstr, $r );
+//		return apply_filters( 'bbp_get_single_topic_description', $retstr, $r );
 	}
 
 /** Topic Tags ****************************************************************/
