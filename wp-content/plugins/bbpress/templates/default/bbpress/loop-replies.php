@@ -25,32 +25,43 @@ $meta['attendee_count'] = get_post_meta( $topic_id, 'attendee_count', true);
 <ul id="topic-<?php bbp_topic_id(); ?>-replies" class="forums bbp-replies">
 
 	<li class="bbp-meta">
-		<div>
-			<strong>时间日期：</strong> <?=$meta['date_and_time']?>
-		</div>
+		<div class="table-responsive">
+			<table class="table table-hover">
+				<tr>
+					<td><strong>时间日期：</strong></td>
+					<td><?=$meta['date_and_time']?></td>
+				</tr>
 
-		<div>
-			<strong>发起人：</strong> <?=$meta['organizer']?>
-		</div>
+				<tr>
+					<td><strong>发起人：</strong></td>
+					<td><?=$meta['organizer']?></td>
+				</tr>
 
-		<div>
-			<strong>限制人数：</strong> <?=$meta['attendee_count_limit']?>
-		</div>
+				<tr>
+					<td><strong>限制人数：</strong></td>
+					<td><?=$meta['attendee_count_limit']?></td>
+				</tr>
 
-		<div>
-			<strong>报名截止日：</strong> <?=$meta['enroll_deadline']?>
-		</div>
+				<tr>
+					<td><strong>报名截止日：</strong></td>
+					<td><?=$meta['enroll_deadline']?></td>
+				</tr>
 
-		<div>
-			<strong>费用：</strong> <?=$meta['fee']?>
-		</div>
+				<tr>
+					<td><strong>费用：</strong></td>
+					<td><?=$meta['fee']?></td>
+				</tr>
 
-		<div>
-			<strong>地址：</strong> <?=$meta['location']?>
-		</div>
+				<tr>
+					<td><strong>地址：</strong></td>
+					<td><?=$meta['location']?></td>
+				</tr>
 
-		<div>
-			<strong>参加人数：</strong> <?=$meta['attendee_count']?>
+				<tr>
+					<td><strong>参加人数：</strong></td>
+					<td><?=$meta['attendee_count']?></td>
+				</tr>
+			</table>
 		</div>
 	</li>
 
