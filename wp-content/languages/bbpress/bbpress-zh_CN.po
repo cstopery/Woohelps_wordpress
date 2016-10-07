@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bbPress\n"
 "Report-Msgid-Bugs-To: https://bbpress.trac.wordpress.org\n"
 "POT-Creation-Date: 2016-09-21 23:54+0800\n"
-"PO-Revision-Date: 2016-09-25 20:51+0800\n"
+"PO-Revision-Date: 2016-10-07 09:35+0800\n"
 "Last-Translator: yanghua <nmimi@126.com>\n"
 "Language-Team: mogita <me@mogita.com>\n"
 "Language: zh_CN\n"
@@ -211,12 +211,12 @@ msgstr "现在您的用户可以订阅特定论坛的新话题"
 
 #: includes/admin/admin.php:798
 msgid "Manage Subscriptions"
-msgstr "管理订阅 "
+msgstr "管理报名"
 
 #: includes/admin/admin.php:799
 msgid ""
 "Your users can manage all of their subscriptions in one convenient location."
-msgstr "您的用户可以在页面方便地管理所有的订阅。"
+msgstr "您的用户可以在页面方便地管理所有的报名。"
 
 #: includes/admin/admin.php:805
 msgid "Converters"
@@ -1451,7 +1451,7 @@ msgstr "收藏"
 #: includes/admin/settings.php:150 includes/extend/buddypress/loader.php:230
 #: templates/default/bbpress/user-details.php:58
 msgid "Subscriptions"
-msgstr "订阅"
+msgstr "报名"
 
 #: includes/admin/settings.php:158
 msgid "Topic tags"
@@ -1517,7 +1517,7 @@ msgstr "收藏的话题"
 
 #: includes/admin/settings.php:378
 msgid "Topic Subscriptions"
-msgstr "话题订阅"
+msgstr "活动报名"
 
 #: includes/admin/settings.php:391
 msgid "Enable Group Forums"
@@ -1565,7 +1565,7 @@ msgstr "允许用户订阅论坛和话题"
 
 #: includes/admin/settings.php:597
 msgid "Allow topics to have tags"
-msgstr "允许用户订阅话题"
+msgstr "允许用户报名活动"
 
 #: includes/admin/settings.php:613
 msgid "Allow forum wide search"
@@ -1822,7 +1822,7 @@ msgstr "收藏可以保存相关话题。默认启动。"
 msgid ""
 "Subscriptions allow users to subscribe for notifications to topics that "
 "interest them. This is enabled by default."
-msgstr "允许用户订阅他们感兴趣的话题。默认启用。"
+msgstr "允许用户报名他们感兴趣的活动。默认启用。"
 
 #: includes/admin/settings.php:1565
 msgid ""
@@ -2068,7 +2068,7 @@ msgstr "移除用户收藏中在回收站中的主题"
 
 #: includes/admin/tools.php:176
 msgid "Remove trashed topics from user subscriptions"
-msgstr "删除用户订阅的垃圾主题"
+msgstr "删除用户报名的垃圾主题"
 
 #: includes/admin/tools.php:177
 msgid "Remove trashed forums from user subscriptions"
@@ -3341,7 +3341,7 @@ msgstr "搜索论坛"
 #: includes/extend/buddypress/loader.php:293
 #: templates/default/bbpress/user-subscriptions.php:34
 msgid "Subscribed Topics"
-msgstr "订阅的论坛话题"
+msgstr "报名的活动"
 
 #: includes/extend/buddypress/notifications.php:48
 msgid "Topic Replies"
@@ -3499,12 +3499,12 @@ msgstr "父论坛："
 #: includes/forums/template.php:840 includes/topics/template.php:1846
 #: includes/users/template.php:1058
 msgid "Subscribe"
-msgstr "订阅"
+msgstr "报名"
 
 #: includes/forums/template.php:841 includes/topics/template.php:1847
 #: includes/users/template.php:1059
 msgid "Unsubscribe"
-msgstr "取消订阅"
+msgstr "取消报名"
 
 #: includes/forums/template.php:1238 includes/forums/template.php:1976
 msgid "%s topic"
@@ -4271,7 +4271,7 @@ msgstr "<strong>错误</strong>：收藏该话题时出现问题！"
 msgid ""
 "<strong>ERROR</strong>: No forum was found! Which forum are you subscribing/"
 "unsubscribing to?"
-msgstr "<strong>错误</strong>：没有找到论坛！哪个是您正在订阅/取消订阅的主题？"
+msgstr "<strong>错误</strong>：没有找到论坛！哪个是您正在报名/取消报名的活动？"
 
 #: includes/users/functions.php:1223
 msgid ""
@@ -4286,16 +4286,16 @@ msgstr "<strong>错误</strong>：订阅该论坛时出现问题！"
 msgid ""
 "<strong>ERROR</strong>: No topic was found! Which topic are you subscribing/"
 "unsubscribing to?"
-msgstr "<strong>错误</strong>：没有找到话题！哪个是您正在订阅/取消订阅的话题？"
+msgstr "<strong>错误</strong>：没有找到话题！哪个是您正在报名/取消报名的活动？"
 
 #: includes/users/functions.php:1329
 msgid ""
 "<strong>ERROR</strong>: There was a problem unsubscribing from that topic!"
-msgstr "<strong>错误</strong>：取消订阅该话题时出现问题！"
+msgstr "<strong>错误</strong>：取消报名该活动时出现问题！"
 
 #: includes/users/functions.php:1331
 msgid "<strong>ERROR</strong>: There was a problem subscribing to that topic!"
-msgstr "<strong>错误</strong>：订阅该话题时出现问题！"
+msgstr "<strong>错误</strong>：报名该话题时出现问题！"
 
 #: includes/users/template.php:503
 msgid "Guest"
@@ -4622,7 +4622,7 @@ msgstr "话题附加"
 
 #: templates/default/bbpress/form-topic-merge.php:71
 msgid "Merge topic subscribers"
-msgstr "合并话题订阅"
+msgstr "合并活动报名"
 
 #: templates/default/bbpress/form-topic-merge.php:76
 msgid "Merge topic favoriters"
@@ -4674,7 +4674,7 @@ msgstr "分割：%s"
 
 #: templates/default/bbpress/form-topic-split.php:75
 msgid "Copy subscribers to the new topic"
-msgstr "复制订阅到新话题"
+msgstr "复制报名到新活动"
 
 #: templates/default/bbpress/form-topic-split.php:80
 msgid "Copy favoriters to the new topic"
@@ -4959,7 +4959,7 @@ msgstr "%s 的收藏"
 
 #: templates/default/bbpress/user-details.php:58
 msgid "%s's Subscriptions"
-msgstr "%s的订阅"
+msgstr "%s的报名"
 
 #: templates/default/bbpress/user-favorites.php:15
 msgid "Favorite Forum Topics"
@@ -5011,11 +5011,11 @@ msgstr "该用户当前没有订阅任何论坛。"
 
 #: templates/default/bbpress/user-subscriptions.php:47
 msgid "You are not currently subscribed to any topics."
-msgstr "目前你没有订阅任何话题。"
+msgstr "目前你没有报名任何活动。"
 
 #: templates/default/bbpress/user-subscriptions.php:47
 msgid "This user is not currently subscribed to any topics."
-msgstr "该用户当前没有订阅任何话题。"
+msgstr "该用户当前没有报名任何活动。"
 
 #: templates/default/bbpress/user-topics-created.php:15
 msgid "Forum Topics Started"

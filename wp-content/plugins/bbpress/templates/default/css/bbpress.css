@@ -290,12 +290,12 @@ span.bbp-author-ip {
 
 #bbpress-forums div.bbp-topic-content a,
 #bbpress-forums div.bbp-reply-content a {
-	background: none;
-	border: none;
-	display: inline;
-	font-weight: normal;
-	margin: 0;
-	padding: 0;
+	/*background: none;*/
+	/*border: none;*/
+	/*display: inline;*/
+	/*font-weight: normal;*/
+	/*margin: 0;*/
+	/*padding: 0;*/
 }
 
 #bbpress-forums div.bbp-topic-content h1,

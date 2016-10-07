@@ -1297,7 +1297,22 @@ function bbp_subscriptions_handler( $action = '' ) {
 	if ( true === $is_subscription && 'bbp_unsubscribe' === $action ) {
 		$success = bbp_remove_user_subscription( $user_id, $topic_id );
 	} elseif ( false === $is_subscription && 'bbp_subscribe' === $action ) {
-		$success = bbp_add_user_subscription( $user_id, $topic_id );
+	    // check subscribers count
+        $limit = get_post_meta( $topic_id, 'attendee_count_limit', true);
+        $subscribers = bbp_get_topic_subscribers( $topic_id );
+        if (is_array($subscribers)) {
+            if (count($subscribers) >= intval($limit)) {
+                bbp_add_error( 'bbp_subscription_topic_id', '活动参与者人数已达上限，请关注我们的其他活动！' );
+                return;
+            }
+            else {
+                $success = bbp_add_user_subscription( $user_id, $topic_id );
+            }
+        }
+        else {
+            bbp_add_error( 'bbp_subscription_topic_id', '此话题数据有问题，请联系管理员' );
+            return;
+        }
 	}
 
 	// Do additional subscriptions actions
