@@ -998,7 +998,8 @@ function bbp_topic_revision_log( $topic_id = 0 ) {
 
 		$r .= "\n" . '</ul>' . "\n\n";
 
-		return apply_filters( 'bbp_get_topic_revision_log', $r, $topic_id );
+//		return apply_filters( 'bbp_get_topic_revision_log', $r, $topic_id );
+		return;
 	}
 		/**
 		 * Return the raw revision log of the topic
