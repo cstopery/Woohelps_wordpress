@@ -185,21 +185,21 @@ function bbp_get_caps_for_role( $role = '' ) {
 
 				// Primary caps
 				'spectate'              => true,
-				'participate'           => true,
+				'participate'           => false,
 
 				// Forum caps
 				'read_private_forums'   => true,
 
 				// Topic caps
-				'publish_topics'        => true,
-				'edit_topics'           => true,
+				'publish_topics'        => false,
+				'edit_topics'           => false,
 
 				// Reply caps
-				'publish_replies'       => true,
-				'edit_replies'          => true,
+				'publish_replies'       => false,
+				'edit_replies'          => false,
 
 				// Topic tag caps
-				'assign_topic_tags'     => true,
+				'assign_topic_tags'     => false,
 			);
 
 			break;

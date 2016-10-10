@@ -253,10 +253,6 @@ function bbp_extra_fields() {
     $value = get_post_meta(bbp_get_topic_id(), 'location', true);
     echo '<label for="bbp_extra_field1">地址</label><br>';
     echo "<input type='text' name='location' value='" . $value . "'>";
-
-    $value = get_post_meta(bbp_get_topic_id(), 'attendee_count', true);
-    echo '<label for="bbp_extra_field1">参加人数</label><br>';
-    echo "<input type='text' name='attendee_count' value='" . $value . "'>";
 }
 
 add_action('bbp_new_topic', 'bbp_save_extra_fields', 10, 1);
@@ -281,7 +277,5 @@ function bbp_save_extra_fields($topic_id = 0) {
     if (isset($_POST) && $_POST['location'] != '') {
         update_post_meta($topic_id, 'location', $_POST['location']);
     }
-    if (isset($_POST) && $_POST['attendee_count'] != '') {
-        update_post_meta($topic_id, 'attendee_count', $_POST['attendee_count']);
-    }
 }
+

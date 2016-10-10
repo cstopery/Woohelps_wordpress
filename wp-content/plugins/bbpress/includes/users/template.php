@@ -1060,7 +1060,7 @@ function bbp_user_subscribe_link( $args = '', $user_id = 0, $wrap = true ) {
 			'user_id'     => 0,
 			'topic_id'    => 0,
 			'forum_id'    => 0,
-			'before'      => '&nbsp;|&nbsp;',
+			'before'      => '',
 			'after'       => ''
 		), 'get_user_subscribe_link' );
 
@@ -1102,12 +1102,14 @@ function bbp_user_subscribe_link( $args = '', $user_id = 0, $wrap = true ) {
 
 			$url  = esc_url( wp_nonce_url( add_query_arg( $query_args, $permalink ), 'toggle-subscription_' . $forum_id ) );
 			$sub  = $is_subscribed ? ' class="is-subscribed"' : '';
-			$html = sprintf( '%s<span id="subscribe-%d"  %s><a href="%s" class="subscription-toggle" data-forum="%d">%s</a></span>%s', $r['before'], $forum_id, $sub, $url, $forum_id, $text, $r['after'] );
+			$html = sprintf( '%s<span id="subscribe-%d"  %s><a href="%s" class="subscription-toggle" data-forum="%d">%s</a></span>%s', '', $forum_id, $sub, $url, $forum_id, $text, $r['after'] );
 
 			// Initial output is wrapped in a span, ajax output is hooked to this
 			if ( !empty( $wrap ) ) {
 				$html = '<span id="subscription-toggle">' . $html . '</span>';
 			}
+
+			$html = '';
 
 		} else {
 
@@ -1134,7 +1136,7 @@ function bbp_user_subscribe_link( $args = '', $user_id = 0, $wrap = true ) {
 			$url  = esc_url( wp_nonce_url( add_query_arg( $query_args, $permalink ), 'toggle-subscription_' . $topic_id ) );
 			$sub  = $is_subscribed ? ' class="is-subscribed"' : '';
 			$a_sub = $is_subscribed ? 'btn-danger' : 'btn-success';
-			$html = sprintf( '%s<span id="subscribe-%d"  %s><a href="%s" class="btn ' . $a_sub . ' btn-xs subscription-toggle" data-topic="%d">%s</a></span>%s', $r['before'], $topic_id, $sub, $url, $topic_id, $text, $r['after'] );
+			$html = sprintf( '%s<span id="subscribe-%d"  %s><a href="%s" class="btn ' . $a_sub . ' btn-xs subscription-toggle" data-topic="%d">%s</a></span>%s', '', $topic_id, $sub, $url, $topic_id, $text, $r['after'] );
 
 			// check subscribers count
 			if ((bbp_is_single_topic() || bbp_is_single_reply()) && !$is_subscribed) {
@@ -1142,7 +1144,7 @@ function bbp_user_subscribe_link( $args = '', $user_id = 0, $wrap = true ) {
 				$subscribers = bbp_get_topic_subscribers( $topic_id );
 				if (is_array($subscribers)) {
 					if (count($subscribers) >= intval($limit)) {
-						$html = $r['before'] . '<button class="btn btn-success btn-xs" disabled="disabled">参加人数已满</button>' . $r['after'];
+						$html = '<button class="btn btn-success btn-xs" disabled="disabled">参加人数已满</button>' . $r['after'];
 					}
 				}
 			}

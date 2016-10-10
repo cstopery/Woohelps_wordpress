@@ -500,3 +500,73 @@ bp groups sections layout
 	height: 36px;
 	margin-right: 5px;
 }
+
+.attendee-list li {
+	list-style: none !important;
+}
+
+.group-button .join-group {
+	float: left !important;
+	border-radius: 5px !important;
+	background: #9370DB !important;
+	color: #fff !important;
+	padding: 6px 20px !important;
+	font-size: 16px !important;
+}
+
+.group-button .join-group:hover {
+	background: #795cb4 !important;
+}
+
+.group-button .join-group:active {
+	background: #8465c5 !important;
+}
+
+.group-button .leave-group {
+	float: left !important;
+	border-radius: 5px !important;
+	padding: 6px 20px !important;
+	font-size: 16px !important;
+}
+
+.bbp-reply-content {
+	margin-left: 0 !important;
+	width: 65%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.bbp-reply-sidebar {
+	display: inline-block;
+	width: 34%;
+}
+
+@media (max-width: 640px) {
+	.bbp-reply-content {
+		width: 100%;
+	}
+
+	.bbp-reply-sidebar {
+		width: 100%;
+	}
+}
+
+.subscription-button {
+	width: 100%;
+	text-align: center;
+	padding-top: 15px;
+	margin-bottom: 30px;
+}
+
+.bbp-reply-title {
+	text-align: center;
+}
+
+.bbp-reply-inner-content {
+	margin-bottom: 30px;
+}
+
+li.bbp-topic-title {
+	font-size: 16px;
+	width: 77%;
+}

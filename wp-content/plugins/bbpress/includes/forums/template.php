@@ -2033,7 +2033,8 @@ function bbp_single_forum_description( $args = '' ) {
 		$retstr = $r['before'] . $retstr . $r['after'];
 
 		// Return filtered result
-		return apply_filters( 'bbp_get_single_forum_description', $retstr, $r );
+		// return apply_filters( 'bbp_get_single_forum_description', $retstr, $r );
+		return;
 	}
 
 /** Forms *********************************************************************/
