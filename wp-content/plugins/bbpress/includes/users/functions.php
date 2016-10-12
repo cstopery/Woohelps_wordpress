@@ -1270,6 +1270,7 @@ function bbp_subscriptions_handler( $action = '' ) {
 	// Get required data
 	$user_id  = bbp_get_user_id( 0, true, true );
 	$topic_id = intval( $_GET['topic_id'] );
+    $forum_id = intval( $_GET['forum_id'] );
 
 	// Check for empty topic
 	if ( empty( $topic_id ) ) {
@@ -1331,7 +1332,7 @@ function bbp_subscriptions_handler( $action = '' ) {
 		} elseif ( is_single() || is_page() ) {
 			$redirect = get_permalink();
 		} else {
-			$redirect = get_permalink( $topic_id );
+			$redirect = get_permalink( $forum_id );
 		}
 
 		wp_safe_redirect( $redirect );

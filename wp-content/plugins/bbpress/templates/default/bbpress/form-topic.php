@@ -219,7 +219,7 @@
 		</form>
 	</div>
 
-<?php elseif ( bbp_is_forum_closed() ) : ?>
+<?php elseif ( bbp_is_forum_closed() ) : return; ?>
 
 	<div id="no-topic-<?php bbp_topic_id(); ?>" class="bbp-no-topic">
 		<div class="bbp-template-notice">
@@ -227,7 +227,7 @@
 		</div>
 	</div>
 
-<?php else : ?>
+<?php else : return; ?>
 
 	<div id="no-topic-<?php bbp_topic_id(); ?>" class="bbp-no-topic">
 		<div class="bbp-template-notice">

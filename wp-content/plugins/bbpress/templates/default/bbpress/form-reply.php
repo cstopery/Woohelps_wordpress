@@ -17,7 +17,7 @@
 
 <?php endif; ?>
 
-<?php if ( bbp_current_user_can_access_create_reply_form() ) : ?>
+<?php if ( bbp_current_user_can_access_create_reply_form() ) : return; ?>
 
 	<div id="new-reply-<?php bbp_topic_id(); ?>" class="bbp-reply-form">
 
@@ -151,7 +151,7 @@
 		</form>
 	</div>
 
-<?php elseif ( bbp_is_topic_closed() ) : ?>
+<?php elseif ( bbp_is_topic_closed() ) : return; ?>
 
 	<div id="no-reply-<?php bbp_topic_id(); ?>" class="bbp-no-reply">
 		<div class="bbp-template-notice">
@@ -159,7 +159,7 @@
 		</div>
 	</div>
 
-<?php elseif ( bbp_is_forum_closed( bbp_get_topic_forum_id() ) ) : ?>
+<?php elseif ( bbp_is_forum_closed( bbp_get_topic_forum_id() ) ) : return; ?>
 
 	<div id="no-reply-<?php bbp_topic_id(); ?>" class="bbp-no-reply">
 		<div class="bbp-template-notice">
@@ -167,7 +167,7 @@
 		</div>
 	</div>
 
-<?php else : ?>
+<?php else : return; ?>
 
 	<div id="no-reply-<?php bbp_topic_id(); ?>" class="bbp-no-reply">
 		<div class="bbp-template-notice">
