@@ -1130,16 +1130,17 @@ function bbp_user_subscribe_link( $args = '', $user_id = 0, $wrap = true ) {
 			} elseif ( bbp_is_single_topic() || bbp_is_single_reply() ) {
 				$permalink = bbp_get_topic_permalink( $topic_id );
 			} else {
-				$permalink = get_permalink();
+				$permalink = get_permalink( );
 			}
 
 			$url  = esc_url( wp_nonce_url( add_query_arg( $query_args, $permalink ), 'toggle-subscription_' . $topic_id ) );
+			$url .= '&forum_id=' . $forum_id;
 			$sub  = $is_subscribed ? ' class="is-subscribed"' : '';
 			$a_sub = $is_subscribed ? 'btn-danger' : 'btn-success';
 			$html = sprintf( '%s<span id="subscribe-%d"  %s><a href="%s" class="btn ' . $a_sub . ' btn-xs subscription-toggle" data-topic="%d">%s</a></span>%s', '', $topic_id, $sub, $url, $topic_id, $text, $r['after'] );
 
 			// check subscribers count
-			if ((bbp_is_single_topic() || bbp_is_single_reply()) && !$is_subscribed) {
+			if (!$is_subscribed) {
 				$limit = get_post_meta( $topic_id, 'attendee_count_limit', true);
 				$subscribers = bbp_get_topic_subscribers( $topic_id );
 				if (is_array($subscribers)) {
