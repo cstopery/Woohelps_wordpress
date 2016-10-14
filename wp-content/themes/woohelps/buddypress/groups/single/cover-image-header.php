@@ -84,9 +84,9 @@ else {
 
 			<?php if ( bp_group_is_visible() ) : ?>
 
-				<h4><?php _e( 'Group Admins', 'buddypress' ); ?></h4>
+				<h4><?php //_e( 'Group Admins', 'buddypress' ); ?></h4>
 
-				<?php bp_group_list_admins();
+				<?php //bp_group_list_admins();
 
 				/**
 				 * Fires after the display of the group's administrators.

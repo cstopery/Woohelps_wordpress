@@ -570,3 +570,11 @@ li.bbp-topic-title {
 	font-size: 16px;
 	width: 77%;
 }
+
+.bbp-reply-header {
+	padding: 1px !important;
+}
+
+div.bbp-forum-header, div.bbp-topic-header, div.bbp-reply-header, li.bbp-body div.hentry {
+	padding: 20px 8px;
+}
