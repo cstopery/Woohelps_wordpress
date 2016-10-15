@@ -2,13 +2,17 @@
 # This file is distributed under the same license as the Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-12-13 03:47:14+0000\n"
+"PO-Revision-Date: 2016-10-15 02:51+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/1.0-alpha-1100\n"
+"X-Generator: Poedit 1.8.9\n"
 "Project-Id-Version: Stable (latest release)\n"
+"POT-Creation-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
 
 #: bp-xprofile/classes/class-bp-xprofile-field.php:752
 #: bp-xprofile/classes/class-bp-xprofile-field.php:1338
@@ -857,9 +861,7 @@ msgstr "发布该回复时出现问题，请重试。"
 msgid "There was a problem posting your update, please try again."
 msgstr "发布您的更新时出现问题，请重试。"
 
-#. #-#-#-#-#  tmp-buddypress.pot (BuddyPress 2.4.3)  #-#-#-#-#
 #. Plugin URI of the plugin/theme
-#. #-#-#-#-#  tmp-buddypress.pot (BuddyPress 2.4.3)  #-#-#-#-#
 #. Author URI of the plugin/theme
 msgid "https://buddypress.org/"
 msgstr "https://buddypress.org"
@@ -1883,7 +1885,7 @@ msgstr "您请求成为群组 '%s' 的成员。"
 #: bp-templates/bp-legacy/buddypress/groups/single/group-header.php:42
 #: bp-themes/bp-default/groups/single/group-header.php:20
 msgid "Group Mods"
-msgstr "群组协管员"
+msgstr "群主"
 
 #: bp-templates/bp-legacy/buddypress/groups/single/cover-image-header.php:73
 #: bp-templates/bp-legacy/buddypress/groups/single/group-header.php:22
@@ -1994,7 +1996,7 @@ msgstr "踢出 &amp; 屏蔽"
 #: bp-templates/bp-legacy/buddypress/groups/single/admin.php:356
 #: bp-themes/bp-default/groups/single/admin.php:271
 msgid "Promote to Mod"
-msgstr "晋升为版主"
+msgstr "晋升为群主"
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin.php:355
 #: bp-themes/bp-default/groups/single/admin.php:270
@@ -3852,7 +3854,7 @@ msgstr "您无法访问这个内容。"
 
 #: bp-groups/classes/class-bp-groups-member.php:272
 msgid "Group Mod"
-msgstr "群组管理员"
+msgstr "群主"
 
 #: bp-groups/bp-groups-widgets.php:181
 msgid "Default groups to show:"
@@ -3920,7 +3922,7 @@ msgstr "显示1个请求"
 
 #: bp-groups/bp-groups-template.php:5094 bp-groups/bp-groups-template.php:5123
 msgid "Moderator Of"
-msgstr "任职版主于"
+msgstr "任职群主于"
 
 #: bp-groups/bp-groups-template.php:5093 bp-groups/bp-groups-template.php:5120
 msgid "Administrator Of"
@@ -4044,7 +4046,7 @@ msgstr "离开群组"
 
 #: bp-groups/bp-groups-template.php:2490
 msgid "This group has no moderators"
-msgstr "该群组没有协管员"
+msgstr "该群组没有群主"
 
 #: bp-groups/bp-groups-template.php:2456
 #: bp-templates/bp-legacy/buddypress/groups/single/admin.php:301
@@ -4091,7 +4093,7 @@ msgstr "过滤群组"
 
 #: bp-groups/bp-groups-template.php:1661
 msgid "No Mods"
-msgstr "没有协管员"
+msgstr "没有群主"
 
 #: bp-groups/bp-groups-template.php:1614
 msgid "No Admins"
@@ -4154,7 +4156,7 @@ msgstr "群信息已更新"
 #: bp-groups/bp-groups-screens.php:1414
 msgctxt "group settings on notification settings page"
 msgid "You are promoted to a group administrator or moderator"
-msgstr "您已晋升为群管理员或是监管员"
+msgstr "您已晋升为群管理员或是群主"
 
 #: bp-groups/bp-groups-screens.php:1393
 msgctxt "Group settings on notification settings page"
@@ -4379,11 +4381,11 @@ msgstr "您有 %d 个群组邀请"
 
 #: bp-groups/bp-groups-notifications.php:1049
 msgid "You were promoted to a mod in the group \"%s\""
-msgstr "您已经成为群组 \"%s\" 的协管员"
+msgstr "您已经成为群组 \"%s\" 的群主"
 
 #: bp-groups/bp-groups-notifications.php:1014
 msgid "You were promoted to a mod in %d groups"
-msgstr "您已经成为 %d 个群组的协管员"
+msgstr "您已经成为 %d 个群组的群主"
 
 #: bp-groups/bp-groups-notifications.php:967
 msgid "You were promoted to an admin in the group \"%s\""
@@ -4468,7 +4470,7 @@ msgstr "在群组 \"%s\" 中，您已被降级。"
 
 #: bp-groups/bp-groups-notifications.php:416
 msgid "a moderator"
-msgstr "协管员"
+msgstr "群主"
 
 #: bp-groups/bp-groups-notifications.php:413
 msgid "an administrator"
@@ -4881,7 +4883,7 @@ msgstr "管理员"
 #: bp-templates/bp-legacy/buddypress/groups/single/admin.php:290
 #: bp-themes/bp-default/groups/single/admin.php:205
 msgid "Moderators"
-msgstr "协管员"
+msgstr "群主"
 
 #: bp-groups/bp-groups-admin.php:809
 msgid "Enter a comma-separated list of user logins."
@@ -4909,7 +4911,7 @@ msgstr "所有群组成员"
 #: bp-themes/bp-default/groups/create.php:101
 #: bp-themes/bp-default/groups/single/admin.php:104
 msgid "Group admins and mods only"
-msgstr "仅限群组管理员和版主"
+msgstr "仅限群组管理员和群主"
 
 #: bp-groups/bp-groups-admin.php:787
 msgid "Who can invite others to this group?"
@@ -5875,7 +5877,7 @@ msgstr "会员"
 
 #: bp-groups/bp-groups-admin.php:906
 msgid "Moderator"
-msgstr "版主"
+msgstr "群主"
 
 #: bp-groups/bp-groups-admin.php:905
 msgid "Administrator"
@@ -7362,7 +7364,6 @@ msgstr "<em>已登录</em> 链接与当前用户有关，且对已登出的用�
 msgid "Logged-In"
 msgstr "已登录"
 
-#. #-#-#-#-#  tmp-buddypress.pot (BuddyPress 2.4.3)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: bp-core/admin/bp-core-admin-functions.php:749 bp-core/bp-core-admin.php:214
 #: bp-core/bp-core-admin.php:215 bp-core/bp-core-admin.php:235
