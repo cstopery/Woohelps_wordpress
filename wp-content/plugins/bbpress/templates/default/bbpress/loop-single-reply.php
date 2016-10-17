@@ -67,8 +67,13 @@
 		<div class="table-responsive">
 			<table class="table table-hover">
 				<tr>
-					<td><strong>时间日期：</strong></td>
-					<td><?=$meta['date_and_time']?></td>
+					<td><strong>日期：</strong></td>
+					<td><?=date('Y 年 m 月 d 日', $meta['date_and_time'] / 1000); ?></td>
+				</tr>
+
+				<tr>
+					<td><strong>时间：</strong></td>
+					<td><?=date('H:m', $meta['date_and_time'] / 1000);?></td>
 				</tr>
 
 				<tr>
@@ -83,7 +88,7 @@
 
 				<tr>
 					<td><strong>报名截止日：</strong></td>
-					<td><?=$meta['enroll_deadline']?></td>
+					<td><?=date('Y 年 m 月 d 日', $meta['enroll_deadline'] / 1000); ?></td>
 				</tr>
 
 				<tr>

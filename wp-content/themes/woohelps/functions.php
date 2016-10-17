@@ -230,29 +230,92 @@ if (bp_is_active('groups')) {
 add_action('bbp_theme_before_topic_form_content', 'bbp_extra_fields');
 
 function bbp_extra_fields() {
-    $value = get_post_meta(bbp_get_topic_id(), 'date_and_time', true);
-    echo '<label for="bbp_extra_field1">日期和时间</label><br>';
-    echo "<input type='text' name='date_and_time' value='" . $value . "'>";
+    $themeFolder = '/wp-content/themes/woohelps';
+    ?>
 
-    $value = get_post_meta(bbp_get_topic_id(), 'organizer', true);
-    echo '<label for="bbp_extra_field1">发起人</label><br>';
-    echo "<input type='text' name='organizer' value='" . $value . "'>";
+    <div class="row">
+        <div class="col-xs-12" style="padding: 0;">
+            <?php $value = get_post_meta(bbp_get_topic_id(), 'date_and_time', true);
+            if (strlen($value) == 0) $value = time() * 1000;
+            ?>
+            <div class="form-group">
+                <label for="bbp_extra_field1">日期和时间</label><br>
+                <input type='text' id='date_and_time' value=''>
+                <input type="hidden" id="fakeTime1" name='date_and_time' value="<?=$value?>">
+            </div>
 
-    $value = get_post_meta(bbp_get_topic_id(), 'attendee_count_limit', true);
-    echo '<label for="bbp_extra_field1">限制人数</label><br>';
-    echo "<input type='text' name='attendee_count_limit' value='" . $value . "'>";
+            <?php $value = get_post_meta(bbp_get_topic_id(), 'organizer', true); ?>
+            <div class="form-group">
+                <label for="bbp_extra_field1">发起人</label><br>
+                <input type='text' name='organizer' value='<?=$value ?>'>
+            </div>
 
-    $value = get_post_meta(bbp_get_topic_id(), 'enroll_deadline', true);
-    echo '<label for="bbp_extra_field1">报名截止日</label><br>';
-    echo "<input type='text' name='enroll_deadline' value='" . $value . "'>";
+            <?php $value = get_post_meta(bbp_get_topic_id(), 'attendee_count_limit', true); ?>
+            <div class="form-group">
+                <label for="bbp_extra_field1">限制人数</label><br>
+                <input type='text' name='attendee_count_limit' value='<?=$value ?>'>
+            </div>
 
-    $value = get_post_meta(bbp_get_topic_id(), 'fee', true);
-    echo '<label for="bbp_extra_field1">费用</label><br>';
-    echo "<input type='text' name='fee' value='" . $value . "'>";
+            <?php $value = get_post_meta(bbp_get_topic_id(), 'enroll_deadline', true);
+            if (strlen($value) == 0) $value = time() * 1000;
+            ?>
+            <div class="form-group">
+                <label for="bbp_extra_field1">报名截止日</label><br>
+                <input type='text' id='enroll_deadline' value=''>
+                <input type="hidden" id="fakeTime2" name='enroll_deadline' value="<?=$value ?>">
+            </div>
 
-    $value = get_post_meta(bbp_get_topic_id(), 'location', true);
-    echo '<label for="bbp_extra_field1">地址</label><br>';
-    echo "<input type='text' name='location' value='" . $value . "'>";
+            <?php $value = get_post_meta(bbp_get_topic_id(), 'fee', true); ?>
+            <div class="form-group">
+                <label for="bbp_extra_field1">费用</label><br>
+                <input type='text' name='fee' value='<?=$value ?>'>
+            </div>
+
+            <?php $value = get_post_meta(bbp_get_topic_id(), 'location', true); ?>
+            <div class="form-group">
+                <label for="bbp_extra_field1">地址</label><br>
+                <input type='text' name='location' value='<?=$value ?>'>
+            </div>
+        </div>
+    </div>
+
+    <script src="<?=$themeFolder . '/js/moment.min.js'?>"></script>
+    <script src="<?=$themeFolder . '/js/locale/zh-cn.js'?>"></script>
+    <script src="<?=$themeFolder . '/js/bootstrap-datetimepicker.min.js'?>"></script>
+    <script>
+        var $ = jQuery;
+        var timeInput = $('#date_and_time');
+        var endTime = $('#enroll_deadline');
+        var fakeTime1 = $('#fakeTime1');
+        var fakeTime2 = $('#fakeTime2');
+        moment.locale('zh-cn');
+        Date.prototype.Format = function (fmt) {
+            var o = {
+                "M+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "h+": this.getHours(), //小时
+                "m+": this.getMinutes(), //分
+                "s+": this.getSeconds(), //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "S": this.getMilliseconds() //毫秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        };
+
+        timeInput.datetimepicker({
+            format: "YYYY 年 M 月 DD 日 H:mm"
+        });
+        timeInput.data('DateTimePicker').defaultDate(moment(parseInt(fakeTime1.val())).format("YYYY 年 M 月 DD 日 H:mm"));
+
+        endTime.datetimepicker({
+            format: "YYYY 年 M 月 DD 日"
+        });
+        endTime.data('DateTimePicker').defaultDate(moment(parseInt(fakeTime2.val())).format("YYYY 年 M 月 DD 日"));
+    </script>
+<?php
 }
 
 add_action('bbp_new_topic', 'bbp_save_extra_fields', 10, 1);

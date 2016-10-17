@@ -41,7 +41,7 @@
 									<li><a href="<?=bp_loggedin_user_domain() . bp_get_messages_slug()?>">我的私信</a></li>
 									<li><a href="<?=bp_loggedin_user_domain() . bp_get_settings_slug()?>">设置</a></li>
 									<li role="separator" class="divider"></li>
-									<li><a href="<?php echo wp_logout_url( home_url() ); ?>">退出</a></li>
+									<li><a href="<?php echo wp_logout_url( home_url() . $_SERVER['REQUEST_URI']); ?>">退出</a></li>
 								</ul>
 							</li>
 						</ul>
