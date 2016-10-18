@@ -28,12 +28,12 @@ else {
 ?>
 
 <div id="cover-image-container">
-	<a id="header-cover-image" href="<?php echo esc_url( bp_get_group_permalink() ); ?>" <?=$bg_style?>></a>
+	<a id="header-cover-image" href="<?php echo esc_url( bp_get_group_permalink() . 'forum/' ); ?>" <?=$bg_style?>></a>
 
 	<div id="item-header-cover-image">
 		<?php if ( ! bp_disable_group_avatar_uploads() ) : ?>
 			<div id="item-header-avatar">
-				<a href="<?php echo esc_url( bp_get_group_permalink() ); ?>" title="<?php echo esc_attr( bp_get_group_name() ); ?>">
+				<a href="<?php echo esc_url( bp_get_group_permalink() . 'forum/' ); ?>" title="<?php echo esc_attr( bp_get_group_name() ); ?>">
 
 					<?php bp_group_avatar(); ?>
 
@@ -50,9 +50,17 @@ else {
 				 *
 				 * @since 1.2.6
 				 */
-				do_action( 'bp_group_header_actions' ); ?></div><!-- #item-buttons -->
-
-			<?php
+				if (is_user_logged_in()) {
+					do_action( 'bp_group_header_actions' ); ?></div><!-- #item-buttons --><?php
+				}
+				else {
+					?>
+					<div class="generic-button group-button public" id="groupbutton-1">
+						<a href="#" title="加入群组" class="group-button join-group" data-toggle="modal" data-target="#loginModal">加入群组</a>
+					</div>
+					</div>
+					<?php
+				}
 
 			/**
 			 * Fires before the display of the group's header meta.

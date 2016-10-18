@@ -3216,11 +3216,15 @@ function bp_group_join_button( $group = false ) {
 		// Already a member.
 		if ( ! empty( $group->is_member ) ) {
 
-			// Stop sole admins from abandoning their group.
+			// Stop admins and moderators from abandoning their group.
 			$group_admins = groups_get_group_admins( $group->id );
+            $group_mods = groups_get_group_mods( $group->id );
 			if ( ( 1 == count( $group_admins ) ) && ( bp_loggedin_user_id() === (int) $group_admins[0]->user_id ) ) {
 				return false;
 			}
+            if ( ( 1 == count( $group_mods ) ) && ( bp_loggedin_user_id() === (int) $group_mods[0]->user_id ) ) {
+                return false;
+            }
 
 			// Setup button attributes.
 			$button = array(
