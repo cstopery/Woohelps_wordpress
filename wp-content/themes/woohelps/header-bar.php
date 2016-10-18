@@ -64,7 +64,7 @@
 					<?php
                     $args = array(
                         'echo' => true,
-                        'redirect' => home_url('/'),
+                        'redirect' => $_SERVER[HTTP_REFERER],
                         'form_id' => 'loginform',
                         'label_username' => __('Username'),
                         'label_password' => __('Password'),

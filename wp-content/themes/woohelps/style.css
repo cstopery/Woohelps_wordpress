@@ -560,10 +560,16 @@ bp groups sections layout
 
 .bbp-reply-title {
 	text-align: center;
+	margin-top: 0 !important;
 }
 
 .bbp-reply-inner-content {
+	padding: 0 10px;
 	margin-bottom: 30px;
+}
+
+.bbp-reply-inner-content p {
+	font-size: 13px;
 }
 
 li.bbp-topic-title {
