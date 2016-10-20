@@ -47,9 +47,25 @@
  *
  * @since 1.2.0
  */
-do_action( 'bp_before_group_activity_post_form' ); ?>
+do_action( 'bp_before_group_activity_post_form' );
 
-<?php if ( is_user_logged_in() && bp_group_is_member() ) : ?>
+global $groups_template;
+if ( empty( $group ) ) {
+	$group =& $groups_template->group;
+}
+$can_post = 0;
+$group_admins = groups_get_group_admins( $group->id );
+$group_mods = groups_get_group_mods( $group->id );
+if ( ( 1 == count( $group_admins ) ) && ( bp_loggedin_user_id() === (int) $group_admins[0]->user_id ) ) {
+	$can_post = 1;
+}
+if ( ( 1 == count( $group_mods ) ) && ( bp_loggedin_user_id() === (int) $group_mods[0]->user_id ) ) {
+	$can_post = 1;
+}
+
+?>
+
+<?php if ( is_user_logged_in() && bp_group_is_member() && $can_post === 1) : ?>
 
 	<?php bp_get_template_part( 'activity/post-form' ); ?>
 

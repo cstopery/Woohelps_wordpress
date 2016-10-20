@@ -69,37 +69,37 @@
 		<div class="table-responsive">
 			<table class="table table-hover">
 				<tr>
-					<td style="max-width: 20px;"><strong>日期</strong></td>
+					<td style="width: 70px;"><strong>日期</strong></td>
 					<td><?=date('Y 年 m 月 d 日', $meta['date_and_time'] / 1000); ?></td>
 				</tr>
 
 				<tr>
-					<td style="max-width: 20px;"><strong>时间</strong></td>
+					<td style="width: 70px;"><strong>时间</strong></td>
 					<td><?=date('H:m', $meta['date_and_time'] / 1000);?></td>
 				</tr>
 
 				<tr>
-					<td style="max-width: 30px;"><strong>发起人</strong></td>
+					<td style="width: 70px;"><strong>发起人</strong></td>
 					<td><?=$meta['organizer']?></td>
 				</tr>
 
 				<tr>
-					<td style="max-width: 50px;"><strong>限制人数</strong></td>
+					<td style="width: 70px;"><strong>限制人数</strong></td>
 					<td><?=$meta['attendee_count_limit']?></td>
 				</tr>
 
 				<tr>
-					<td style="max-width: 50px;"><strong>报名截止</strong></td>
+					<td style="width: 70px;"><strong>报名截止</strong></td>
 					<td><?=date('Y 年 m 月 d 日', $meta['enroll_deadline'] / 1000); ?></td>
 				</tr>
 
 				<tr>
-					<td style="max-width: 20px;"><strong>费用</strong></td>
+					<td style="width: 70px;"><strong>费用</strong></td>
 					<td><?=$meta['fee']?></td>
 				</tr>
 
 				<tr>
-					<td style="max-width: 20px;"><strong>地址</strong></td>
+					<td style="width: 70px;"><strong>地址</strong></td>
 					<td><?=$meta['location']?></td>
 				</tr>
 			</table>
