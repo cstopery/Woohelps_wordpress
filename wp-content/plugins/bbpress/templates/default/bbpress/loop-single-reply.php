@@ -10,9 +10,28 @@
 ?>
 
 <div id="post-<?php bbp_reply_id(); ?>" class="bbp-reply-header">
-	<div class="pull-right" style="padding-right: 8px;">
-			<?=bbp_get_topic_edit_link()?>
-	</div>
+	<?php
+	global $groups_template;
+	if ( empty( $group ) ) {
+		$group =& $groups_template->group;
+	}
+
+	$can_post = 0;
+
+	$group_admins = groups_get_group_admins( $group->id );
+	$group_mods = groups_get_group_mods( $group->id );
+	if ( ( 1 == count( $group_admins ) ) && ( bp_loggedin_user_id() === (int) $group_admins[0]->user_id ) ) {
+		$can_post = 1;
+	}
+	if ( ( 1 == count( $group_mods ) ) && ( bp_loggedin_user_id() === (int) $group_mods[0]->user_id ) ) {
+		$can_post = 1;
+	}
+	?>
+	<?php if (is_user_logged_in() && $can_post === 1): ?>
+		<div class="pull-right" style="padding-right: 8px;">
+				<?=bbp_get_topic_edit_link()?>
+		</div>
+	<?php endif; ?>
 </div>
 
 <div <?php bbp_reply_class(); ?>>
@@ -105,17 +124,21 @@
 			</table>
 		</div>
 
-        <?php if (is_user_logged_in()): ?>
-            <div class="subscription-button">
-                <?php bbp_topic_subscription_link(); ?>
-            </div>
-        <?php else: ?>
-            <div class="subscription-button">
-                <a class="btn btn-success btn-xs" href="#" data-toggle="modal" data-target="#loginModal">报名</a>
-            </div>
-
-
-        <?php endif; ?>
+		<?php if (is_page('meetups-list')): ?>
+			<div class="subscription-button">
+				<a href="<?=bbp_get_topic_permalink()?>" class="btn btn-success btn-xs">查看详情</a>
+			</div>
+		<?php else: ?>
+			<?php if (is_user_logged_in()): ?>
+				<div class="subscription-button">
+					<?php bbp_topic_subscription_link(); ?>
+				</div>
+			<?php else: ?>
+				<div class="subscription-button">
+					<a class="btn btn-success btn-xs" href="#" data-toggle="modal" data-target="#loginModal">报名</a>
+				</div>
+			<?php endif; ?>
+		<?php endif; ?>
 	</div>
 
 </div><!-- .reply -->

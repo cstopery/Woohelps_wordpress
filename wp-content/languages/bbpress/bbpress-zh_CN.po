@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: bbPress\n"
 "Report-Msgid-Bugs-To: https://bbpress.trac.wordpress.org\n"
 "POT-Creation-Date: 2016-09-21 23:54+0800\n"
-"PO-Revision-Date: 2016-10-15 02:59+0800\n"
+"PO-Revision-Date: 2016-10-23 22:04+0800\n"
 "Last-Translator: yanghua <nmimi@126.com>\n"
 "Language-Team: mogita <me@mogita.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 1.8.10\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -35,7 +35,7 @@ msgstr "bbPress群活动"
 
 #: bbpress.php:509
 msgid "bbPress Topics"
-msgstr "bbPress话题"
+msgstr "bbPress活动"
 
 #: bbpress.php:534
 msgid "bbPress Replies"
@@ -87,11 +87,11 @@ msgstr[0] "隐藏 <span class=\"count\">(%s)</span>"
 
 #: bbpress.php:677
 msgid "Most popular topics"
-msgstr "热门话题"
+msgstr "热门活动"
 
 #: bbpress.php:689
 msgid "Topics with no replies"
-msgstr "话题没有回复"
+msgstr "活动没有回复"
 
 #: includes/admin/admin.php:198 includes/admin/functions.php:273
 #: includes/admin/tools.php:34
@@ -207,7 +207,7 @@ msgstr "订阅群活动"
 
 #: includes/admin/admin.php:794
 msgid "Now your users can subscribe to new topics in specific forums."
-msgstr "现在您的用户可以订阅特定群活动的新话题"
+msgstr "现在您的用户可以订阅特定群活动的新活动"
 
 #: includes/admin/admin.php:798
 msgid "Manage Subscriptions"
@@ -455,11 +455,11 @@ msgstr "正在计算群活动层次结构(%1$s - %2$s)"
 
 #: includes/admin/converter.php:436
 msgid "No topics to convert"
-msgstr "没有话题可转换"
+msgstr "没有活动可转换"
 
 #: includes/admin/converter.php:440
 msgid "Converting topics (%1$s - %2$s)"
-msgstr "转换话题 (%1$s - %2$s)"
+msgstr "转换活动 (%1$s - %2$s)"
 
 #: includes/admin/converter.php:451
 msgid "No stickies to stick"
@@ -467,7 +467,7 @@ msgstr "没有置顶贴子"
 
 #: includes/admin/converter.php:455
 msgid "Calculating topic stickies (%1$s - %2$s)"
-msgstr "计算置顶话题 (%1$s - %2$s)"
+msgstr "计算置顶活动 (%1$s - %2$s)"
 
 #: includes/admin/converter.php:466
 msgid "No super stickies to stick"
@@ -475,7 +475,7 @@ msgstr "没有超级置顶贴"
 
 #: includes/admin/converter.php:470
 msgid "Calculating topic super stickies (%1$s - %2$s)"
-msgstr "计算话题超级置顶帖(%1$s - %2$s)"
+msgstr "计算活动超级置顶帖(%1$s - %2$s)"
 
 #: includes/admin/converter.php:481
 msgid "No tags to convert"
@@ -483,7 +483,7 @@ msgstr "没有标签可转换"
 
 #: includes/admin/converter.php:485
 msgid "Converting topic tags (%1$s - %2$s)"
-msgstr "正在转换话题标签 (%1$s - %2$s)"
+msgstr "正在转换活动标签 (%1$s - %2$s)"
 
 #: includes/admin/converter.php:496
 msgid "No replies to convert"
@@ -747,7 +747,7 @@ msgstr ""
 #: includes/admin/forums.php:208
 msgid ""
 "<strong>Status</strong> allows you to close a forum to new topics and forums."
-msgstr "<strong>状态</strong> 允许你给新的话题或回复选择一个群活动."
+msgstr "<strong>状态</strong> 允许你给新的活动或回复选择一个群活动."
 
 #: includes/admin/forums.php:209
 msgid ""
@@ -790,7 +790,7 @@ msgstr "群活动"
 #: templates/default/bbpress/content-statistics.php:27
 #: templates/default/bbpress/loop-forums.php:20
 msgid "Topics"
-msgstr "话题"
+msgstr "活动"
 
 #: includes/admin/forums.php:411 includes/admin/settings.php:230
 #: includes/admin/settings.php:251 includes/admin/topics.php:634
@@ -825,7 +825,7 @@ msgstr "最近更新"
 
 #: includes/admin/forums.php:463 includes/forums/template.php:601
 msgid "No Topics"
-msgstr "没有话题"
+msgstr "没有活动"
 
 #: includes/admin/forums.php:529
 msgid "Forum updated. <a href=\"%s\">View forum</a>"
@@ -892,7 +892,7 @@ msgstr "评论"
 #: templates/default/bbpress/loop-topics.php:19
 msgid "Topic"
 msgid_plural "Topics"
-msgstr[0] "话题"
+msgstr[0] "活动"
 
 #: includes/admin/metaboxes.php:84 includes/admin/settings.php:325
 #: includes/replies/template.php:49 includes/replies/template.php:1621
@@ -905,7 +905,7 @@ msgstr[0] "回复"
 #: includes/topics/template.php:3367
 msgid "Topic Tag"
 msgid_plural "Topic Tags"
-msgstr[0] "话题标签"
+msgstr[0] "活动标签"
 
 #: includes/admin/metaboxes.php:127
 msgid "Users &amp; Moderation"
@@ -929,7 +929,7 @@ msgstr[0] "隐藏回复"
 #: includes/admin/metaboxes.php:198
 msgid "Empty Topic Tag"
 msgid_plural "Empty Topic Tags"
-msgstr[0] "空的话题标签"
+msgstr[0] "空的活动标签"
 
 #: includes/admin/metaboxes.php:222
 msgid "You are using <span class=\"b\">bbPress %s</span>."
@@ -974,11 +974,11 @@ msgstr "群活动顺序"
 
 #: includes/admin/metaboxes.php:356
 msgid "Topic Type"
-msgstr "话题类型"
+msgstr "活动类型"
 
 #: includes/admin/metaboxes.php:368
 msgid "Select whether to open or close the topic."
-msgstr "选择是否打开或关闭这个话题。"
+msgstr "选择是否打开或关闭这个活动。"
 
 #: includes/admin/metaboxes.php:379 includes/admin/metaboxes.php:433
 #: includes/extend/buddypress/groups.php:1042 includes/topics/template.php:61
@@ -988,7 +988,7 @@ msgstr "群活动："
 
 #: includes/admin/metaboxes.php:457 includes/replies/template.php:61
 msgid "Topic:"
-msgstr "话题："
+msgstr "活动："
 
 #: includes/admin/metaboxes.php:463
 msgid "Reply To:"
@@ -1222,12 +1222,12 @@ msgid ""
 "post the reply in forum of the topic."
 msgstr ""
 " <strong>块版</strong> 通过下拉菜单选择父回复。通过下拉菜单选择群活动或分类，"
-"或默认（无父级）给群活动话题创建新回复。"
+"或默认（无父级）给群活动活动创建新回复。"
 
 #: includes/admin/replies.php:222
 msgid ""
 "<strong>Topic</strong> determines the parent topic that the reply belongs to."
-msgstr "<strong>话题</strong> 确定回复属于的父话题。"
+msgstr "<strong>活动</strong> 确定回复属于的父活动。"
 
 #: includes/admin/replies.php:223
 msgid "<strong>Reply To</strong> determines the threading of the reply."
@@ -1276,7 +1276,7 @@ msgstr "作者"
 
 #: includes/admin/replies.php:625 includes/admin/replies.php:633
 msgid "No Topic"
-msgstr "没有话题"
+msgstr "没有活动"
 
 #: includes/admin/replies.php:651 includes/admin/replies.php:666
 #: includes/admin/topics.php:687
@@ -1351,7 +1351,7 @@ msgstr "所有群活动"
 
 #: includes/admin/replies.php:849
 msgid "Reply updated. <a href=\"%s\">View topic</a>"
-msgstr "回复已更新。<a href=\"%s\">查看话题</a>"
+msgstr "回复已更新。<a href=\"%s\">查看活动</a>"
 
 #: includes/admin/replies.php:858
 msgid "Reply updated."
@@ -1364,7 +1364,7 @@ msgstr "回复已从修订版本 %s 恢复"
 
 #: includes/admin/replies.php:867
 msgid "Reply created. <a href=\"%s\">View topic</a>"
-msgstr "回复已创建。<a href=\"%s\">查看话题</a>"
+msgstr "回复已创建。<a href=\"%s\">查看活动</a>"
 
 #: includes/admin/replies.php:870
 msgid "Reply saved."
@@ -1372,7 +1372,7 @@ msgstr "回复已保存。"
 
 #: includes/admin/replies.php:873
 msgid "Reply submitted. <a target=\"_blank\" href=\"%s\">Preview topic</a>"
-msgstr "回复已提交。<a target=\"_blank\" href=\"%s\">预览话题</a>"
+msgstr "回复已提交。<a target=\"_blank\" href=\"%s\">预览活动</a>"
 
 #: includes/admin/replies.php:876
 msgid ""
@@ -1380,11 +1380,11 @@ msgid ""
 "\">Preview topic</a>"
 msgstr ""
 "回复预发布于：<strong>%1$s</strong>。<a target=\"_blank\" href=\"%2$s\">预览"
-"话题</a>"
+"活动</a>"
 
 #: includes/admin/replies.php:883
 msgid "Reply draft updated. <a target=\"_blank\" href=\"%s\">Preview topic</a>"
-msgstr "回复草稿已更新。<a target=\"_blank\" href=\"%s\">预览话题</a>"
+msgstr "回复草稿已更新。<a target=\"_blank\" href=\"%s\">预览活动</a>"
 
 #: includes/admin/settings.php:24
 msgid "Forum User Settings"
@@ -1400,11 +1400,11 @@ msgstr "群活动主题包"
 
 #: includes/admin/settings.php:39
 msgid "Topics and Replies Per Page"
-msgstr "每页话题与回复数"
+msgstr "每页活动与回复数"
 
 #: includes/admin/settings.php:44
 msgid "Topics and Replies Per RSS Page"
-msgstr "RSS每页话题与回复数"
+msgstr "RSS每页活动与回复数"
 
 #: includes/admin/settings.php:49
 msgid "Forum Root Slug"
@@ -1458,7 +1458,7 @@ msgstr "报名"
 
 #: includes/admin/settings.php:158
 msgid "Topic tags"
-msgstr "话题标签"
+msgstr "活动标签"
 
 #: includes/admin/settings.php:166 includes/admin/settings.php:333
 #: includes/common/template.php:2330 includes/search/template.php:225
@@ -1496,7 +1496,7 @@ msgstr "群活动根页面将显示"
 
 #: includes/admin/settings.php:317
 msgid "Topic View"
-msgstr "话题查看"
+msgstr "活动查看"
 
 #: includes/admin/settings.php:346
 msgid "User Base"
@@ -1506,7 +1506,7 @@ msgstr "用户群"
 #: includes/extend/buddypress/loader.php:269
 #: templates/default/bbpress/user-details.php:35
 msgid "Topics Started"
-msgstr "发起的话题"
+msgstr "发起的活动"
 
 #: includes/admin/settings.php:362 includes/extend/buddypress/loader.php:207
 #: includes/extend/buddypress/loader.php:277
@@ -1516,7 +1516,7 @@ msgstr "创建的回复"
 
 #: includes/admin/settings.php:370 includes/extend/buddypress/loader.php:285
 msgid "Favorite Topics"
-msgstr "收藏的话题"
+msgstr "收藏的活动"
 
 #: includes/admin/settings.php:378
 msgid "Topic Subscriptions"
@@ -1548,7 +1548,7 @@ msgstr "秒钟"
 
 #: includes/admin/settings.php:499
 msgid "Allow guest users without accounts to create topics and replies"
-msgstr "允许没有账户的访问者创建话题和回复"
+msgstr "允许没有账户的访问者创建活动和回复"
 
 #: includes/admin/settings.php:533
 msgid "Automatically give registered visitors the %s forum role"
@@ -1560,11 +1560,11 @@ msgstr "群活动功能可以进行切换打开与关闭"
 
 #: includes/admin/settings.php:565
 msgid "Allow users to mark topics as favorites"
-msgstr "允许用户收藏话题"
+msgstr "允许用户收藏活动"
 
 #: includes/admin/settings.php:581
 msgid "Allow users to subscribe to forums and topics"
-msgstr "允许用户订阅群活动和话题"
+msgstr "允许用户订阅群活动和活动"
 
 #: includes/admin/settings.php:597
 msgid "Allow topics to have tags"
@@ -1580,7 +1580,7 @@ msgstr "启用线状图案（嵌套）回复 %s 层深"
 
 #: includes/admin/settings.php:669
 msgid "Allow topic and reply revision logging"
-msgstr "开启话题和回复的修订版本日志"
+msgstr "开启活动和回复的修订版本日志"
 
 #: includes/admin/settings.php:685
 msgid "Add toolbar & buttons to textareas to help with HTML formatting"
@@ -1606,11 +1606,11 @@ msgstr "没有模板包可用。"
 msgid ""
 "Embed media (YouTube, Twitter, Flickr, etc...) directly into topics and "
 "replies"
-msgstr "把媒体（YouTube, Twitter, Flickr, etc...）直接嵌入到话题和回复中。"
+msgstr "把媒体（YouTube, Twitter, Flickr, etc...）直接嵌入到活动和回复中。"
 
 #: includes/admin/settings.php:763
 msgid "How many topics and replies to show per page"
-msgstr "每页显示多少话题与回复"
+msgstr "每页显示多少活动与回复"
 
 #: includes/admin/settings.php:779 includes/admin/settings.php:795
 #: includes/admin/settings.php:826 includes/admin/settings.php:842
@@ -1619,7 +1619,7 @@ msgstr "每页"
 
 #: includes/admin/settings.php:810
 msgid "How many topics and replies to show per RSS page"
-msgstr "RSS每页显示多少话题与回复"
+msgstr "RSS每页显示多少活动与回复"
 
 #: includes/admin/settings.php:860
 msgid ""
@@ -1637,7 +1637,7 @@ msgstr "群活动首页"
 
 #: includes/admin/settings.php:916
 msgid "Topics by Freshness"
-msgstr "新鲜话题"
+msgstr "新鲜活动"
 
 #: includes/admin/settings.php:943
 msgid "Customize your user profile slugs."
@@ -1646,7 +1646,7 @@ msgstr "定制您的用户配置简况缩略名。"
 #: includes/admin/settings.php:1043
 msgid ""
 "Custom slugs for single forums, topics, replies, tags, views, and search."
-msgstr "给单独群活动、话题、回复、标签、查看和搜索自定义缩略名。"
+msgstr "给单独群活动、活动、回复、标签、查看和搜索自定义缩略名。"
 
 #: includes/admin/settings.php:1161
 msgid "Forum settings for BuddyPress"
@@ -1819,7 +1819,7 @@ msgstr ""
 msgid ""
 "Favorites are a way for users to save and later return to topics they favor. "
 "This is enabled by default."
-msgstr "收藏可以保存相关话题。默认启动。"
+msgstr "收藏可以保存相关活动。默认启动。"
 
 #: includes/admin/settings.php:1564
 msgid ""
@@ -1831,13 +1831,13 @@ msgstr "允许用户报名他们感兴趣的活动。默认启用。"
 msgid ""
 "Topic-Tags allow users to filter topics between forums. This is enabled by "
 "default."
-msgstr "话题标签允许用户在群活动间过滤话题。默认启用。"
+msgstr "活动标签允许用户在群活动间过滤活动。默认启用。"
 
 #: includes/admin/settings.php:1566
 msgid ""
 "\"Anonymous Posting\" allows guest users who do not have accounts on your "
 "site to both create topics as well as replies."
-msgstr "\"匿名发表\" 允许游客创建话题与回复。"
+msgstr "\"匿名发表\" 允许游客创建活动与回复。"
 
 #: includes/admin/settings.php:1567
 msgid ""
@@ -1865,7 +1865,7 @@ msgstr "每页显示"
 msgid ""
 "Per Page settings allow you to control the number of topics and replies "
 "appear on each page."
-msgstr "页面设置允许设置每一页显示话题和回复的数量。"
+msgstr "页面设置允许设置每一页显示活动和回复的数量。"
 
 #: includes/admin/settings.php:1579
 msgid ""
@@ -1897,14 +1897,14 @@ msgid ""
 "you combine these values with existing page slugs, bbPress will attempt to "
 "output the most correct title and content."
 msgstr ""
-"\"归档缩略名\" 如 \"根\" 一样在你的群活动的话题上使用。如果你关联该值到当前页"
+"\"归档缩略名\" 如 \"根\" 一样在你的群活动的活动上使用。如果你关联该值到当前页"
 "面后缩略名，bbPress将会尝试输出最正确的标题和内容。"
 
 #: includes/admin/settings.php:1589
 msgid ""
 "\"Single Slugs\" are used as a prefix when viewing an individual forum, "
 "topic, reply, user, or view."
-msgstr "\"单面缩略名\"当你查看群活动，话题，回复，用户，或视图时用作前缀。"
+msgstr "\"单面缩略名\"当你查看群活动，活动，回复，用户，或视图时用作前缀。"
 
 #: includes/admin/settings.php:1590
 msgid ""
@@ -1947,7 +1947,7 @@ msgstr "群活动群"
 
 #: includes/admin/settings.php:1706
 msgid "Topics base"
-msgstr "话题群"
+msgstr "活动群"
 
 #: includes/admin/settings.php:1709
 msgid "Forum slug"
@@ -1955,7 +1955,7 @@ msgstr "群活动缩略名"
 
 #: includes/admin/settings.php:1712
 msgid "Topic slug"
-msgstr "话题缩略名"
+msgstr "活动缩略名"
 
 #: includes/admin/settings.php:1715
 msgid "Reply slug"
@@ -1971,7 +1971,7 @@ msgstr "查看群"
 
 #: includes/admin/settings.php:1724
 msgid "Topic tag slug"
-msgstr "话题标签缩略名"
+msgstr "活动标签缩略名"
 
 #: includes/admin/settings.php:1736
 msgid "%s page"
@@ -1988,7 +1988,7 @@ msgid ""
 "most often after an import or migration. Use the tools below to manually "
 "recalculate these relationships."
 msgstr ""
-"bbPress会跟踪相关群活动群活动、话题、回复、帖子标签和用户。有时这些关系会错"
+"bbPress会跟踪相关群活动群活动、活动、回复、帖子标签和用户。有时这些关系会错"
 "乱，比如在导入或迁移后。使用下列工具可手动重新统计这些关系。"
 
 #: includes/admin/tools.php:37
@@ -2011,7 +2011,7 @@ msgstr "维修项目"
 
 #: includes/admin/tools.php:161
 msgid "Recalculate the parent topic for each post"
-msgstr "重新为每个帖子计算父话题"
+msgstr "重新为每个帖子计算父活动"
 
 #: includes/admin/tools.php:162
 msgid "Recalculate the parent forum for each post"
@@ -2023,11 +2023,11 @@ msgstr "重新计算私人和隐藏的群活动"
 
 #: includes/admin/tools.php:164
 msgid "Recalculate last activity in each topic and forum"
-msgstr "重新计算每个话题和群活动中的最新活动"
+msgstr "重新计算每个活动和群活动中的最新活动"
 
 #: includes/admin/tools.php:165
 msgid "Recalculate the sticky relationship of each topic"
-msgstr "重新计算每个话题的粘性关系"
+msgstr "重新计算每个活动的粘性关系"
 
 #: includes/admin/tools.php:166
 msgid "Recalculate the position of each reply"
@@ -2039,7 +2039,7 @@ msgstr "修理BuddyPress群活动组的关系"
 
 #: includes/admin/tools.php:168
 msgid "Count topics in each forum"
-msgstr "计算每个群活动中的话题"
+msgstr "计算每个群活动中的活动"
 
 #: includes/admin/tools.php:169
 msgid "Count replies in each forum"
@@ -2047,11 +2047,11 @@ msgstr "计算每个群活动中的回复"
 
 #: includes/admin/tools.php:170
 msgid "Count replies in each topic"
-msgstr "计算每个话题的回复"
+msgstr "计算每个活动的回复"
 
 #: includes/admin/tools.php:171
 msgid "Count voices in each topic"
-msgstr "计算每个话题的参与人数"
+msgstr "计算每个活动的参与人数"
 
 #: includes/admin/tools.php:172
 msgid "Count spammed & trashed replies in each topic"
@@ -2059,7 +2059,7 @@ msgstr "计算每个主题的垃圾邮件和移到垃圾箱的回复"
 
 #: includes/admin/tools.php:173
 msgid "Count topics for each user"
-msgstr "计算每个用户的话题"
+msgstr "计算每个用户的活动"
 
 #: includes/admin/tools.php:174
 msgid "Count replies for each user"
@@ -2136,7 +2136,7 @@ msgstr "完成！%s 组更新； %s 群活动更新； %s 群活动状态同步�
 
 #: includes/admin/tools.php:453
 msgid "Counting the number of topics in each forum&hellip; %s"
-msgstr "正在计算每个群活动中的话题&hellip; %s"
+msgstr "正在计算每个群活动中的活动&hellip; %s"
 
 #: includes/admin/tools.php:487
 msgid "Counting the number of replies in each forum&hellip; %s"
@@ -2144,15 +2144,15 @@ msgstr "正在计算每个群活动中的回复&hellip; %s"
 
 #: includes/admin/tools.php:530
 msgid "Counting the number of topics each user has created&hellip; %s"
-msgstr "正在计算每个用户创建的话题&hellip; %s"
+msgstr "正在计算每个用户创建的活动&hellip; %s"
 
 #: includes/admin/tools.php:575
 msgid "Counting the number of topics to which each user has replied&hellip; %s"
-msgstr "正在计算每个用户回复的话题&hellip; %s"
+msgstr "正在计算每个用户回复的活动&hellip; %s"
 
 #: includes/admin/tools.php:620
 msgid "Removing trashed topics from user favorites&hellip; %s"
-msgstr "正在从用户收藏夹中移除已放入回收站中的话题&hellip; %s"
+msgstr "正在从用户收藏夹中移除已放入回收站中的活动&hellip; %s"
 
 #: includes/admin/tools.php:650 includes/admin/tools.php:711
 #: includes/admin/tools.php:772
@@ -2161,7 +2161,7 @@ msgstr "没有可移除的！"
 
 #: includes/admin/tools.php:682
 msgid "Removing trashed topics from user subscriptions&hellip; %s"
-msgstr "正在从用户订阅中移除已放入回收站中的话题&hellip; %s"
+msgstr "正在从用户订阅中移除已放入回收站中的活动&hellip; %s"
 
 #: includes/admin/tools.php:743
 msgid "Removing trashed forums from user subscriptions&hellip; %s"
@@ -2177,11 +2177,11 @@ msgstr "完成！%s用户已更新。"
 
 #: includes/admin/tools.php:859
 msgid "Recomputing latest post in every topic and forum&hellip; %s"
-msgstr "正在重新计算每个话题和群活动中的最新帖子&hellip; %s"
+msgstr "正在重新计算每个活动和群活动中的最新帖子&hellip; %s"
 
 #: includes/admin/tools.php:965
 msgid "Repairing the sticky topic to the parent forum relationships&hellip; %s"
-msgstr "修复话题与父群活动的粘性关系&hellip; %s"
+msgstr "修复活动与父群活动的粘性关系&hellip; %s"
 
 #: includes/admin/tools.php:1022
 msgid "Recalculating forum visibility &hellip; %s"
@@ -2193,7 +2193,7 @@ msgstr "重新计算每个帖子的群活动 &hellip; %s"
 
 #: includes/admin/tools.php:1100
 msgid "Recalculating the topic for each post &hellip; %s"
-msgstr "重新计算每个帖子的话题 &hellip; %s"
+msgstr "重新计算每个帖子的活动 &hellip; %s"
 
 #: includes/admin/tools.php:1147
 msgid "Recalculating reply menu order &hellip; %s"
@@ -2224,7 +2224,7 @@ msgstr "所有群活动"
 #: includes/admin/tools.php:1219 includes/topics/functions.php:3439
 #: includes/topics/template.php:50
 msgid "All Topics"
-msgstr "所有话题"
+msgstr "所有活动"
 
 #: includes/admin/tools.php:1220 includes/replies/functions.php:1994
 #: includes/replies/template.php:50
@@ -2233,7 +2233,7 @@ msgstr "所有回复"
 
 #: includes/admin/tools.php:1221
 msgid "All Topic Tags"
-msgstr "所有话题标签"
+msgstr "所有活动标签"
 
 #: includes/admin/tools.php:1222
 msgid "Related Meta Data"
@@ -2308,7 +2308,7 @@ msgstr "删除帖子标签&hellip; %s"
 
 #: includes/admin/tools.php:1316
 msgid "Deleting Topic Tags&hellip; %s"
-msgstr "正在删除话题标签&hellip; %s"
+msgstr "正在删除活动标签&hellip; %s"
 
 #: includes/admin/tools.php:1331
 msgid "Deleting User&hellip; %s"
@@ -2335,14 +2335,14 @@ msgid ""
 "This screen displays the individual topics on your site. You can customize "
 "the display of this screen to suit your workflow."
 msgstr ""
-"这个屏幕显示您站点里的单个话题。您可以定制这个屏幕的显示以适合您的工作流程。"
+"这个屏幕显示您站点里的单个活动。您可以定制这个屏幕的显示以适合您的工作流程。"
 
 #: includes/admin/topics.php:144
 msgid ""
 "You can hide/display columns based on your needs and decide how many topics "
 "to list per screen using the Screen Options tab."
 msgstr ""
-"您可以跟据需要在显示选项标签中隐藏/显示某个列，或者决定每页显示多少个话题。"
+"您可以跟据需要在显示选项标签中隐藏/显示某个列，或者决定每页显示多少个活动。"
 
 #: includes/admin/topics.php:145
 msgid ""
@@ -2368,27 +2368,27 @@ msgid ""
 "Hovering over a row in the topics list will display action links that allow "
 "you to manage your topic. You can perform the following actions:"
 msgstr ""
-"悬停在话题列表的某行时，将会显示出一些主题管理链接。您可以执行以下操作："
+"悬停在活动列表的某行时，将会显示出一些主题管理链接。您可以执行以下操作："
 
 #: includes/admin/topics.php:157
 msgid ""
 "<strong>Edit</strong> takes you to the editing screen for that topic. You "
 "can also reach that screen by clicking on the topic title."
 msgstr ""
-"<strong>编辑</strong> 转到该话题的编辑页面。您也可以通过点击话题标题到达此"
+"<strong>编辑</strong> 转到该活动的编辑页面。您也可以通过点击活动标题到达此"
 "页。"
 
 #: includes/admin/topics.php:158
 msgid ""
 "<strong>Trash</strong> removes your topic from this list and places it in "
 "the trash, from which you can permanently delete it."
-msgstr "<strong>垃圾桶</strong>从列表里移除您想永久删除的话题到垃圾桶。"
+msgstr "<strong>垃圾桶</strong>从列表里移除您想永久删除的活动到垃圾桶。"
 
 #: includes/admin/topics.php:159
 msgid ""
 "<strong>Spam</strong> removes your topic from this list and places it in the "
 "spam queue, from which you can permanently delete it."
-msgstr "<strong>垃圾帖</strong> 从列表里移除您想永久删除的话题到垃圾桶。"
+msgstr "<strong>垃圾帖</strong> 从列表里移除您想永久删除的活动到垃圾桶。"
 
 #: includes/admin/topics.php:160
 msgid ""
@@ -2396,23 +2396,23 @@ msgid ""
 "if you publish it. View will take you to your live site to view the topic. "
 "Which link is available depends on your topic&#8217;s status."
 msgstr ""
-"<strong>预览</strong>会告诉你你的话题草稿将是什么，如果你发布它等。查看将带你"
-"到你的实时站点，以查看相关主题。哪一个环节可以取决于你的话题的状态。"
+"<strong>预览</strong>会告诉你你的活动草稿将是什么，如果你发布它等。查看将带你"
+"到你的实时站点，以查看相关主题。哪一个环节可以取决于你的活动的状态。"
 
 #: includes/admin/topics.php:161
 msgid ""
 "<strong>Close</strong> will mark the selected topic as &#8217;closed&#8217; "
 "and disable the option to post new replies to the topic."
 msgstr ""
-"<strong>关闭</strong> 标记所选话题状态为 &#8217;关闭&#8217;，并且禁用发表新回"
-"复到该话题的选项。"
+"<strong>关闭</strong> 标记所选活动状态为 &#8217;关闭&#8217;，并且禁用发表新回"
+"复到该活动的选项。"
 
 #: includes/admin/topics.php:162
 msgid ""
 "<strong>Stick</strong> will keep the selected topic &#8217;pinned&#8217; to "
 "the top the parent forum topic list."
 msgstr ""
-"<strong>置顶</strong>所选话题将会被  &#8217;置顶&#8217; 保持在父群活动的话题"
+"<strong>置顶</strong>所选活动将会被  &#8217;置顶&#8217; 保持在父群活动的活动"
 "列表顶部。"
 
 #: includes/admin/topics.php:163
@@ -2421,8 +2421,8 @@ msgid ""
 "&#8217;pinned&#8217; to the top of ALL forums and be visable in any forums "
 "topics list."
 msgstr ""
-"<strong>置顶<em>(到顶部)</em></strong> 所选的话题将会被 &#8217;置顶 &#8217;保"
-"持在所有群活动的顶部，并且会在任何群活动的话题列表里显示。"
+"<strong>置顶<em>(到顶部)</em></strong> 所选的活动将会被 &#8217;置顶 &#8217;保"
+"持在所有群活动的顶部，并且会在任何群活动的活动列表里显示。"
 
 #: includes/admin/topics.php:172
 msgid ""
@@ -2430,7 +2430,7 @@ msgid ""
 "topics you want to act on using the checkboxes, then select the action you "
 "want to take from the Bulk Actions menu and click Apply."
 msgstr ""
-"您可以一次编辑或移除多个话题到回收站。通过复选框选择你需要处理的回复，然后通"
+"您可以一次编辑或移除多个活动到回收站。通过复选框选择你需要处理的回复，然后通"
 "过行动菜单选择你需要的操作，并点击应用。"
 
 #: includes/admin/topics.php:173
@@ -2440,7 +2440,7 @@ msgid ""
 "click the x next to its name in the Bulk Edit area that appears."
 msgstr ""
 "当使用批量编辑，一次性选择所有回复改变其属性数据（类别，作者，等。）从分类中"
-"移除一个话题，只要点击它名字旁边的X即可。"
+"移除一个活动，只要点击它名字旁边的X即可。"
 
 #: includes/admin/topics.php:194
 msgid ""
@@ -2451,20 +2451,20 @@ msgid ""
 "Discussion, Slug, Author) or to choose a 1- or 2-column layout for this "
 "screen."
 msgstr ""
-"大标题字段和话题编辑区是固定，但你可以拖放其框架，并可以通过标题块对其进行放"
+"大标题字段和活动编辑区是固定，但你可以拖放其框架，并可以通过标题块对其进行放"
 "大和缩小。使用屏幕选项卡，取消隐藏框架（摘要，发送引用，自定义字段，讨论，缩"
 "略名，作者），或选择1或2列布局屏幕。"
 
 #: includes/admin/topics.php:204
 msgid "Title and Topic Editor"
-msgstr "标题和话题编辑"
+msgstr "标题和活动编辑"
 
 #: includes/admin/topics.php:206
 msgid ""
 "<strong>Title</strong> - Enter a title for your topic. After you enter a "
 "title, you&#8217;ll see the permalink below, which you can edit."
 msgstr ""
-"<strong>标题</strong> -输入话题的标题。当您输入了一个标题，您会看到可编辑的固"
+"<strong>标题</strong> -输入活动的标题。当您输入了一个标题，您会看到可编辑的固"
 "定链接在下面。"
 
 #: includes/admin/topics.php:207
@@ -2480,11 +2480,11 @@ msgid ""
 "mode (last in the row). Once there, you can make buttons visible by hovering "
 "over the top area. Exit Fullscreen back to the regular topic editor."
 msgstr ""
-"<strong>话题编辑</strong> - 输入话题文本。有两种编辑模式：可视化与HTML，通过"
+"<strong>活动编辑</strong> - 输入活动文本。有两种编辑模式：可视化与HTML，通过"
 "点击标签选择模式，可视化模式带来所见即所得的方案。HTML模式，允许您输入HTML代"
 "码到主题文本里。您可以通过点击上面的主题编辑器的图标插入媒体文件。您可以通过"
 "全屏的图标进入自由编写屏幕。全屏时，在上方可见区域有菜单按钮，退出全屏回到正"
-"规的话题编辑器。"
+"规的活动编辑器。"
 
 #: includes/admin/topics.php:210
 msgid ""
@@ -2497,9 +2497,9 @@ msgid ""
 "future or backdate a topic."
 msgstr ""
 "<strong>发布</strong>-您可以在发布框设置你的发布条件。对于状态，是否可见，发"
-"布（立即），点击编辑链接显示更多选择。是否可见，包否对话题设置密码或帖子长期"
+"布（立即），点击编辑链接显示更多选择。是否可见，包否对活动设置密码或帖子长期"
 "出现在您的群活动顶部（置顶）。 发布 (立即)，允许你设置将来或过去的时间日期，"
-"您可以安排您话题被发布的日期。"
+"您可以安排您活动被发布的日期。"
 
 #: includes/admin/topics.php:213
 msgid ""
@@ -2508,16 +2508,16 @@ msgid ""
 "makes use of the featured image as a topic thumbnail on the home page, a "
 "custom header, etc."
 msgstr ""
-"<strong>特色图片</strong> - 允许您关联一张图像到你的话题。当你的话题支持特色"
-"图像，将会在微博页面显示话题的缩略图，如自定义标题。"
+"<strong>特色图片</strong> - 允许您关联一张图像到你的活动。当你的活动支持特色"
+"图像，将会在微博页面显示活动的缩略图，如自定义标题。"
 
 #: includes/admin/topics.php:218 includes/admin/topics.php:255
 msgid "Topic Attributes"
-msgstr "话题属性"
+msgstr "活动属性"
 
 #: includes/admin/topics.php:220
 msgid "Select the attributes that your topic should have:"
-msgstr "选择您的话题需要拥有的属性："
+msgstr "选择您的活动需要拥有的属性："
 
 #: includes/admin/topics.php:222
 msgid ""
@@ -2525,8 +2525,8 @@ msgid ""
 "belongs to. Select the forum or category from the dropdown, or leave the "
 "default (No Forum) to post the topic without an assigned forum."
 msgstr ""
-"<strong>群活动</strong> 下拉菜单决定的话题所属的母公司群活动。从下拉群活动或"
-"类别，或保留默认值（无群活动）发布的话题没有指定的群活动。"
+"<strong>群活动</strong> 下拉菜单决定的活动所属的母公司群活动。从下拉群活动或"
+"类别，或保留默认值（无群活动）发布的活动没有指定的群活动。"
 
 #: includes/admin/topics.php:223
 msgid ""
@@ -2535,69 +2535,69 @@ msgid ""
 "of your forums, i.e. the topic index, sticky option would stick the topic to "
 "its respective forum. Selecting normal would not stick the topic anywhere."
 msgstr ""
-"<strong>话题类型</strong>下拉菜单指示话题的置顶状态。选择超级置顶可置顶话题到"
+"<strong>活动类型</strong>下拉菜单指示活动的置顶状态。选择超级置顶可置顶活动到"
 "群活动的首页，即主题索引，置顶选择可置顶主题到各自的群活动。选择普通将不会置"
-"顶话题到任何地方。"
+"顶活动到任何地方。"
 
 #: includes/admin/topics.php:485
 msgid "The topic was not found!"
-msgstr "没有找到话题！"
+msgstr "没有找到活动！"
 
 #: includes/admin/topics.php:575
 msgid "There was a problem opening the topic \"%1$s\"."
-msgstr "开放话题 \"%1$s\" 时出现问题。"
+msgstr "开放活动 \"%1$s\" 时出现问题。"
 
 #: includes/admin/topics.php:575
 msgid "Topic \"%1$s\" successfully opened."
-msgstr "话题 \"%1$s\" 被成功开放。"
+msgstr "活动 \"%1$s\" 被成功开放。"
 
 #: includes/admin/topics.php:579
 msgid "There was a problem closing the topic \"%1$s\"."
-msgstr "关闭话题 \"%1$s\" 时出现问题。"
+msgstr "关闭活动 \"%1$s\" 时出现问题。"
 
 #: includes/admin/topics.php:579
 msgid "Topic \"%1$s\" successfully closed."
-msgstr "话题 \"%1$s\" 被成功关闭。"
+msgstr "活动 \"%1$s\" 被成功关闭。"
 
 #: includes/admin/topics.php:583
 msgid "There was a problem sticking the topic \"%1$s\" to front."
-msgstr "在置顶话题 \"%1$s\" 到顶部时出现问题。"
+msgstr "在置顶活动 \"%1$s\" 到顶部时出现问题。"
 
 #: includes/admin/topics.php:583
 msgid "Topic \"%1$s\" successfully sticked to front."
-msgstr "话题 \"%1$s\" 成功置顶。"
+msgstr "活动 \"%1$s\" 成功置顶。"
 
 #: includes/admin/topics.php:587
 msgid "There was a problem sticking the topic \"%1$s\"."
-msgstr "置顶话题 \"%1$s\" 时出现问题。"
+msgstr "置顶活动 \"%1$s\" 时出现问题。"
 
 #: includes/admin/topics.php:587
 msgid "Topic \"%1$s\" successfully sticked."
-msgstr "话题 \"%1$s\" 成功粘贴。"
+msgstr "活动 \"%1$s\" 成功粘贴。"
 
 #: includes/admin/topics.php:591
 msgid "There was a problem unsticking the topic \"%1$s\"."
-msgstr "取消置顶话题 \"%1$s\" 时出现问题。"
+msgstr "取消置顶活动 \"%1$s\" 时出现问题。"
 
 #: includes/admin/topics.php:591
 msgid "Topic \"%1$s\" successfully unsticked."
-msgstr "话题 \"%1$s\" 成功撤销。"
+msgstr "活动 \"%1$s\" 成功撤销。"
 
 #: includes/admin/topics.php:595
 msgid "There was a problem marking the topic \"%1$s\" as spam."
-msgstr "标记话题 \"%1$s\" 为垃圾帖时出现问题。"
+msgstr "标记活动 \"%1$s\" 为垃圾帖时出现问题。"
 
 #: includes/admin/topics.php:595
 msgid "Topic \"%1$s\" successfully marked as spam."
-msgstr "话题\"%1$s\" 已成功标记为垃圾帖。"
+msgstr "活动\"%1$s\" 已成功标记为垃圾帖。"
 
 #: includes/admin/topics.php:599
 msgid "There was a problem unmarking the topic \"%1$s\" as spam."
-msgstr "取消话题 \"%1$s\" 垃圾帖标记时出现问题。"
+msgstr "取消活动 \"%1$s\" 垃圾帖标记时出现问题。"
 
 #: includes/admin/topics.php:599
 msgid "Topic \"%1$s\" successfully unmarked as spam."
-msgstr "话题 \"%1$s\" 已成功取消垃圾帖标记。"
+msgstr "活动 \"%1$s\" 已成功取消垃圾帖标记。"
 
 #: includes/admin/topics.php:635 templates/default/bbpress/loop-topics.php:20
 msgid "Voices"
@@ -2614,7 +2614,7 @@ msgstr "没有回复"
 
 #: includes/admin/topics.php:786
 msgid "Close this topic"
-msgstr "关闭此话题"
+msgstr "关闭此活动"
 
 #: includes/admin/topics.php:786
 msgctxt "Close a Topic"
@@ -2623,7 +2623,7 @@ msgstr "关闭"
 
 #: includes/admin/topics.php:788
 msgid "Open this topic"
-msgstr "开放此话题"
+msgstr "开放此活动"
 
 #: includes/admin/topics.php:788
 msgctxt "Open a Topic"
@@ -2632,7 +2632,7 @@ msgstr "开放"
 
 #: includes/admin/topics.php:797
 msgid "Unstick this topic"
-msgstr "取消此话题"
+msgstr "取消此活动"
 
 #: includes/admin/topics.php:797 includes/topics/template.php:2746
 msgid "Unstick"
@@ -2640,7 +2640,7 @@ msgstr "取消置顶"
 
 #: includes/admin/topics.php:800
 msgid "Stick this topic to its forum"
-msgstr "置顶该话题到所在群活动"
+msgstr "置顶该活动到所在群活动"
 
 #: includes/admin/topics.php:800 includes/topics/template.php:2745
 msgid "Stick"
@@ -2648,7 +2648,7 @@ msgstr "置顶"
 
 #: includes/admin/topics.php:800
 msgid "Stick this topic to front"
-msgstr "置顶该话题到顶部"
+msgstr "置顶该活动到顶部"
 
 #: includes/admin/topics.php:800 includes/topics/template.php:2747
 msgid "(to front)"
@@ -2656,48 +2656,48 @@ msgstr "（群活动）"
 
 #: includes/admin/topics.php:807
 msgid "Mark the topic as not spam"
-msgstr "取消该话题垃圾帖标记"
+msgstr "取消该活动垃圾帖标记"
 
 #: includes/admin/topics.php:809
 msgid "Mark this topic as spam"
-msgstr "标记该话题为垃圾帖"
+msgstr "标记该活动为垃圾帖"
 
 #: includes/admin/topics.php:919
 msgid "Topic updated. <a href=\"%s\">View topic</a>"
-msgstr "话题已更新。<a href=\"%s\">查看话题</a>"
+msgstr "活动已更新。<a href=\"%s\">查看活动</a>"
 
 #: includes/admin/topics.php:928
 msgid "Topic updated."
-msgstr "话题已更新。"
+msgstr "活动已更新。"
 
 #. translators: %s: date and time of the revision
 #: includes/admin/topics.php:933
 msgid "Topic restored to revision from %s"
-msgstr "话题已从修订版本 %s 恢复"
+msgstr "活动已从修订版本 %s 恢复"
 
 #: includes/admin/topics.php:937
 msgid "Topic created. <a href=\"%s\">View topic</a>"
-msgstr "话题已创建。<a href=\"%s\">查看话题</a>"
+msgstr "活动已创建。<a href=\"%s\">查看活动</a>"
 
 #: includes/admin/topics.php:940
 msgid "Topic saved."
-msgstr "话题已保存。"
+msgstr "活动已保存。"
 
 #: includes/admin/topics.php:943
 msgid "Topic submitted. <a target=\"_blank\" href=\"%s\">Preview topic</a>"
-msgstr "话题已提交。<a target=\"_blank\" href=\"%s\">预览主题</a>"
+msgstr "活动已提交。<a target=\"_blank\" href=\"%s\">预览主题</a>"
 
 #: includes/admin/topics.php:946
 msgid ""
 "Topic scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s"
 "\">Preview topic</a>"
 msgstr ""
-"话题预发布于：<strong>%1$s</strong>。<a target=\"_blank\" href=\"%2$s\">预览"
-"话题</a>"
+"活动预发布于：<strong>%1$s</strong>。<a target=\"_blank\" href=\"%2$s\">预览"
+"活动</a>"
 
 #: includes/admin/topics.php:953
 msgid "Topic draft updated. <a target=\"_blank\" href=\"%s\">Preview topic</a>"
-msgstr "话题草稿已更新。<a target=\"_blank\" href=\"%s\">预览话题</a>"
+msgstr "活动草稿已更新。<a target=\"_blank\" href=\"%s\">预览活动</a>"
 
 #: includes/admin/users.php:87 includes/admin/users.php:218
 #: templates/default/bbpress/form-user-roles.php:20
@@ -2826,7 +2826,7 @@ msgstr ""
 "\n"
 "帖子链接：%3$s\n"
 "\n"
-"您收到该邮件是因为您订阅了该群活动的一个话题。\n"
+"您收到该邮件是因为您订阅了该群活动的一个活动。\n"
 "\n"
 "您可以登录并访问该主题来取消订阅该邮件上。"
 
@@ -2864,7 +2864,7 @@ msgstr "条件标签在运行查询之前使用是无效的。这样做的话，
 
 #: includes/common/template.php:1457
 msgid "No topics available"
-msgstr "无有效话题"
+msgstr "无有效活动"
 
 #: includes/common/template.php:1462
 msgid "No forums available"
@@ -2887,7 +2887,7 @@ msgstr "(编辑)"
 #: templates/default/extras/taxonomy-topic-tag-edit.php:17
 #: templates/default/extras/taxonomy-topic-tag.php:17
 msgid "Topic Tag: %s"
-msgstr "话题标签：%s"
+msgstr "活动标签：%s"
 
 #: includes/common/template.php:2216 includes/forums/template.php:53
 #: includes/replies/template.php:53 includes/replies/template.php:1910
@@ -2914,7 +2914,7 @@ msgstr "群活动编辑： %s"
 
 #: includes/common/template.php:2560
 msgid "Topic Edit: %s"
-msgstr "话题编辑： %s"
+msgstr "活动编辑： %s"
 
 #: includes/common/template.php:2565
 msgid "Reply Edit: %s"
@@ -2922,7 +2922,7 @@ msgstr "回复编辑：  %s"
 
 #: includes/common/template.php:2570
 msgid "Topic Tag Edit: %s"
-msgstr "话题标签编辑： %s"
+msgstr "活动标签编辑： %s"
 
 #: includes/common/template.php:2577
 msgid "Forum: %s"
@@ -2930,7 +2930,7 @@ msgstr "群活动：%s"
 
 #: includes/common/template.php:2582
 msgid "Topic: %s"
-msgstr "话题：%s"
+msgstr "活动：%s"
 
 #: includes/common/template.php:2600
 msgctxt "User viewing his/her own profile"
@@ -2944,7 +2944,7 @@ msgstr "%s的"
 
 #: includes/common/template.php:2609
 msgid "%s Topics"
-msgstr "%s的话题"
+msgstr "%s的活动"
 
 #: includes/common/template.php:2613
 msgid "%s Replies"
@@ -3033,11 +3033,11 @@ msgstr "密码重置链接："
 
 #: includes/common/widgets.php:243
 msgid "A list of registered optional topic views."
-msgstr "注册可选话题的视图列表。"
+msgstr "注册可选活动的视图列表。"
 
 #: includes/common/widgets.php:246
 msgid "(bbPress) Topic Views List"
-msgstr "(bbPress) 话题视图列表"
+msgstr "(bbPress) 活动视图列表"
 
 #: includes/common/widgets.php:384
 msgid "The bbPress forum search form."
@@ -3069,11 +3069,11 @@ msgstr "\"0\" 将显示根 - \"任意\" 将显示全部"
 
 #: includes/common/widgets.php:692
 msgid "A list of recent topics, sorted by popularity or freshness."
-msgstr "近期话题列表，排序按热门程度和新鲜度。"
+msgstr "近期活动列表，排序按热门程度和新鲜度。"
 
 #: includes/common/widgets.php:695
 msgid "(bbPress) Recent Topics"
-msgstr "(bbPress) 最近发表话题"
+msgstr "(bbPress) 最近发表活动"
 
 #: includes/common/widgets.php:815
 msgctxt "widgets"
@@ -3082,7 +3082,7 @@ msgstr "由 %1$s"
 
 #: includes/common/widgets.php:877
 msgid "Maximum topics to show:"
-msgstr "显示话题最大数量："
+msgstr "显示活动最大数量："
 
 #: includes/common/widgets.php:889 includes/common/widgets.php:1236
 msgid "Show post date:"
@@ -3090,7 +3090,7 @@ msgstr "显示帖子日期："
 
 #: includes/common/widgets.php:890
 msgid "Show topic author:"
-msgstr "显示话题作者："
+msgstr "显示活动作者："
 
 #: includes/common/widgets.php:893
 msgid "Order By:"
@@ -3098,20 +3098,20 @@ msgstr "排序："
 
 #: includes/common/widgets.php:895
 msgid "Newest Topics"
-msgstr "最新的话题"
+msgstr "最新的活动"
 
 #: includes/common/widgets.php:896
 #: templates/default/extras/page-forum-statistics.php:34
 msgid "Popular Topics"
-msgstr "热门话题"
+msgstr "热门活动"
 
 #: includes/common/widgets.php:897
 msgid "Topics With Recent Replies"
-msgstr "最近回复的话题"
+msgstr "最近回复的活动"
 
 #: includes/common/widgets.php:914
 msgid "Recent Topics"
-msgstr "最近话题"
+msgstr "最近活动"
 
 #: includes/common/widgets.php:948
 msgid "Some statistics from your forum."
@@ -3211,7 +3211,7 @@ msgstr "Hello World!"
 
 #: includes/core/update.php:189
 msgid "I am the first topic in your new forums."
-msgstr "我是你群活动的第一个话题。"
+msgstr "我是你群活动的第一个活动。"
 
 #: includes/core/update.php:190
 msgid "Re: Hello World!"
@@ -3261,7 +3261,7 @@ msgstr "没有历史记录。Akismet没有检查到这贴子。"
 
 #: includes/extend/buddypress/activity.php:195
 msgid "New forum topic"
-msgstr "新的群活动话题"
+msgstr "新的群活动活动"
 
 #: includes/extend/buddypress/activity.php:196
 msgid "New forum reply"
@@ -3269,11 +3269,11 @@ msgstr "新的群活动回复"
 
 #: includes/extend/buddypress/activity.php:420
 msgid "%1$s started the topic %2$s in the forum %3$s"
-msgstr "%1$s 在群活动 %3$s 中发起了话题 %2$s"
+msgstr "%1$s 在群活动 %3$s 中发起了活动 %2$s"
 
 #: includes/extend/buddypress/activity.php:565
 msgid "%1$s replied to the topic %2$s in the forum %3$s"
-msgstr "%1$s 在群活动 %3$s 中回复了话题 %2$s"
+msgstr "%1$s 在群活动 %3$s 中回复了活动 %2$s"
 
 #: includes/extend/buddypress/groups.php:275
 #: includes/extend/buddypress/groups.php:278
@@ -3348,7 +3348,7 @@ msgstr "报名的活动"
 
 #: includes/extend/buddypress/notifications.php:48
 msgid "Topic Replies"
-msgstr "话题回复"
+msgstr "活动回复"
 
 #: includes/extend/buddypress/notifications.php:51
 msgid "You have %d new replies"
@@ -3515,7 +3515,7 @@ msgstr "取消报名"
 #: includes/forums/template.php:1238 includes/forums/template.php:1976
 msgid "%s topic"
 msgid_plural "%s topics"
-msgstr[0] "%s 话题"
+msgstr[0] "%s 活动"
 
 #: includes/forums/template.php:1254 includes/topics/template.php:2118
 msgid " (+ %d hidden)"
@@ -3569,19 +3569,19 @@ msgstr "<strong>错误</strong>：您无权进行回复。"
 
 #: includes/replies/functions.php:154
 msgid "<strong>ERROR</strong>: Topic ID is missing."
-msgstr "<strong>错误</strong>：缺少话题 ID。"
+msgstr "<strong>错误</strong>：缺少活动 ID。"
 
 #: includes/replies/functions.php:158
 msgid "<strong>ERROR</strong>: Topic ID must be a number."
-msgstr "<strong>错误</strong>：话题ID必须是一个数字。"
+msgstr "<strong>错误</strong>：活动ID必须是一个数字。"
 
 #: includes/replies/functions.php:168
 msgid "<strong>ERROR</strong>: Topic ID cannot be a negative number."
-msgstr "<strong>错误</strong>：话题ID不能是一个负数。"
+msgstr "<strong>错误</strong>：活动ID不能是一个负数。"
 
 #: includes/replies/functions.php:172
 msgid "<strong>ERROR</strong>: Topic does not exist."
-msgstr "<strong>错误</strong>：话题不存在。"
+msgstr "<strong>错误</strong>：活动不存在。"
 
 #: includes/replies/functions.php:191 includes/replies/functions.php:205
 #: includes/topics/functions.php:196 includes/topics/functions.php:210
@@ -3642,12 +3642,12 @@ msgstr "<strong>错误</strong>：您目前无法创建回复。"
 
 #: includes/replies/functions.php:318
 msgid "<strong>ERROR</strong>: Topic is closed."
-msgstr "<strong>错误</strong>：话题已关闭。"
+msgstr "<strong>错误</strong>：活动已关闭。"
 
 #: includes/replies/functions.php:377 includes/replies/functions.php:702
 msgid ""
 "<strong>ERROR</strong>: There was a problem adding the tags to the topic."
-msgstr "<strong>错误</strong>：为话题添加标签时出现问题。"
+msgstr "<strong>错误</strong>：为活动添加标签时出现问题。"
 
 #: includes/replies/functions.php:505
 msgid "<strong>ERROR</strong>: Reply ID not found."
@@ -3675,14 +3675,14 @@ msgstr "<strong>错误</strong>：没有找到您要移动的回复。"
 
 #: includes/replies/functions.php:1241
 msgid "<strong>ERROR</strong>: The topic you want to move from was not found."
-msgstr "<strong>错误</strong>：没有找到您要移动的话题。"
+msgstr "<strong>错误</strong>：没有找到您要移动的活动。"
 
 #: includes/replies/functions.php:1252 includes/topics/functions.php:1164
 #: includes/topics/functions.php:1462
 msgid ""
 "<strong>ERROR</strong>: You do not have the permissions to edit the source "
 "topic."
-msgstr "<strong>错误</strong>：您无权编辑该原始话题。"
+msgstr "<strong>错误</strong>：您无权编辑该原始活动。"
 
 #: includes/replies/functions.php:1262
 msgid "<strong>ERROR</strong>: You need to choose a valid move option."
@@ -3690,17 +3690,17 @@ msgstr "<strong>错误</strong>：你需要选择一个有效的移动选项。"
 
 #: includes/replies/functions.php:1275 includes/topics/functions.php:1483
 msgid "<strong>ERROR</strong>: Destination topic ID not found!"
-msgstr "<strong>错误</strong>：没有找到目标话题 ID！"
+msgstr "<strong>错误</strong>：没有找到目标活动 ID！"
 
 #: includes/replies/functions.php:1285
 msgid "<strong>ERROR</strong>: The topic you want to move to was not found!"
-msgstr "<strong>错误</strong>： 找不到您想要移动的话题。"
+msgstr "<strong>错误</strong>： 找不到您想要移动的活动。"
 
 #: includes/replies/functions.php:1290 includes/topics/functions.php:1496
 msgid ""
 "<strong>ERROR</strong>: You do not have the permissions to edit the "
 "destination topic!"
-msgstr "<strong>错误</strong>：您无权编辑该目标话题！"
+msgstr "<strong>错误</strong>：您无权编辑该目标活动！"
 
 #: includes/replies/functions.php:1299 includes/replies/template.php:571
 #: includes/topics/functions.php:1294 includes/topics/functions.php:1652
@@ -3712,14 +3712,14 @@ msgstr "回复：%s"
 msgid ""
 "<strong>ERROR</strong>: There was a problem converting the reply into the "
 "topic. Please try again."
-msgstr "<strong>错误</strong>：将回复转换成话题时出现问题，请重试。"
+msgstr "<strong>错误</strong>：将回复转换成活动时出现问题，请重试。"
 
 #: includes/replies/functions.php:1349 includes/topics/functions.php:1538
 msgid ""
 "<strong>ERROR</strong>: You do not have the permissions to create new "
 "topics. The reply could not be converted into a topic."
 msgstr ""
-"<strong>错误</strong>：您无权创建新话题，因此您无法将回复转换成一个话题。"
+"<strong>错误</strong>：您无权创建新活动，因此您无法将回复转换成一个活动。"
 
 #: includes/replies/functions.php:1530
 msgid "<strong>ERROR:</strong> You do not have the permission to do that!"
@@ -3842,12 +3842,12 @@ msgstr "分割"
 
 #: includes/replies/template.php:2237
 msgid "Split the topic from this reply"
-msgstr "从该回复中分割出该话题"
+msgstr "从该回复中分割出该活动"
 
 #: includes/replies/template.php:2343
 msgid "Viewing %1$s reply thread"
 msgid_plural "Viewing %1$s reply threads"
-msgstr[0] "查看 %1$s 话题回复"
+msgstr[0] "查看 %1$s 活动回复"
 
 #: includes/replies/template.php:2350
 msgid "Viewing %1$s reply"
@@ -3886,81 +3886,81 @@ msgstr[0] "查看：%2$s - %3$s ，本页显示 %1$s  (共 %4$s 结果)"
 #: includes/topics/functions.php:150
 msgid ""
 "<strong>ERROR</strong>: You do not have permission to create new topics."
-msgstr "<strong>错误</strong>：您无权创建新话题。"
+msgstr "<strong>错误</strong>：您无权创建新活动。"
 
 #: includes/topics/functions.php:175 includes/topics/functions.php:585
 msgid "<strong>ERROR</strong>: Your topic needs a title."
-msgstr "<strong>错误</strong>：您的话题需要有一个标题。"
+msgstr "<strong>错误</strong>：您的活动需要有一个标题。"
 
 #: includes/topics/functions.php:187 includes/topics/functions.php:597
 msgid "<strong>ERROR</strong>: Your topic cannot be empty."
-msgstr "<strong>错误</strong>：您的话题内容不能为空。"
+msgstr "<strong>错误</strong>：您的活动内容不能为空。"
 
 #: includes/topics/functions.php:232
 msgid ""
 "<strong>ERROR</strong>: This forum is a category. No topics can be created "
 "in this forum."
-msgstr "<strong>错误</strong>：该群活动为一个分类。无法在该群活动发表话题！"
+msgstr "<strong>错误</strong>：该群活动为一个分类。无法在该群活动发表活动！"
 
 #: includes/topics/functions.php:239 includes/topics/functions.php:557
 msgid "<strong>ERROR</strong>: This forum has been closed to new topics."
-msgstr "<strong>错误</strong>：该群活动已关闭发表话题！"
+msgstr "<strong>错误</strong>：该群活动已关闭发表活动！"
 
 #: includes/topics/functions.php:245 includes/topics/functions.php:563
 msgid ""
 "<strong>ERROR</strong>: This forum is private and you do not have the "
 "capability to read or create new topics in it."
 msgstr ""
-"<strong>错误</strong>：该群活动为私密群活动，您没有权限阅读该群活动和创建新话"
-"题！"
+"<strong>错误</strong>：该群活动为私密群活动，您没有权限阅读该群活动和创建新活"
+"动！"
 
 #: includes/topics/functions.php:251 includes/topics/functions.php:569
 msgid ""
 "<strong>ERROR</strong>: This forum is hidden and you do not have the "
 "capability to read or create new topics in it."
 msgstr ""
-"<strong>错误</strong>：该群活动为隐藏群活动，您没有权限阅读该群活动和创建新话"
-"题！"
+"<strong>错误</strong>：该群活动为隐藏群活动，您没有权限阅读该群活动和创建新活"
+"动！"
 
 #: includes/topics/functions.php:265
 msgid ""
 "<strong>ERROR</strong>: Duplicate topic detected; it looks as though "
 "you&#8217;ve already said that!"
-msgstr "<strong>错误</strong>：检测到重复的话题；似乎您已经发表过了！"
+msgstr "<strong>错误</strong>：检测到重复的活动；似乎您已经发表过了！"
 
 #: includes/topics/functions.php:270
 msgid "<strong>ERROR</strong>: Your topic cannot be created at this time."
-msgstr "<strong>错误</strong>：您目前无法创建话题。"
+msgstr "<strong>错误</strong>：您目前无法创建活动。"
 
 #: includes/topics/functions.php:482 includes/topics/functions.php:1146
 msgid "<strong>ERROR</strong>: Topic ID not found."
-msgstr "<strong>错误</strong>：没有找到话题 ID！"
+msgstr "<strong>错误</strong>：没有找到活动 ID！"
 
 #: includes/topics/functions.php:493
 msgid "<strong>ERROR</strong>: The topic you want to edit was not found."
-msgstr "<strong>错误</strong>：没有找到您要编辑的话题。"
+msgstr "<strong>错误</strong>：没有找到您要编辑的活动。"
 
 #: includes/topics/functions.php:504
 msgid "<strong>ERROR</strong>: You do not have permission to edit that topic."
-msgstr "<strong>错误</strong>：您无权编辑该话题。"
+msgstr "<strong>错误</strong>：您无权编辑该活动。"
 
 #: includes/topics/functions.php:550
 msgid ""
 "<strong>ERROR</strong>: This forum is a category. No topics can be created "
 "in it."
-msgstr "<strong>错误</strong>：该群活动为一个分类。无法在该群活动发表话题。"
+msgstr "<strong>错误</strong>：该群活动为一个分类。无法在该群活动发表活动。"
 
 #: includes/topics/functions.php:602
 msgid "<strong>ERROR</strong>: Your topic cannot be edited at this time."
-msgstr "<strong>错误</strong>：您目前无法编辑话题。"
+msgstr "<strong>错误</strong>：您目前无法编辑活动。"
 
 #: includes/topics/functions.php:1158
 msgid "<strong>ERROR</strong>: The topic you want to merge was not found."
-msgstr "<strong>错误</strong>：没有找到您要合并的话题。"
+msgstr "<strong>错误</strong>：没有找到您要合并的活动。"
 
 #: includes/topics/functions.php:1172
 msgid "<strong>ERROR</strong>: Destination topic ID not found."
-msgstr "<strong>错误</strong>：没有找到目标话题 ID。"
+msgstr "<strong>错误</strong>：没有找到目标活动 ID。"
 
 #: includes/topics/functions.php:1178
 msgid "<strong>ERROR</strong>: The topic you want to merge to was not found."
@@ -3970,11 +3970,11 @@ msgstr "<strong>错误</strong>： 找不到您想要合并的主题。"
 msgid ""
 "<strong>ERROR</strong>: You do not have the permissions to edit the "
 "destination topic."
-msgstr "<strong>错误</strong>：您无权编辑该目标话题。"
+msgstr "<strong>错误</strong>：您无权编辑该目标活动。"
 
 #: includes/topics/functions.php:1435
 msgid "<strong>ERROR</strong>: Reply ID to split the topic from not found!"
-msgstr "<strong>错误</strong>：没有从话题找您要分割的回复 ID！"
+msgstr "<strong>错误</strong>：没有从活动找您要分割的回复 ID！"
 
 #: includes/topics/functions.php:1443
 msgid "<strong>ERROR</strong>: The reply you want to split from was not found."
@@ -3982,7 +3982,7 @@ msgstr "<strong>错误</strong>：没有找到您要分割的回复。"
 
 #: includes/topics/functions.php:1452
 msgid "<strong>ERROR</strong>: The topic you want to split was not found."
-msgstr "<strong>错误</strong>：没有找到您要分割的话题。"
+msgstr "<strong>错误</strong>：没有找到您要分割的活动。"
 
 #: includes/topics/functions.php:1470
 msgid "<strong>ERROR</strong>: You need to choose a valid split option."
@@ -3990,7 +3990,7 @@ msgstr "<strong>错误</strong>：您需要选择一个有效的分割选项。"
 
 #: includes/topics/functions.php:1492
 msgid "<strong>ERROR</strong>: The topic you want to split to was not found!"
-msgstr "<strong>错误</strong>：没有找到您要分割的目标话题！"
+msgstr "<strong>错误</strong>：没有找到您要分割的目标活动！"
 
 #: includes/topics/functions.php:1808
 msgid ""
@@ -4002,7 +4002,7 @@ msgstr "<strong>错误</strong>：获取标签 %s 时出现以下问题"
 msgid ""
 "<strong>ERROR</strong>: You do not have the permissions to edit the topic "
 "tags."
-msgstr "<strong>错误</strong>：您无权编辑话题标签。"
+msgstr "<strong>错误</strong>：您无权编辑活动标签。"
 
 #: includes/topics/functions.php:1832 includes/topics/functions.php:1871
 msgid "<strong>ERROR</strong>: You need to enter a tag name."
@@ -4029,7 +4029,7 @@ msgstr "<strong>错误</strong>：无法合并相同的标签。"
 msgid ""
 "<strong>ERROR</strong>: You do not have the permissions to delete the topic "
 "tags."
-msgstr "<strong>错误</strong>：您无权删除话题标签。"
+msgstr "<strong>错误</strong>：您无权删除活动标签。"
 
 #: includes/topics/functions.php:1931
 msgid ""
@@ -4083,76 +4083,76 @@ msgstr "<strong>错误：</strong>您无权执行此项操作。"
 
 #: includes/topics/functions.php:2102
 msgid "<strong>ERROR</strong>: There was a problem closing the topic."
-msgstr "<strong>错误</strong>：关闭该话题时出现问题。"
+msgstr "<strong>错误</strong>：关闭该活动时出现问题。"
 
 #: includes/topics/functions.php:2102
 msgid "<strong>ERROR</strong>: There was a problem opening the topic."
-msgstr "<strong>错误</strong>：开放该话题时出现问题。"
+msgstr "<strong>错误</strong>：开放该活动时出现问题。"
 
 #: includes/topics/functions.php:2113
 msgid "<strong>ERROR</strong>: There was a problem unsticking the topic."
-msgstr "<strong>错误</strong>：取消话题置顶时出现错误。"
+msgstr "<strong>错误</strong>：取消活动置顶时出现错误。"
 
 #: includes/topics/functions.php:2113
 msgid "<strong>ERROR</strong>: There was a problem sticking the topic."
-msgstr "<strong>错误</strong>：置顶话题时出现错误。"
+msgstr "<strong>错误</strong>：置顶活动时出现错误。"
 
 #: includes/topics/functions.php:2123
 msgid ""
 "<strong>ERROR</strong>: There was a problem unmarking the topic as spam."
-msgstr "<strong>错误</strong>：取消该话题垃圾帖标记时出现问题。"
+msgstr "<strong>错误</strong>：取消该活动垃圾帖标记时出现问题。"
 
 #: includes/topics/functions.php:2123
 msgid "<strong>ERROR</strong>: There was a problem marking the topic as spam."
-msgstr "<strong>错误</strong>：将该话题标记为垃圾帖时出现问题。"
+msgstr "<strong>错误</strong>：将该活动标记为垃圾帖时出现问题。"
 
 #: includes/topics/functions.php:2142
 msgid "<strong>ERROR</strong>: There was a problem trashing the topic."
-msgstr "<strong>错误</strong>：将该话题移入回收站时出现问题。"
+msgstr "<strong>错误</strong>：将该活动移入回收站时出现问题。"
 
 #: includes/topics/functions.php:2150
 msgid "<strong>ERROR</strong>: There was a problem untrashing the topic."
-msgstr "<strong>错误</strong>：从回收站移出该话题时出现问题。"
+msgstr "<strong>错误</strong>：从回收站移出该活动时出现问题。"
 
 #: includes/topics/functions.php:2158
 msgid "<strong>ERROR</strong>: There was a problem deleting the topic."
-msgstr "<strong>错误</strong>：删除话题时出现问题。"
+msgstr "<strong>错误</strong>：删除活动时出现问题。"
 
 #: includes/topics/template.php:51 includes/topics/template.php:55
 msgid "New Topic"
-msgstr "新建话题"
+msgstr "新建活动"
 
 #: includes/topics/template.php:52 templates/default/bbpress/form-topic.php:43
 msgid "Create New Topic"
-msgstr "创建新话题"
+msgstr "创建新活动"
 
 #: includes/topics/template.php:54
 msgid "Edit Topic"
-msgstr "编辑话题"
+msgstr "编辑活动"
 
 #: includes/topics/template.php:56 includes/topics/template.php:57
 msgid "View Topic"
-msgstr "查看话题"
+msgstr "查看活动"
 
 #: includes/topics/template.php:58
 msgid "Search Topics"
-msgstr "搜索话题"
+msgstr "搜索活动"
 
 #: includes/topics/template.php:59
 msgid "No topics found"
-msgstr "没有找到话题"
+msgstr "没有找到活动"
 
 #: includes/topics/template.php:60
 msgid "No topics found in Trash"
-msgstr "回收站中没有话题"
+msgstr "回收站中没有活动"
 
 #: includes/topics/template.php:991
 msgid "This topic was modified %1$s by %2$s. Reason: %3$s"
-msgstr "该话题由 %2$s 于 %1$s 修正。原因：%3$s"
+msgstr "该活动由 %2$s 于 %1$s 修正。原因：%3$s"
 
 #: includes/topics/template.php:993
 msgid "This topic was modified %1$s by %2$s."
-msgstr "该话题由 %2$s 于 %1$s 修正。"
+msgstr "该活动由 %2$s 于 %1$s 修正。"
 
 #: includes/topics/template.php:1891 includes/users/template.php:894
 msgid "Favorite"
@@ -4185,20 +4185,20 @@ msgstr "合并"
 #: includes/topics/template.php:2977
 msgid "Viewing %1$s topic"
 msgid_plural "Viewing %1$s topics"
-msgstr[0] "查看 %1$s 话题"
+msgstr[0] "查看 %1$s 活动"
 
 #: includes/topics/template.php:2981
 msgid "Viewing topic %2$s (of %4$s total)"
 msgid_plural "Viewing %1$s topics - %2$s through %3$s (of %4$s total)"
-msgstr[0] "查看：%2$s - %3$s ，本页显示 %1$s  (共 %4$s 话题)"
+msgstr[0] "查看：%2$s - %3$s ，本页显示 %1$s  (共 %4$s 活动)"
 
 #: includes/topics/template.php:3041
 msgid "This topic is marked as spam."
-msgstr "该话题已被标记为垃圾帖。"
+msgstr "该活动已被标记为垃圾帖。"
 
 #: includes/topics/template.php:3046
 msgid "This topic is in the trash."
-msgstr "该话题已在回收站内。"
+msgstr "该活动已在回收站内。"
 
 #: includes/topics/template.php:3306
 msgid "%s voice"
@@ -4207,20 +4207,20 @@ msgstr[0] "%s 参与者"
 
 #: includes/topics/template.php:3312
 msgid "This topic contains %1$s, has %2$s, and was last updated by %3$s %4$s."
-msgstr "该话题包含 %1$s，有 %2$s，并且由 %3$s 于 %4$s 最后一次更新。"
+msgstr "该活动包含 %1$s，有 %2$s，并且由 %3$s 于 %4$s 最后一次更新。"
 
 #: includes/topics/template.php:3316
 msgid "This topic contains %1$s and has %2$s."
-msgstr "本话题包含 %1$s 和 %2$s."
+msgstr "本活动包含 %1$s 和 %2$s."
 
 #: includes/topics/template.php:3320
 msgid "This topic has no replies."
-msgstr "该话题没有回复。"
+msgstr "该活动没有回复。"
 
 #: includes/topics/template.php:3366
 #: templates/default/bbpress/content-statistics.php:37
 msgid "Topic Tags"
-msgstr "话题标签"
+msgstr "活动标签"
 
 #: includes/topics/template.php:3368
 msgid "Search Tags"
@@ -4252,14 +4252,14 @@ msgstr "新标签名"
 
 #: includes/topics/template.php:3375
 msgid "View Topic Tag"
-msgstr "查看话题标签"
+msgstr "查看活动标签"
 
 #: includes/users/functions.php:455
 msgid ""
 "<strong>ERROR</strong>: No topic was found! Which topic are you marking/"
 "unmarking as favorite?"
 msgstr ""
-"<strong>错误</strong>：没有找到话题！哪个是您正在标记/取消标记收藏的话题？"
+"<strong>错误</strong>：没有找到活动！哪个是您正在标记/取消标记收藏的活动？"
 
 #: includes/users/functions.php:463 includes/users/functions.php:1178
 #: includes/users/functions.php:1284
@@ -4272,11 +4272,11 @@ msgstr "<strong>错误</strong>：您无权编辑该用户的收藏夹！"
 msgid ""
 "<strong>ERROR</strong>: There was a problem removing that topic from "
 "favorites!"
-msgstr "<strong>错误</strong>：从收藏夹中移出该话题时出现问题！"
+msgstr "<strong>错误</strong>：从收藏夹中移出该活动时出现问题！"
 
 #: includes/users/functions.php:508
 msgid "<strong>ERROR</strong>: There was a problem favoriting that topic!"
-msgstr "<strong>错误</strong>：收藏该话题时出现问题！"
+msgstr "<strong>错误</strong>：收藏该活动时出现问题！"
 
 #: includes/users/functions.php:1170
 msgid ""
@@ -4298,7 +4298,7 @@ msgstr "<strong>错误</strong>：订阅该群活动时出现问题！"
 msgid ""
 "<strong>ERROR</strong>: No topic was found! Which topic are you subscribing/"
 "unsubscribing to?"
-msgstr "<strong>错误</strong>：没有找到话题！哪个是您正在报名/取消报名的活动？"
+msgstr "<strong>错误</strong>：没有找到活动！哪个是您正在报名/取消报名的活动？"
 
 #: includes/users/functions.php:1329
 msgid ""
@@ -4307,7 +4307,7 @@ msgstr "<strong>错误</strong>：取消报名该活动时出现问题！"
 
 #: includes/users/functions.php:1331
 msgid "<strong>ERROR</strong>: There was a problem subscribing to that topic!"
-msgstr "<strong>错误</strong>：报名该话题时出现问题！"
+msgstr "<strong>错误</strong>：报名该活动时出现问题！"
 
 #: includes/users/template.php:503
 msgid "Guest"
@@ -4371,11 +4371,11 @@ msgstr "注册用户"
 
 #: templates/default/bbpress/content-statistics.php:44
 msgid "Empty Topic Tags"
-msgstr "空的话题标签"
+msgstr "空的活动标签"
 
 #: templates/default/bbpress/content-statistics.php:53
 msgid "Hidden Topics"
-msgstr "隐藏话题"
+msgstr "隐藏活动"
 
 #: templates/default/bbpress/content-statistics.php:64
 msgid "Hidden Replies"
@@ -4407,7 +4407,7 @@ msgstr "噢兄弟！没有搜到相关搜索结果！"
 
 #: templates/default/bbpress/feedback-no-topics.php:13
 msgid "Oh bother! No topics were found here!"
-msgstr "哦！没有找到话题！"
+msgstr "哦！没有找到活动！"
 
 #: templates/default/bbpress/form-anonymous.php:17
 msgid "Your information:"
@@ -4497,13 +4497,13 @@ msgstr "移动回复 \"%s\""
 msgid ""
 "You can either make this reply a new topic with a new title, or merge it "
 "into an existing topic."
-msgstr "您可以给这个新话题的回复使用一个新的标题，或合并成一个现有的话题。"
+msgstr "您可以给这个新活动的回复使用一个新的标题，或合并成一个现有的活动。"
 
 #: templates/default/bbpress/form-reply-move.php:33
 msgid ""
 "If you choose an existing topic, replies will be ordered by the time and "
 "date they were created."
-msgstr "如果您选择现有的话题与回复，将会以其创建时间排序"
+msgstr "如果您选择现有的活动与回复，将会以其创建时间排序"
 
 #: templates/default/bbpress/form-reply-move.php:37
 msgid "Move Method"
@@ -4512,7 +4512,7 @@ msgstr "移动方法"
 #: templates/default/bbpress/form-reply-move.php:41
 #: templates/default/bbpress/form-topic-split.php:41
 msgid "New topic in <strong>%s</strong> titled:"
-msgstr "在新的话题<strong>%s</strong> 标题："
+msgstr "在新的活动<strong>%s</strong> 标题："
 
 #: templates/default/bbpress/form-reply-move.php:42
 msgid "Moved: %s"
@@ -4521,7 +4521,7 @@ msgstr "已移动：%s"
 #: templates/default/bbpress/form-reply-move.php:49
 #: templates/default/bbpress/form-topic-split.php:49
 msgid "Use an existing topic in this forum:"
-msgstr "使用该群活动下现有的话题："
+msgstr "使用该群活动下现有的活动："
 
 #: templates/default/bbpress/form-reply-move.php:68
 #: templates/default/bbpress/form-topic-merge.php:89
@@ -4541,7 +4541,7 @@ msgstr "您不能编辑此回复。"
 msgid ""
 "This topic is marked as closed to new replies, however your posting "
 "capabilities still allow you to do so."
-msgstr "该话题已被标记为关闭新回复，不过您的发表权限仍然允许您进行回复。"
+msgstr "该活动已被标记为关闭新回复，不过您的发表权限仍然允许您进行回复。"
 
 #: templates/default/bbpress/form-reply.php:75
 msgid "Tags:"
@@ -4569,20 +4569,20 @@ msgstr "可选的编辑理由："
 
 #: templates/default/bbpress/form-reply.php:158
 msgid "The topic &#8216;%s&#8217; is closed to new replies."
-msgstr "话题 &#8216;%s&#8217; 已关闭，不允许发布新回复。"
+msgstr "活动 &#8216;%s&#8217; 已关闭，不允许发布新回复。"
 
 #: templates/default/bbpress/form-reply.php:166
 #: templates/default/bbpress/form-topic.php:226
 msgid "The forum &#8216;%s&#8217; is closed to new topics and replies."
-msgstr "群活动 &#8216;%s&#8217; 已关闭，不允许发布新话题和回复。"
+msgstr "群活动 &#8216;%s&#8217; 已关闭，不允许发布新活动和回复。"
 
 #: templates/default/bbpress/form-reply.php:174
 msgid "You cannot reply to this topic."
-msgstr "你不能回复该话题。"
+msgstr "你不能回复该活动。"
 
 #: templates/default/bbpress/form-reply.php:174
 msgid "You must be logged in to reply to this topic."
-msgstr "抱歉，回复话题必需登录。"
+msgstr "抱歉，回复活动必需登录。"
 
 #: templates/default/bbpress/form-search.php:14
 msgid "Search for:"
@@ -4590,20 +4590,20 @@ msgstr "搜索到："
 
 #: templates/default/bbpress/form-topic-merge.php:24
 msgid "Merge topic \"%s\""
-msgstr "合并话题 \"%s\""
+msgstr "合并活动 \"%s\""
 
 #: templates/default/bbpress/form-topic-merge.php:29
 msgid ""
 "Select the topic to merge this one into. The destination topic will remain "
 "the lead topic, and this one will change into a reply."
 msgstr ""
-"选择该帖将要进行合并到的话题。目标话题将继续做为主帖，该帖将做为一个回复。"
+"选择该帖将要进行合并到的活动。目标活动将继续做为主帖，该帖将做为一个回复。"
 
 #: templates/default/bbpress/form-topic-merge.php:30
 msgid ""
 "To keep this topic as the lead, go to the other topic and use the merge tool "
 "from there instead."
-msgstr "如果保持该话题为主帖，那么请到另外一个话题中使用合并工具进行操作。"
+msgstr "如果保持该活动为主帖，那么请到另外一个活动中使用合并工具进行操作。"
 
 #: templates/default/bbpress/form-topic-merge.php:34
 msgid ""
@@ -4621,16 +4621,16 @@ msgstr "目标地址"
 
 #: templates/default/bbpress/form-topic-merge.php:42
 msgid "Merge with this topic:"
-msgstr "合并此话题："
+msgstr "合并此活动："
 
 #: templates/default/bbpress/form-topic-merge.php:56
 msgid "There are no other topics in this forum to merge with."
-msgstr "在该群活动中没有其它可供合并的话题。"
+msgstr "在该群活动中没有其它可供合并的活动。"
 
 #: templates/default/bbpress/form-topic-merge.php:64
 #: templates/default/bbpress/form-topic-split.php:68
 msgid "Topic Extras"
-msgstr "话题附加"
+msgstr "活动附加"
 
 #: templates/default/bbpress/form-topic-merge.php:71
 msgid "Merge topic subscribers"
@@ -4638,25 +4638,25 @@ msgstr "合并活动报名"
 
 #: templates/default/bbpress/form-topic-merge.php:76
 msgid "Merge topic favoriters"
-msgstr "合并收藏话题"
+msgstr "合并收藏活动"
 
 #: templates/default/bbpress/form-topic-merge.php:81
 msgid "Merge topic tags"
-msgstr "合并话题标签"
+msgstr "合并活动标签"
 
 #: templates/default/bbpress/form-topic-merge.php:106
 #: templates/default/bbpress/form-topic-split.php:110
 msgid "You do not have the permissions to edit this topic!"
-msgstr "您无权编辑该话题。"
+msgstr "您无权编辑该活动。"
 
 #: templates/default/bbpress/form-topic-merge.php:106
 #: templates/default/bbpress/form-topic-split.php:110
 msgid "You cannot edit this topic."
-msgstr "抱歉，您不能编辑此话题。"
+msgstr "抱歉，您不能编辑此活动。"
 
 #: templates/default/bbpress/form-topic-split.php:24
 msgid "Split topic \"%s\""
-msgstr "分割话题 \"%s\""
+msgstr "分割活动 \"%s\""
 
 #: templates/default/bbpress/form-topic-split.php:29
 msgid ""
@@ -4664,8 +4664,8 @@ msgid ""
 "you just selected. Choose to use that reply as a new topic with a new title, "
 "or merge those replies into an existing topic."
 msgstr ""
-"当您分割一个话题时，您是将已选的回复从原帖中分割。您可以为该回复赋予一个新的"
-"标题做为一个新话题，或者将其与现有的话题进行合并。"
+"当您分割一个活动时，您是将已选的回复从原帖中分割。您可以为该回复赋予一个新的"
+"标题做为一个新活动，或者将其与现有的活动进行合并。"
 
 #: templates/default/bbpress/form-topic-split.php:33
 msgid ""
@@ -4673,7 +4673,7 @@ msgid ""
 "merged chronologically. The order of the merged replies is based on the time "
 "and date they were posted."
 msgstr ""
-"如果您使用现有话题选项，这两篇帖子中的回复将按照时间顺序进行合并。合并后的回"
+"如果您使用现有活动选项，这两篇帖子中的回复将按照时间顺序进行合并。合并后的回"
 "复是基于它们的发布时间和日期进行排列的。"
 
 #: templates/default/bbpress/form-topic-split.php:37
@@ -4690,11 +4690,11 @@ msgstr "复制报名到新活动"
 
 #: templates/default/bbpress/form-topic-split.php:80
 msgid "Copy favoriters to the new topic"
-msgstr "复制收藏到新话题"
+msgstr "复制收藏到新活动"
 
 #: templates/default/bbpress/form-topic-split.php:85
 msgid "Copy topic tags to the new topic"
-msgstr "复制话题题标签到新话题"
+msgstr "复制活动题标签到新活动"
 
 #: templates/default/bbpress/form-topic-tag.php:18
 msgid "Manage Tag: \"%s\""
@@ -4737,7 +4737,7 @@ msgstr "您确定要将 \"%s\" 标签与您指定的标签合并？"
 
 #: templates/default/bbpress/form-topic-tag.php:91
 msgid "This does not delete your topics. Only the tag itself is deleted."
-msgstr "这不会删除您的话题。只会删除标签本身。"
+msgstr "这不会删除您的活动。只会删除标签本身。"
 
 #: templates/default/bbpress/form-topic-tag.php:94
 msgid "Deleting a tag cannot be undone."
@@ -4755,7 +4755,7 @@ msgstr "您确定要删除 \"%s\" 标签？这项操作是不可恢复的。"
 
 #: templates/default/bbpress/form-topic.php:43
 msgid "Create New Topic in &ldquo;%s&rdquo;"
-msgstr "在 &ldquo;%s&rdquo; 中创建新话题"
+msgstr "在 &ldquo;%s&rdquo; 中创建新活动"
 
 #: templates/default/bbpress/form-topic.php:53
 msgid ""
@@ -4765,27 +4765,27 @@ msgstr "该群活动已被标记为关闭，不过您的发表权限仍然允许
 
 #: templates/default/bbpress/form-topic.php:75
 msgid "Topic Title (Maximum Length: %d):"
-msgstr "话题标题(最大长度: %d):"
+msgstr "活动标题(最大长度: %d):"
 
 #: templates/default/bbpress/form-topic.php:101
 msgid "Topic Tags:"
-msgstr "话题标签:"
+msgstr "活动标签:"
 
 #: templates/default/bbpress/form-topic.php:133
 msgid "Topic Type:"
-msgstr "话题类型:"
+msgstr "活动类型:"
 
 #: templates/default/bbpress/form-topic.php:145
 msgid "Topic Status:"
-msgstr "编辑话题"
+msgstr "编辑活动"
 
 #: templates/default/bbpress/form-topic.php:234
 msgid "You cannot create new topics."
-msgstr "您不能创建新话题。"
+msgstr "您不能创建新活动。"
 
 #: templates/default/bbpress/form-topic.php:234
 msgid "You must be logged in to create new topics."
-msgstr "您需要先登录才可以创建新话题。"
+msgstr "您需要先登录才可以创建新活动。"
 
 #: templates/default/bbpress/form-user-edit.php:24
 msgid "First Name"
@@ -4959,7 +4959,7 @@ msgstr "档案"
 
 #: templates/default/bbpress/user-details.php:35
 msgid "%s's Topics Started"
-msgstr "%s 发起的话题"
+msgstr "%s 发起的活动"
 
 #: templates/default/bbpress/user-details.php:41
 msgid "%s's Replies Created"
@@ -4975,15 +4975,15 @@ msgstr "%s的报名"
 
 #: templates/default/bbpress/user-favorites.php:15
 msgid "Favorite Forum Topics"
-msgstr "收藏的群活动话题"
+msgstr "收藏的群活动活动"
 
 #: templates/default/bbpress/user-favorites.php:28
 msgid "You currently have no favorite topics."
-msgstr "您当前没有收藏任何话题."
+msgstr "您当前没有收藏任何活动."
 
 #: templates/default/bbpress/user-favorites.php:28
 msgid "This user has no favorite topics."
-msgstr "该用户没有收藏任何话题."
+msgstr "该用户没有收藏任何活动."
 
 #: templates/default/bbpress/user-profile.php:24
 msgid "Forum Role: %s"
@@ -4991,7 +4991,7 @@ msgstr "群活动角色：%s"
 
 #: templates/default/bbpress/user-profile.php:25
 msgid "Topics Started: %s"
-msgstr "话题发起：%s"
+msgstr "活动发起：%s"
 
 #: templates/default/bbpress/user-profile.php:26
 msgid "Replies Created: %s"
@@ -5003,11 +5003,11 @@ msgstr "创建的群活动主题"
 
 #: templates/default/bbpress/user-replies-created.php:28
 msgid "You have not replied to any topics."
-msgstr "您还没有回复任何话题."
+msgstr "您还没有回复任何活动."
 
 #: templates/default/bbpress/user-replies-created.php:28
 msgid "This user has not replied to any topics."
-msgstr "该用户还没有回答任何话题."
+msgstr "该用户还没有回答任何活动."
 
 #: templates/default/bbpress/user-subscriptions.php:19
 msgid "Subscribed Forums"
@@ -5031,15 +5031,15 @@ msgstr "该用户当前没有报名任何活动。"
 
 #: templates/default/bbpress/user-topics-created.php:15
 msgid "Forum Topics Started"
-msgstr "已发起的群活动话题"
+msgstr "已发起的群活动活动"
 
 #: templates/default/bbpress/user-topics-created.php:28
 msgid "You have not created any topics."
-msgstr "您还没有发表任何话题."
+msgstr "您还没有发表任何活动."
 
 #: templates/default/bbpress/user-topics-created.php:28
 msgid "This user has not created any topics."
-msgstr "该用户还没有创建任何话题."
+msgstr "该用户还没有创建任何活动."
 
 #: templates/default/bbpress-functions.php:248
 #: templates/default/bbpress-functions.php:257
@@ -5083,20 +5083,20 @@ msgstr "收藏夹不在有效。"
 
 #: templates/default/bbpress-functions.php:358
 msgid "Please login to make this topic a favorite."
-msgstr "请登录以确保该话题为收藏。"
+msgstr "请登录以确保该活动为收藏。"
 
 #: templates/default/bbpress-functions.php:375
 #: templates/default/bbpress-functions.php:443
 msgid "The topic could not be found."
-msgstr "该话题没有被找到！"
+msgstr "该活动没有被找到！"
 
 #: templates/default/bbpress-functions.php:426
 msgid "Please login to subscribe to this topic."
-msgstr "请登录以订阅该话题。"
+msgstr "请登录以订阅该活动。"
 
 #: templates/default/extras/page-forum-statistics.php:22
 msgid "<p>Here are the statistics and popular topics of our forums.</p>"
-msgstr "<p>下面是统计和我们的群活动热门的话题.</p>"
+msgstr "<p>下面是统计和我们的群活动热门的活动.</p>"
 
 #: templates/default/extras/page-topic-tags.php:22
 msgid ""

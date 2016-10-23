@@ -44,3 +44,23 @@
 	<?php do_action( 'bbp_template_after_topics_index' ); ?>
 
 </div>
+
+<script>
+	if (typeof $ === 'undefined') var $ = jQuery;
+	$(function() {
+		$("[data-toggle='popover']").each(function(index, element) {
+			var contentElementId = $(element).data().target;
+			var contentHtml = $(contentElementId).html();
+			$(element).popover({
+				content: contentHtml
+			});
+		});
+
+		$('body').on('click', function(e) {
+			if ($(e.target).data('toggle') !== 'popover'
+				&& $(e.target).parents('.popover.in').length === 0) {
+				$('[data-toggle="popover"]').popover('hide');
+			}
+		});
+	});
+</script>
