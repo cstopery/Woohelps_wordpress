@@ -151,14 +151,21 @@ function bbp_has_topics( $args = '' ) {
 	$default = array(
 		'post_type'      => bbp_get_topic_post_type(), // Narrow query down to bbPress topics
 		'post_parent'    => $default_post_parent,      // Forum ID
-		'meta_key'       => '_bbp_last_active_time',   // Make sure topic has some last activity time
-		'orderby'        => 'meta_value',              // 'meta_value', 'author', 'date', 'title', 'modified', 'parent', rand',
-		'order'          => 'DESC',                    // 'ASC', 'DESC'
+		'meta_key'       => 'date_and_time',   // changed to orderby activity date and time
+		'orderby'        => 'meta_value_num',              // 'meta_value', 'author', 'date', 'title', 'modified', 'parent', rand',
+		'order'          => 'ASC',                    // 'ASC', 'DESC'
 		'posts_per_page' => bbp_get_topics_per_page(), // Topics per page
 		'paged'          => bbp_get_paged(),           // Page Number
 		's'              => $default_topic_search,     // Topic Search
 		'show_stickies'  => $default_show_stickies,    // Ignore sticky topics?
 		'max_num_pages'  => false,                     // Maximum number of pages to show
+		'meta_query'	 => [
+			[
+				'key' => 'date_and_time',
+				'value' => time() * 1000,
+				'compare' => '>=' // later than today and now
+			]
+		]
 	);
 
 	// What are the default allowed statuses (based on user caps)

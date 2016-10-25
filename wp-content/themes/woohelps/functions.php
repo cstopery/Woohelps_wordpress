@@ -310,10 +310,18 @@ function bbp_extra_fields() {
         });
         timeInput.data('DateTimePicker').defaultDate(moment(parseInt(fakeTime1.val())).format("YYYY 年 M 月 DD 日 H:mm"));
 
+        timeInput.on('blur', function() {
+            fakeTime1.val((moment(timeInput.data('DateTimePicker').date()).unix()) * 1000);
+        });
+
         endTime.datetimepicker({
             format: "YYYY 年 M 月 DD 日"
         });
         endTime.data('DateTimePicker').defaultDate(moment(parseInt(fakeTime2.val())).format("YYYY 年 M 月 DD 日"));
+
+        endTime.on('blur', function() {
+            fakeTime2.val((moment(endTime.data('DateTimePicker').date()).unix()) * 1000);
+        });
     </script>
 <?php
 }
@@ -522,3 +530,17 @@ class Calendar {
     }
 
 }
+
+function sort_before_today($query) {
+    var_dump($query);
+    $meta_query = [
+        [
+            'key' => 'date_and_time',
+            'value' => time() * 1000,
+            'compare' => '>=' // later than today and now
+        ]
+    ];
+
+    $query->set('meta_query', $meta_query);
+}
+
