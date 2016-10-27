@@ -7,7 +7,6 @@
  Template:       docpress
  Version:        1.0.0
 */
-
 @import url("../docpress/style.css");
 
 /* =Theme customization starts here
@@ -18,123 +17,124 @@ woohelps Global
 ============================================
 */
 .navbar {
-	background: #616db3;
+    background: #616db3;
 }
 
 .container {
-	padding: 0;
+    padding: 0;
 }
 
 .row {
-	margin: 0;
+    margin: 0;
 }
 
 .navbar-default .navbar-nav > li > a {
-	color: #ffffff;
+    color: #ffffff;
 }
 
 .navbar .register-button {
-	line-height: 21px;
-	padding: 4px 20px;
-	font-size: 13px;
-	font-weight: 700;
-	margin-top: 6px;
+    line-height: 21px;
+    padding: 4px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 6px;
 }
 
 .navbar .register-button:hover {
-	background: #ffffff !important;
-	color: #e99002 !important;
+    background: #ffffff !important;
+    color: #e99002 !important;
 }
 
 .user-badge a {
-	padding: 7px 15px !important;
+    padding: 7px 15px !important;
 }
 
 .user-badge img {
-	max-width: 32px !important;
-	margin: 0 10px !important;
+    max-width: 32px !important;
+    margin: 0 10px !important;
 }
 
 .with-radius {
-	-webkit-border-radius: 8px !important;
-	-moz-border-radius: 8px !important;
-	border-radius: 8px !important;
+    -webkit-border-radius: 8px !important;
+    -moz-border-radius: 8px !important;
+    border-radius: 8px !important;
 }
 
 .woo-button {
-	font-size: 13px;
-	padding: 4px 20px;
+    font-size: 13px;
+    padding: 4px 20px;
 }
 
 .section-divider {
-	background: #f7f7f7;
-	padding: 20px 12px 1px 12px;
-	min-height: 120px;
+    background: #f7f7f7;
+    padding: 20px 12px 1px 12px;
+    min-height: 120px;
 }
 
 .section-divider .inner {
-	max-width: 750px;
+    max-width: 750px;
 }
 
 .category-list {
-	margin-top: 20px;
+    margin-top: 20px;
 }
 
 .category-list ul li {
-	list-style-type: none;
-	display: inline;
+    list-style-type: none;
+    display: inline;
 }
 
 .category-list ul li a, .category-list ul li a:focus {
-	display: inline-block;
-	border: 1px solid #cacaca;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	min-width: 80px;
-	text-align: center;
-	font-size: 13px;
-	padding: 4px 12px;
-	text-decoration: none;
+    display: inline-block;
+    border: 1px solid #cacaca;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    min-width: 80px;
+    text-align: center;
+    font-size: 13px;
+    padding: 4px 12px;
+    text-decoration: none;
 }
 
 .category-list ul li a:hover {
-	border: 1px solid #acacac;
-	color: #00b0ea;
+    border: 1px solid #acacac;
+    color: #00b0ea;
 }
+
 /* Added by Martin */
 
 .dwqa-question-footer {
-	width: 100%;
+    width: 100%;
 }
 
 .dwqa-question-footer span {
-	font-size: 11px;
-	color: #939393;
+    font-size: 11px;
+    color: #939393;
 }
 
 .dwqa-question-footer .subscribe-button {
-	margin-top: 4px;
-	float: right;
-	cursor: pointer;
+    margin-top: 4px;
+    float: right;
+    cursor: pointer;
 }
 
 .dwqa-question-footer .subscribe-button.processing {
-	color: #cecece;
+    color: #cecece;
 }
 
 .best-answer-author {
-	font-size: 10px;
-	background: #1ba1e2;
-	color: #fff;
-	padding: 2px 5px;
-	border-radius: 3px;
-	margin-right: 5px;
+    font-size: 10px;
+    background: #1ba1e2;
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-right: 5px;
 }
 
 .best-answer-author a, .page-content .best-answer-author a:focus, .page-content .best-answer-author a:hover {
-	color: #ffffff;
-	text-decoration: none !important;
+    color: #ffffff;
+    text-decoration: none !important;
 }
 
 /*
@@ -144,46 +144,46 @@ dw qa layout
 */
 
 .dwqa-home {
-	margin-top: 30px;
-	margin-bottom: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .dwqa-home .dwqa-status {
-	font-size: 11px;
+    font-size: 11px;
 }
 
 .dwqa-home .dwqa-questions-list {
-	border: none;
+    border: none;
 }
 
 .dwqa-home .dwqa-questions-list .dwqa-question-item {
-	padding: 15px 20px 15px 80px;
-	width: 49%;
-	display: inline-block;
-	vertical-align: top;
-	border-bottom: none;
-	border-left: none;
-	border-right: none;
-	border-top: 1px solid #eee;
+    padding: 15px 20px 15px 80px;
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #eee;
 }
 
 @media (max-width: 600px) {
-	.dwqa-home .dwqa-questions-list .dwqa-question-item {
-		width: 100%;
-	}
+    .dwqa-home .dwqa-questions-list .dwqa-question-item {
+        width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
-	.dwqa-home .dwqa-questions-list .dwqa-question-item .avatar {
-		position: absolute;
-		top: 40px;
-		width: auto;
-		height: auto;
-	}
+    .dwqa-home .dwqa-questions-list .dwqa-question-item .avatar {
+        position: absolute;
+        top: 40px;
+        width: auto;
+        height: auto;
+    }
 }
 
 .dwqa-home .dwqa-questions-list .dwqa-question-item .avatar {
-	top: 40px;
+    top: 40px;
 }
 
 /*
@@ -193,89 +193,89 @@ local service grids layout
 */
 
 .adverts-flexbox {
-	-webkit-column-count: 1;
-	-webkit-column-gap: 10px;
-	-webkit-column-fill: auto;
-	-moz-column-count: 1;
-	-moz-column-gap: 10px;
-	-moz-column-fill: auto;
-	column-count: 1;
-	column-gap: 15px;
-	column-fill: auto;
-	margin-bottom: 30px;
+    -webkit-column-count: 1;
+    -webkit-column-gap: 10px;
+    -webkit-column-fill: auto;
+    -moz-column-count: 1;
+    -moz-column-gap: 10px;
+    -moz-column-fill: auto;
+    column-count: 1;
+    column-gap: 15px;
+    column-fill: auto;
+    margin-bottom: 30px;
 }
 
 @media (min-width: 600px) {
-	.adverts-flexbox {
-		-webkit-column-count: 2;
-		-moz-column-count: 2;
-		column-count: 2;
-	}
+    .adverts-flexbox {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
 }
 
 @media (min-width: 800px) {
-	.adverts-flexbox {
-		-webkit-column-count: 3;
-		-moz-column-count: 3;
-		column-count: 3;
-	}
+    .adverts-flexbox {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
 }
 
 @media (min-width: 960px) {
-	.adverts-flexbox {
-		-webkit-column-count: 4;
-		-moz-column-count: 4;
-		column-count: 4;
-	}
+    .adverts-flexbox {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
+    }
 }
 
 .adverts-flexbox-item {
-	display: inline-block;
-	background: #FEFEFE;
-	border: 2px solid #FAFAFA;
-	margin: 15px 2px 0;
-	width: 100%;
-	-webkit-column-break-inside: avoid;
-	-moz-column-break-inside: avoid;
-	column-break-inside: avoid;
-	padding: 15px 15px 5px;
-	-webkit-transition: all .2s ease;
-	-moz-transition: all .2s ease;
-	-o-transition: all .2s ease;
-	transition: all .2s ease;
+    display: inline-block;
+    background: #FEFEFE;
+    border: 2px solid #FAFAFA;
+    margin: 15px 2px 0;
+    width: 100%;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
+    padding: 15px 15px 5px;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
 }
 
 .adverts-flexbox-item:hover {
-	border: 2px solid #eeeeee;
+    border: 2px solid #eeeeee;
 }
 
 .adverts-category-all-main {
-	font-size: 16px;
+    font-size: 16px;
 }
 
 .adverts-category-all-main a, .adverts-category-all-main a:focus {
-	display: block;
-	margin: 5px 0 5px;
-	color: #3a3a3a;
+    display: block;
+    margin: 5px 0 5px;
+    color: #3a3a3a;
 }
 
 .adverts-category-all-main a:hover {
-	color: #737373;
+    color: #737373;
 }
 
 .adverts-flexbox-list a, adverts-flexbox-list a:focus {
-	font-size: 13px;
+    font-size: 13px;
 }
 
 .adverts-flexbox-list li {
-	display: inline-block;
-	width: 31%;
-	margin-bottom: 5px;
-	vertical-align: top;
+    display: inline-block;
+    width: 31%;
+    margin-bottom: 5px;
+    vertical-align: top;
 }
 
 .adverts-flexbox-list li:last-child {
-	display: none;
+    display: none;
 }
 
 /*
@@ -285,29 +285,29 @@ google maps layout
 */
 
 .gmap {
-	margin-top: 30px;
-	margin-bottom: 30px;
-	min-height: 480px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    min-height: 480px;
 }
 
 .locations-list {
-	margin-top: 30px;
-	margin-bottom: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .wpgmp_tabs_container {
-	padding: 0 5px !important;
-	right: 10px !important;
+    padding: 0 5px !important;
+    right: 10px !important;
 }
 
 .wpgmp_toggle_container {
-	width: 50px !important;
-	right: 0 !important;
-	left: auto !important;
+    width: 50px !important;
+    right: 0 !important;
+    left: auto !important;
 }
 
 .wpgmp_tabs {
-	display: none !important;
+    display: none !important;
 }
 
 /*
@@ -317,89 +317,89 @@ dw qa sections layout
 */
 
 .dwqa-questions-list .dwqa-question-item {
-	border-left: none;
-	border-right: none;
-	padding-right: 0;
+    border-left: none;
+    border-right: none;
+    padding-right: 0;
 }
 
 .dwqa-questions-list .question-meta .view-count {
-	position: absolute;
-	left: 0;
-	top: 75px;
-	width: 75px;
-	text-align: center;
-	font-size: 12px;
-	color: #888;
+    position: absolute;
+    left: 0;
+    top: 75px;
+    width: 75px;
+    text-align: center;
+    font-size: 12px;
+    color: #888;
 }
 
 .dwqa-questions-list .dwqa-status {
-	font-size: 10px;
-	padding: 2px 5px;
+    font-size: 10px;
+    padding: 2px 5px;
 }
 
 .dwqa-questions-list .best-answer-excerpt {
-	margin: 15px 0;
-	text-overflow: ellipsis;
-	word-wrap: break-word;
-	overflow: hidden;
-	max-height: 6em;
-	line-height: 1.5em;
+    margin: 15px 0;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 6em;
+    line-height: 1.5em;
 }
 
 .dwqa-questions-list .best-answer-author {
-	font-size: 10px;
-	background: #1ba1e2;
-	color: #fff;
-	padding: 2px 5px;
-	border-radius: 3px;
-	margin-right: 5px;
+    font-size: 10px;
+    background: #1ba1e2;
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-right: 5px;
 }
 
 .dwqa-questions-list .best-answer-author a, dwqa-questions-list .best-answer-author a:focus, dwqa-questions-list .best-answer-author a:hover {
-	color: #ffffff;
-	text-decoration: none !important;
+    color: #ffffff;
+    text-decoration: none !important;
 }
 
 .dwqa-questions-list .dwqa-question-item .avatar {
-	top: 40px;
+    top: 40px;
 }
 
 .dwqa-questions-list .dwqa-question-footer {
-	width: 100%;
+    width: 100%;
 }
 
 .dwqa-questions-list .dwqa-question-footer span {
-	font-size: 11px;
-	color: #939393;
+    font-size: 11px;
+    color: #939393;
 }
 
 .dwqa-questions-list .dwqa-question-footer .subscribe-button {
-	margin-top: 4px;
-	float: right;
-	cursor: pointer;
+    margin-top: 4px;
+    float: right;
+    cursor: pointer;
 }
 
 .dwqa-questions-list .dwqa-question-footer .subscribe-button.processing {
-	color: #cecece;
+    color: #cecece;
 }
 
 .to-top {
-	position: fixed;
-	bottom: 40px;
-	right: 40px;
-	z-index: 199;
-	cursor: pointer;
-	display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 199;
+    cursor: pointer;
+    display: none;
 }
 
 .to-top .inner {
-	padding: 2px 9px;
-	background: #cdcdcd;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	color: #919191;
-	font-size: 20px;
+    padding: 2px 9px;
+    background: #cdcdcd;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #919191;
+    font-size: 20px;
 }
 
 /*
@@ -409,16 +409,16 @@ page sections layout
 */
 
 div.page-content {
-	margin-top: 120px;
-	margin-bottom: 40px;
+    margin-top: 120px;
+    margin-bottom: 40px;
 }
 
 div.doc-main .container {
-	padding: 0 15px;
+    padding: 0 15px;
 }
 
 div.sidebar {
-	margin-top: 40px;
+    margin-top: 40px;
 }
 
 div.footer {
@@ -432,19 +432,19 @@ helpers
 */
 
 .margin-top {
-	margin-top: 20px;
+    margin-top: 20px;
 }
 
 .margin-top-bigger {
-	margin-top: 60px;
+    margin-top: 60px;
 }
 
 .margin-top-100 {
-	margin-top: 100px;
+    margin-top: 100px;
 }
 
 .margin-bottom {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 /*
@@ -454,135 +454,135 @@ bp groups sections layout
 */
 
 .bp-group-item {
-	display: block;
-	margin: 0 0 50px 0;
-	overflow: hidden;
+    display: block;
+    margin: 0 0 50px 0;
+    overflow: hidden;
 }
 
 .bp-group-item-inner {
-	position: relative;
-	height: 180px;
+    position: relative;
+    height: 180px;
 }
 
 .bp-group-item-inner img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .bp-group-meta {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
-	width: 100%;
-	padding: 0 12px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0); /* IE6-9 */
+    width: 100%;
+    padding: 0 12px;
 }
 
 .bp-group-title {
-	color: #ffffff;
-	font-size: 20px;
-	margin: 100px 0 0 0;
-	font-weight: 700;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 100px 0 0 0;
+    font-weight: 700;
 }
 
 .bp-group-member-count {
-	color: #ffffff;
-	font-size: 10px;
-	margin: 0 0 10px 0;
+    color: #ffffff;
+    font-size: 10px;
+    margin: 0 0 10px 0;
 }
 
 .attendee-list img {
-	width: 36px;
-	height: 36px;
-	margin-right: 5px;
+    width: 36px;
+    height: 36px;
+    margin-right: 5px;
 }
 
 .attendee-list li {
-	list-style: none !important;
+    list-style: none !important;
 }
 
 .group-button .join-group {
-	float: left !important;
-	border-radius: 5px !important;
-	background: #9370DB !important;
-	color: #fff !important;
-	padding: 6px 20px !important;
-	font-size: 16px !important;
+    float: left !important;
+    border-radius: 5px !important;
+    background: #9370DB !important;
+    color: #fff !important;
+    padding: 6px 20px !important;
+    font-size: 16px !important;
 }
 
 .group-button .join-group:hover {
-	background: #795cb4 !important;
+    background: #795cb4 !important;
 }
 
 .group-button .join-group:active {
-	background: #8465c5 !important;
+    background: #8465c5 !important;
 }
 
 .group-button .leave-group {
-	float: left !important;
-	border-radius: 5px !important;
-	padding: 6px 20px !important;
-	font-size: 16px !important;
+    float: left !important;
+    border-radius: 5px !important;
+    padding: 6px 20px !important;
+    font-size: 16px !important;
 }
 
 .bbp-reply-content {
-	margin-left: 0 !important;
-	width: 65%;
-	display: inline-block;
-	vertical-align: top;
+    margin-left: 0 !important;
+    width: 65%;
+    display: inline-block;
+    vertical-align: top;
 }
 
 .bbp-reply-sidebar {
-	display: inline-block;
-	width: 34%;
+    display: inline-block;
+    width: 34%;
 }
 
 @media (max-width: 640px) {
-	.bbp-reply-content {
-		width: 100%;
-	}
+    .bbp-reply-content {
+        width: 100%;
+    }
 
-	.bbp-reply-sidebar {
-		width: 100%;
-	}
+    .bbp-reply-sidebar {
+        width: 100%;
+    }
 }
 
 .subscription-button {
-	width: 100%;
-	text-align: center;
-	padding-top: 15px;
-	margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+    margin-bottom: 30px;
 }
 
 .bbp-reply-title {
-	text-align: center;
-	margin-top: 0 !important;
+    text-align: center;
+    margin-top: 0 !important;
 }
 
 .bbp-reply-inner-content {
-	padding: 0 10px;
-	margin-bottom: 30px;
+    padding: 0 10px;
+    margin-bottom: 30px;
 }
 
 .bbp-reply-inner-content p {
-	font-size: 13px;
+    font-size: 13px;
 }
 
 li.bbp-topic-title {
-	font-size: 16px;
-	width: 77%;
+    font-size: 16px;
+    width: 77%;
 }
 
 .bbp-reply-header {
-	padding: 1px !important;
+    padding: 1px !important;
 }
 
 div.bbp-forum-header, div.bbp-topic-header, div.bbp-reply-header, li.bbp-body div.hentry {
-	padding: 20px 8px;
+    padding: 20px 8px;
 }
 
 /*
@@ -590,130 +590,129 @@ div.bbp-forum-header, div.bbp-topic-header, div.bbp-reply-header, li.bbp-body di
 calendar sections layout
 ============================================
 */
-div#calendar{
-	margin:0px auto;
-	padding:0px;
-	width: 100%;
+div#calendar {
+    margin: 0px auto;
+    padding: 0px;
+    width: 100%;
 }
 
-div#calendar div.box{
-	position:relative;
-	margin: 0;
-	border: none;
-	border-radius: 0;
-	top:0px;
-	left:0px;
-	width:100%;
-	height:40px;
-	background-color:   #787878 ;
+div#calendar div.box {
+    position: relative;
+    margin: 0;
+    border: 1px solid #b4b4b4;
+    border-radius: 3px 3px 0 0;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 40px;
+    background-color: #ffffff;
 }
 
-div#calendar div.header{
-	line-height:40px;
-	vertical-align:middle;
-	position:absolute;
-	left:11px;
-	top:0px;
-	width:100%;
-	height:40px;
-	text-align:center;
+div#calendar div.header {
+    line-height: 35px;
+    vertical-align: middle;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /*height: 40px;*/
+    text-align: left;
 }
 
-div#calendar div.header a.prev,div#calendar div.header a.next{
-	position:absolute;
-	top:0px;
-	height: 17px;
-	display:block;
-	cursor:pointer;
-	text-decoration:none;
-	color:#FFF;
+div#calendar div.header a.prev, div#calendar div.header a.next {
+    position: absolute;
+    top: 0px;
+    height: 17px;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
 }
 
-div#calendar div.header span.title{
-	color:#FFF;
-	font-size:18px;
+div#calendar div.header span.title {
+    color: #2e2e2e;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 15px;
 }
 
-div#calendar div.header a.prev{
-	left:0px;
+div#calendar div.header a.prev {
+    left: 0px;
 }
 
-div#calendar div.header a.next{
-	right:0px;
+div#calendar div.header a.next {
+    right: 0px;
 }
 
-div#calendar div.box-content{
-	border:1px solid #787878 ;
-	border-top:none;
+div#calendar div.box-content {
+    border: 1px solid #cdcdcd;
+    border-top: none;
+    padding-bottom: 3px;
 }
 
-div#calendar ul.label{
-	float:left;
-	margin: 0px;
-	padding: 0px;
-	margin-top:5px;
-	margin-left: 5px;
-	width: 100%;
+div#calendar ul.label {
+    float: left;
+    margin: 0;
+    padding: 4px 0;
+    width: 100%;
+    background: #eee;
 }
 
-div#calendar ul.label li{
-	margin:0px;
-	padding:0px;
-	float:left;
-	list-style-type:none;
-	width:14%;
-	height:20px;
-	line-height:20px;
-	vertical-align:middle;
-	text-align:center;
-	color:#000;
-	font-size: 15px;
-	background-color: transparent;
+div#calendar ul.label li {
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    list-style-type: none;
+    width: 14%;
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+    text-align: center;
+    color: #000;
+    font-size: 15px;
+    background-color: transparent;
 }
 
-
-div#calendar ul.dates{
-	float:left;
-	margin: 0px;
-	padding: 0px;
-	margin-left: 5px;
-	margin-bottom: 5px;
-	width: 100%;
+div#calendar ul.dates {
+    margin: 3px;
+    padding: 0;
+    width: 100%;
 }
 
 /** overall width = width+padding-right**/
-div#calendar ul.dates li{
-	margin:0px;
-	padding:0px;
-	margin-top: 5px;
-	line-height:30px;
-	vertical-align:middle;
-	float:left;
-	list-style-type:none;
-	width:14%;
-	height:30px;
-	font-size:16px;
-	background-color: #DDD;
-	color:#000;
-	text-align:center;
+div#calendar ul.dates li {
+    margin: 0px 0 0 0;
+    padding: 0;
+    line-height: 30px;
+    vertical-align: middle;
+    float: left;
+    list-style-type: none;
+    width: 14%;
+    height: 30px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    border: 1px solid #eee;
 }
 
-div#calendar button {
-	margin-top: -4px;
+div#calendar ul.dates button {
+    margin-top: -5px;
+    padding: 5px 10px;
 }
 
 .popover {
-	background: #f8f8f8;
+    background: #f8f8f8;
 }
 
-.popover.top>.arrow:after {
-	border-top-color: #f8f8f8;
+.popover.top > .arrow:after {
+    border-top-color: #f8f8f8;
 }
 
-:focus{
-	outline:none;
+:focus {
+    outline: none;
 }
 
-div.clear{
-	clear:both;
+div.clear {
+    clear: both;
 }
