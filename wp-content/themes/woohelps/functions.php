@@ -531,16 +531,9 @@ class Calendar {
 
 }
 
-function sort_before_today($query) {
-    var_dump($query);
-    $meta_query = [
-        [
-            'key' => 'date_and_time',
-            'value' => time() * 1000,
-            'compare' => '>=' // later than today and now
-        ]
-    ];
-
-    $query->set('meta_query', $meta_query);
+function dd($input) {
+    echo '<pre>';
+    print_r($input);
+    echo '</pre>';
+    die;
 }
-

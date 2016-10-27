@@ -203,6 +203,8 @@ function bbp_has_topics( $args = '' ) {
 	// Parse arguments against default values
 	$r = bbp_parse_args( $args, $default, 'has_topics' );
 
+	if ($r['order'] == 'DESC') $r['order'] = 'ASC'; // force to ASC order
+
 	// Get bbPress
 	$bbp = bbpress();
 
