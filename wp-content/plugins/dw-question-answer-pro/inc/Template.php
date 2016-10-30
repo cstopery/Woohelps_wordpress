@@ -168,7 +168,7 @@ function dwqa_question_button_action() {
 function dwqa_answer_button_action() {
 	$html = '';
 	if ( is_user_logged_in() ) {
-		if ( dwqa_current_user_can( 'edit_answer' ) ) {
+		if ( dwqa_current_user_can( 'edit_answer' , get_the_ID()) ) {
 			$parent_id = dwqa_get_question_from_answer_id();
 			$html .= '<a class="dwqa_edit_question" href="'. add_query_arg( array( 'edit' => get_the_ID() ), get_permalink( $parent_id ) ) .'">' . __( 'Edit', 'dwqa' ) . '</a> ';
 		}
