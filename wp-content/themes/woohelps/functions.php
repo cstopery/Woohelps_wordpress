@@ -3,6 +3,7 @@
 /* Disable WordPress Admin Bar for all users but admins. */
 
 show_admin_bar(false);
+date_default_timezone_set(get_option('timezone_string'));
 
 // Added footer credits
 function woohelps_footer_credits() {
@@ -306,9 +307,9 @@ function bbp_extra_fields() {
         };
 
         timeInput.datetimepicker({
-            format: "YYYY 年 M 月 DD 日 H:mm"
+            format: "YYYY 年 M 月 DD 日 H:m"
         });
-        timeInput.data('DateTimePicker').defaultDate(moment(parseInt(fakeTime1.val())).format("YYYY 年 M 月 DD 日 H:mm"));
+        timeInput.data('DateTimePicker').defaultDate(moment(parseInt(fakeTime1.val())).format("YYYY 年 M 月 DD 日 H:m"));
 
         timeInput.on('blur', function() {
             fakeTime1.val((moment(timeInput.data('DateTimePicker').date()).unix()) * 1000);

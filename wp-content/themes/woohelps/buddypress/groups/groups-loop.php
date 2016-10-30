@@ -32,7 +32,7 @@ do_action('bp_before_groups_loop'); ?>
 
 	<div class="row">
 		<?php while (bp_groups()) : bp_the_group(); ?>
-			<div class="col-xs-6 bp-group-item">
+			<div class="col-xs-4 bp-group-item">
 				<a href="<?php bp_group_permalink(); ?>forum/">
 					<div class="bp-group-item-inner">
 						<?php // Get the Cover Image
