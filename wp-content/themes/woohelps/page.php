@@ -4,7 +4,20 @@
 	<div class="page-content doc-main">
 		<div class="container">
 			<div class="row">
-				<div class="main-content page col-xs-12 col-md-8">
+				<?php
+				if (is_page('meetup')) {
+					?>
+					<div class="main-content page col-xs-12">
+						<div class="group-toggle btn-group" role="group" aria-label="group-toggle">
+							<a href="#" class="btn btn-primary">Groups</a>
+							<a href="/meetups-list/" class="btn btn-info">Calendar</a>
+						</div>
+					<?php
+				}
+				else {
+					echo '<div class="main-content page col-xs-12 col-md-8">';
+				}
+				?>
 					<?php if ( have_posts() ) : ?>
 						<?php while ( have_posts() ) : the_post(); ?>
 							<?php get_template_part( 'content', 'page' ); ?>
@@ -18,8 +31,15 @@
 							<?php get_template_part( 'content', 'none' ); ?>
 					<?php endif; ?>
 				</div>
+				<?php
+				if (!is_page('meetup')) :
+				?>
 				<div class="col-md-4 col-xs-12">
 					<?php if (is_page('meetups-list')): ?>
+						<div class="group-toggle btn-group" role="group" aria-label="group-toggle">
+							<a href="/meetup/" class="btn btn-info">Groups</a>
+							<a href="#" class="btn btn-primary">Calendar</a>
+						</div>
 						<?php
 						$topics = array();
 
@@ -44,6 +64,7 @@
 					<?php endif;?>
 				    <?php get_sidebar(); ?>
 				</div>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>

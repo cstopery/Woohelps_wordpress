@@ -94,7 +94,7 @@
 
 				<tr>
 					<td style="width: 70px;"><strong>时间</strong></td>
-					<td><?=date('H:m', $meta['date_and_time'] / 1000);?></td>
+					<td><?=date('H:i', $meta['date_and_time'] / 1000);?></td>
 				</tr>
 
 				<tr>
