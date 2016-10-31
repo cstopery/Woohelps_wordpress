@@ -11,7 +11,7 @@
 
 <div class="section-divider">
     <div class="container">
-        <h2 class="text-center">
+        <h2 class="text-center" style="color: #008cba;">
             同城活动日历
         </h2>
         <div class="row">

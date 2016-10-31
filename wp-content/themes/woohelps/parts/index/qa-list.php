@@ -20,11 +20,11 @@
 				<div class="clearfix"></div>
 				<div class="category-list text-right">
 					<ul>
-						<li><a href="#">新移民</a></li>
-						<li><a href="#">孩子</a></li>
-						<li><a href="#">解除条件</a></li>
-						<li><a href="#">汽车</a></li>
-						<li><a href="#">活动</a></li>
+						<li><a class="woohelps-item-tag" href="#">新移民</a></li>
+						<li><a class="woohelps-item-tag" href="#">孩子</a></li>
+						<li><a class="woohelps-item-tag" href="#">解除条件</a></li>
+						<li><a class="woohelps-item-tag" href="#">汽车</a></li>
+						<li><a class="woohelps-item-tag" href="#">活动</a></li>
 					</ul>
 				</div>
 			</div>
