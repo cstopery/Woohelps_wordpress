@@ -11,7 +11,7 @@
 	<div class="dwqa-home-subtitle-section">
 		<div class="container">
 			<div class="col-md-4 dwqa-home-subtitle">
-				<h4>在萨斯卡通你感兴趣的信息</h4>
+				<h3>这里有你感兴趣的加拿大信息</h3>
 			</div>
 			<div class="col-md-8">
 				<div style="padding-top:10px;">
