@@ -357,13 +357,19 @@ class DWQA_Status {
 			$answer = get_post( $answer_id );
 			if ( $question_id && $answer->post_author ) {
 				$question_status = get_post_meta( $question_id, '_dwqa_status', true );
-				if ( dwqa_current_user_can( 'edit_question' ) ) {
+
+				if($answer->post_status != 'draft' && $question_status == 'open')
+				{
+					update_post_meta( $question_id, '_dwqa_status', 'answered' );
+				}
+
+				/*if ( dwqa_current_user_can( 'edit_question' ) ) {
 					update_post_meta( $question_id, '_dwqa_status', 'answered' );
 				} else {
 					if ( $question_status == 'resolved' || $question_status == 'answered' ) {
 						update_post_meta( $question_id, '_dwqa_status', 'open' );
 					}
-				}
+				}*/
 			}
 		}
 	}

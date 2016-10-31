@@ -92,7 +92,7 @@ class DWQA_Handle {
 
 		if ( !is_wp_error( $answer_id ) ) {
 			if ( $answers['post_status'] != 'draft' ) {
-				update_post_meta( $question_id, '_dwqa_status', 'answered' );
+//				update_post_meta( $question_id, '_dwqa_status', 'answered' );
 				update_post_meta( $question_id, '_dwqa_answered_time', time() );
 				update_post_meta( $answer_id, '_dwqa_votes', 0 );
 				$answer_count = get_post_meta( $question_id, '_dwqa_answers_count', true );
@@ -122,8 +122,14 @@ class DWQA_Handle {
 	}
 
 	public function update_answer() {
+		/**
+		 * answer id
+		 */
+
+		$answer_id = isset($_POST['answer_id']) ? intval($_POST['answer_id']) : 0;
+
 		if ( isset( $_POST['dwqa-edit-answer-submit'] ) ) {
-			if ( !dwqa_current_user_can( 'edit_answer' ) ) {
+			if ( !dwqa_current_user_can( 'edit_answer' , $answer_id) ) {
 				dwqa_add_notice( __( "You do not have permission to edit answer.", 'dwqa' ), 'error' );
 			}
 
