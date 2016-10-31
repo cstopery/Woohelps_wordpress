@@ -9,8 +9,8 @@
 					?>
 					<div class="main-content page col-xs-12">
 						<div class="group-toggle btn-group" role="group" aria-label="group-toggle">
-							<a href="#" class="btn btn-primary">Groups</a>
-							<a href="/meetups-list/" class="btn btn-info">Calendar</a>
+							<a href="#" class="btn btn-primary">显示所有活动群</a>
+							<a href="/meetups-list/" class="btn btn-info">显示所有活动日历</a>
 						</div>
 					<?php
 				}
