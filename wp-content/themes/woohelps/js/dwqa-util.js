@@ -56,6 +56,13 @@ $(function() {
         }
     });
 
+    $('#backButton').on('click', function(e) {
+        e.preventDefault();
+            window.location.href = "/dwqa-questions/";
+    });
+
+
+
     $('.subscribe-button').on('click',function(e){
         e.preventDefault();
         var t = $(this);
