@@ -61,8 +61,10 @@
 						$calendar = new Calendar($topics);
 						echo $calendar->show();
 						?>
+					<?php else: ?>
+						<?php get_sidebar(); ?>
 					<?php endif;?>
-				    <?php get_sidebar(); ?>
+
 				</div>
 				<?php endif; ?>
 			</div>
