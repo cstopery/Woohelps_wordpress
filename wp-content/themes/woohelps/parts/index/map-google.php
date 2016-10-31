@@ -15,7 +15,7 @@
     <div class="col-lg-8 col-md-8 sub-title-line">
     </div>
     <div class="col-lg-2 col-md-2">
-        <a class="btn btn-primary with-radius woo-button pull-right" href="#">我要显示在地图上</a>
+        <a class="btn btn-primary with-radius woo-button pull-right" href="/map-submit-form/">我要显示在地图上</a>
     </div>
 </div>
 

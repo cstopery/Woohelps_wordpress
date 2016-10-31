@@ -17,7 +17,7 @@ woohelps Global
 ============================================
 */
 .navbar {
-    background: #616db3;
+    background: #333a5f;
     font-family: "Hiragino Sans GB","Helvetica Neue",Helvetica,Arial,Verdana,"Microsoft Yahei",sans-serif;
     font-size: 14px;
 }
@@ -148,6 +148,7 @@ woohelps Global
 }
 
 .woohelps-item-tag {
+    border: 1px solid #cacaca;
     background: #eff6fa;
     padding: 1px 10px 0;
     border-radius: 30px;

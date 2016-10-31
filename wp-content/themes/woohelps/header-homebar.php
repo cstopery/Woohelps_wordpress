@@ -28,8 +28,8 @@
 
 				<?php if (!is_user_logged_in()): ?>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a class="btn btn-warning register-button with-radius" href="#" data-toggle="modal" data-target="#registerModal">注册</a></li>
-						<li><a class="btn btn-warning register-button with-radius" href="#" data-toggle="modal" data-target="#loginModal">登录</a></li>
+						<li><a class="btn register-button with-radius" href="#" data-toggle="modal" data-target="#registerModal">注册</a></li>
+						<li><a class="btn register-button with-radius" href="#" data-toggle="modal" data-target="#loginModal">登录</a></li>
 					</ul>
 					<?php else: ?>
 						<?php $user = wp_get_current_user(); ?>
