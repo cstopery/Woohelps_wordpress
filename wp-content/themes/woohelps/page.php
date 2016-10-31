@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php get_header('bar'); ?>
+<?php get_header('homebar'); ?>
 
 	<div class="page-content doc-main">
 		<div class="container">
