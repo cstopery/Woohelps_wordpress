@@ -34,6 +34,17 @@
 	<?php endif; ?>
 </div>
 
+<?php
+$topic_id = bbp_get_topic_id();
+$meta['date_and_time'] = get_post_meta( $topic_id, 'date_and_time', true);
+$meta['organizer'] = get_post_meta( $topic_id, 'organizer', true);
+$meta['attendee_count_limit'] = get_post_meta( $topic_id, 'attendee_count_limit', true);
+$meta['enroll_deadline'] = get_post_meta( $topic_id, 'enroll_deadline', true);
+$meta['fee'] = get_post_meta( $topic_id, 'fee', true);
+$meta['location'] = get_post_meta( $topic_id, 'location', true);
+$meta['attendee_count'] = bbp_get_attendee_count( $topic_id );
+?>
+
 <div <?php bbp_reply_class(); ?>>
 
 	<div class="bbp-reply-content">
@@ -57,13 +68,16 @@
 		?>
 		<div class="attendee-list">
 			<?php if (is_array($subscribers) && count($subscribers) > 0) : ?>
-				<h5>参加人数：<?=count($subscribers)?> 人</h5>
+				<h5>参加人数：<?=$meta['attendee_count']?> 人</h5>
 				<ul>
 					<?php foreach($subscribers as $id): $user = get_user_by( 'id', $id ); ?>
 						<li>
 							<a href="<?=bbp_get_user_profile_url($user->ID);?>" target="_blank">
 								<?=get_avatar( $user->ID, 45 );?>
 							</a>
+							<span class="attendee-info">
+								<?=bbp_get_user_nicename($user->ID)?> 预定 <?=get_user_meta($user->ID, 'subscribe-' . $topic_id, true)?> 个名额
+							</span>
 						</li>
 					<?php endforeach; ?>
 				</ul>
@@ -73,16 +87,6 @@
 		</div>
 
 	</div><!-- .bbp-reply-content -->
-
-	<?php
-	$topic_id = bbp_get_topic_id();
-	$meta['date_and_time'] = get_post_meta( $topic_id, 'date_and_time', true);
-	$meta['organizer'] = get_post_meta( $topic_id, 'organizer', true);
-	$meta['attendee_count_limit'] = get_post_meta( $topic_id, 'attendee_count_limit', true);
-	$meta['enroll_deadline'] = get_post_meta( $topic_id, 'enroll_deadline', true);
-	$meta['fee'] = get_post_meta( $topic_id, 'fee', true);
-	$meta['location'] = get_post_meta( $topic_id, 'location', true);
-	?>
 
 	<div class="bbp-reply-sidebar">
 		<div class="table-responsive">

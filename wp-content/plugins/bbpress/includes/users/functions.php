@@ -1271,6 +1271,8 @@ function bbp_subscriptions_handler( $action = '' ) {
 	$user_id  = bbp_get_user_id( 0, true, true );
 	$topic_id = intval( $_GET['topic_id'] );
     $forum_id = intval( $_GET['forum_id'] );
+    $resv_count = intval($_GET['resv']);
+    if ($resv_count === 0) $resv_count = 1;
 
 	// Check for empty topic
 	if ( empty( $topic_id ) ) {
@@ -1295,26 +1297,28 @@ function bbp_subscriptions_handler( $action = '' ) {
 	$is_subscription = bbp_is_user_subscribed( $user_id, $topic_id );
 	$success         = false;
 
-	if ( true === $is_subscription && 'bbp_unsubscribe' === $action ) {
-		$success = bbp_remove_user_subscription( $user_id, $topic_id );
-	} elseif ( false === $is_subscription && 'bbp_subscribe' === $action ) {
-	    // check subscribers count
-        $limit = get_post_meta( $topic_id, 'attendee_count_limit', true);
-        $subscribers = bbp_get_topic_subscribers( $topic_id );
-        if (is_array($subscribers)) {
-            if (count($subscribers) >= intval($limit)) {
-                bbp_add_error( 'bbp_subscription_topic_id', '活动参与者人数已达上限，请关注我们的其他活动！' );
-                return;
-            }
-            else {
-                $success = bbp_add_user_subscription( $user_id, $topic_id );
-            }
-        }
-        else {
-            bbp_add_error( 'bbp_subscription_topic_id', '此话题数据有问题，请联系管理员' );
+	if ( true === $is_subscription && 'bbp_unsubscribe' === $action) {
+        bbp_remove_attendee($topic_id, $user_id);
+        $success = bbp_remove_user_subscription($user_id, $topic_id);
+    }
+    elseif (false === $is_subscription && 'bbp_subscribe' === $action) {
+        // check subscribers count
+        $limit = intval(get_post_meta($topic_id, 'attendee_count_limit', true));
+        $attendee_count = intval(bbp_get_attendee_count($topic_id));
+
+        if ($attendee_count >= $limit) {
+            bbp_add_error('bbp_subscription_topic_id', '活动参与者人数已达上限，请关注我们的其他活动！');
             return;
         }
-	}
+        elseif ($attendee_count + $resv_count > $limit) {
+            bbp_add_error('bbp_subscription_topic_id', '预定人数不能大于剩余名额！');
+            return;
+        }
+        else {
+            bbp_add_attendee_count($topic_id, $resv_count, $user_id);
+            $success = bbp_add_user_subscription($user_id, $topic_id);
+        }
+    }
 
 	// Do additional subscriptions actions
 	do_action( 'bbp_subscriptions_handler', $success, $user_id, $topic_id, $action );

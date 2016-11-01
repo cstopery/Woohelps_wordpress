@@ -56,6 +56,7 @@
 			$topics[$key]->meta['enroll_deadline'] = get_post_meta( $id, 'enroll_deadline', true);
 			$topics[$key]->meta['fee'] = get_post_meta( $id, 'fee', true);
 			$topics[$key]->meta['location'] = get_post_meta( $id, 'location', true);
+			$topics[$key]->meta['attendee_count'] = bbp_get_attendee_count( $id );
 
             $topics[$key]->forum = [];
 		    $topics[$key]->forum['name'] = get_the_title($topics[$key]->post_parent);
@@ -89,7 +90,7 @@
                                 <strong>地址：</strong><?=$topics[$key]->meta['location']?>
                             </p>
                             <p class="text-muted">
-                                <strong>参加人数：</strong><?=count($topics[$key]->subscribers)?> 人
+                                <strong>参加人数：</strong><?=$topics[$key]->meta['attendee_count']?> 人
                             </p>
 						</div>
 					</div>
