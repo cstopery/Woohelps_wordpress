@@ -1,0 +1,150 @@
+/* Codepen: https://codepen.io/amustill/pen/dgjxE */
+
+.mce-edit-area {
+    position: relative!important;
+}
+
+.dw-tinymce-imgur-upload-loading {
+    position: absolute!important;
+    top: 0;
+    left: 0;
+    width: 100%!important;
+    height: 100%!important;
+    background: rgba(0, 0, 0, 0.15)!important;
+}
+
+.dw-tinymce-imgur-upload-loading .loading {
+    position: absolute;
+    top: 20%;
+    left: 48%;
+    border-width: 20px;
+    border-radius: 50%;
+    -webkit-animation: spin 1s linear infinite;
+    -moz-animation: spin 1s linear infinite;
+    -o-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    /* Loading style */
+    border-style: double;
+    border-color: #444 #fff #fff;
+}
+
+@-webkit-keyframes spin {
+    100% { -webkit-transform: rotate(359deg); }
+}
+
+@-moz-keyframes spin {
+    100% { -moz-transform: rotate(359deg); }
+}
+
+@-o-keyframes spin {
+    100% { -moz-transform: rotate(359deg); }
+}
+
+@keyframes spin {
+    100% {  transform: rotate(359deg); }
+}
+
+#dw-tmce-imgur-library-area {
+    width: 100%;
+}
+
+@media (min-width: 1200px) {
+    .unique-modal-lg {
+          width: 80%;
+          margin: 3% 0 5% 10%;
+    }
+}
+
+.dw-tmce-imgur-library-item {
+  width: 15%;
+  position: relative;
+  display: inline-block;
+  height: 18%;
+  margin-right: 18px;
+  text-align: center;
+  border: 1px solid #ddd;
+  /*box-shadow: inset 0 0 0 5px #fff,inset 0 0 0 7px #ccc;*/
+  /*webkit-box-shadow: inset 0 0 0 5px #fff,inset 0 0 0 7px #ccc;*/
+  background: #eee;
+  padding: 10px;
+  margin-bottom: 16px;
+}
+.item.dw-tmce-imgur-library-item.in-active {
+    box-shadow: inset 0 0 0 3px #fff,inset 0 0 0 7px #0fa9ec;
+    webkit-box-shadow: inset 0 0 0 3px #fff,inset 0 0 0 7px #0fa9ec;
+}
+
+.dw-tmce-imgur-library-item img {
+  width: 100%;
+  height: 160px;
+  top: 0;
+  left: 0;
+  transform: translate(0%,0%);
+}
+
+i.fa.fa-check-square{
+    position: absolute;
+    right: 12px;
+    color: #fff;
+    font-size: 24px;
+    top: 10px;
+    z-index: 1;
+    display: none;
+}
+
+#dw-tmce-imgur-library-area {
+    padding: 16px 0px 10px 10px;
+    background: #cfcfcf;
+}
+
+.imgur-upload-modal {
+    overflow-y: scroll !important;
+    max-height: 440px !important;
+    padding: 30px !important;
+    background-color: white;
+}
+
+
+.dw-tmce-imgur-modal {
+    left: 0 !important;
+    right: 0;
+    /*margin-left: 26px !important;*/
+    width: 100% !important;
+    overflow-y: inherit !important;
+    /*max-width: 1200px;*/
+    margin-right: 0px;
+    position: absolute !important;
+}
+
+.item.dw-tmce-imgur-library-item.in-active i.fa.fa-check-square {
+    display: block;
+    color: #0fa9ec;
+}
+
+/* Modal  */
+/* The Modal (background) */
+.dw-tmce-modal {
+    display: none; /* Hidden by default */
+    position: fixed!important; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.dw-tmce-modal-content {
+    background-color: #fefefe;
+  /*  margin: 5% 15% auto 15%;*/ /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%; /* Could be more or less, depending on screen size */
+}
+
+.dw-tmce-modal-footer {
+  margin-top: 15px;
+}

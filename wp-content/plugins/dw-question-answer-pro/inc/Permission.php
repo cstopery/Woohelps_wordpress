@@ -23,6 +23,17 @@ function dwqa_current_user_can( $perm, $post_id = false ) {
 	return false;
 }
 
+function dwqa_current_user_can_modified( $perm, $post_id = false ) {
+	global $dwqa, $current_user;
+	if ( is_user_logged_in() ) {
+		if ( $post_id && $current_user->ID == get_post_field( 'post_author', $post_id ) ) {
+			return true;
+		}
+	} else {
+        return false;
+    }
+}
+
 function dwqa_get_warning_page() {
 	global $dwqa_options, $wpdb;
 	$warning_page_id = isset( $dwqa_options['pages']['404'] ) ? $dwqa_options['pages']['404'] : false;

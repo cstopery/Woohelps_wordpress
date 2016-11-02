@@ -8,26 +8,27 @@
  */
 ?>
 <!-- section divider -->
-	<div class="section-divider">
+	<div class="dwqa-home-subtitle-section">
 		<div class="container">
-			<div class="row">
-				<div class="title">
-					<h2 class="text-center">
-						在萨斯卡通你需要知道的信息
-					</h2>
+			<div class="col-md-4 dwqa-home-subtitle">
+				<h3>这里有你感兴趣的加拿大信息</h3>
+			</div>
+			<div class="col-md-8">
+				<div style="padding-top:10px;">
 					<a class="btn btn-primary with-radius woo-button pull-right" href="#">我要提问</a>
 				</div>
 				<div class="clearfix"></div>
 				<div class="category-list text-right">
 					<ul>
-						<li><a href="#">新移民</a></li>
-						<li><a href="#">孩子</a></li>
-						<li><a href="#">解除条件</a></li>
-						<li><a href="#">汽车</a></li>
-						<li><a href="#">活动</a></li>
+						<li><a class="woohelps-item-tag" href="#">新移民</a></li>
+						<li><a class="woohelps-item-tag" href="#">孩子</a></li>
+						<li><a class="woohelps-item-tag" href="#">解除条件</a></li>
+						<li><a class="woohelps-item-tag" href="#">汽车</a></li>
+						<li><a class="woohelps-item-tag" href="#">活动</a></li>
 					</ul>
 				</div>
 			</div>
+
 		</div>
 	</div>
 

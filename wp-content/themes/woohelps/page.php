@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php get_header('bar'); ?>
+<?php get_header('homebar'); ?>
 
 	<div class="page-content doc-main">
 		<div class="container">
@@ -9,8 +9,8 @@
 					?>
 					<div class="main-content page col-xs-12">
 						<div class="group-toggle btn-group" role="group" aria-label="group-toggle">
-							<a href="#" class="btn btn-primary">Groups</a>
-							<a href="/meetups-list/" class="btn btn-info">Calendar</a>
+							<a href="#" class="btn btn-primary">显示所有活动群</a>
+							<a href="/meetups-list/" class="btn btn-info">显示所有活动日历</a>
 						</div>
 					<?php
 				}
@@ -37,8 +37,8 @@
 				<div class="col-md-4 col-xs-12">
 					<?php if (is_page('meetups-list')): ?>
 						<div class="group-toggle btn-group" role="group" aria-label="group-toggle">
-							<a href="/meetup/" class="btn btn-info">Groups</a>
-							<a href="#" class="btn btn-primary">Calendar</a>
+							<a href="/meetup/" class="btn btn-info">显示所有活动群</a>
+							<a href="#" class="btn btn-primary">显示所有活动日历</a>
 						</div>
 						<?php
 						$topics = array();
@@ -61,8 +61,10 @@
 						$calendar = new Calendar($topics);
 						echo $calendar->show();
 						?>
+					<?php else: ?>
+						<?php get_sidebar(); ?>
 					<?php endif;?>
-				    <?php get_sidebar(); ?>
+
 				</div>
 				<?php endif; ?>
 			</div>

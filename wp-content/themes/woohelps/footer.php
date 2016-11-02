@@ -1,3 +1,16 @@
+<div id="woohelps-footer" class="container woohelps-footer">
+    <div class="content woohelps-wrap clearfix">
+    <ul>
+
+    <li><a href="/contact">联系我们</a></li>
+
+    </ul>
+
+    <span class="copy">© 2016 Woohelps</span>
+
+    </div>
+</div>
+
 <?php wp_footer(); ?>
 
 <script>

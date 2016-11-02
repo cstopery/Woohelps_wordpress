@@ -8,20 +8,19 @@
  */
 ?>
 <!-- section divider -->
-<div class="section-divider">
-    <div class="container">
-        <div class="row">
-            <div class="title">
-                <h2 class="text-center">
-                    萨斯卡通地图
-                </h2>
-            </div>
-        </div>
+<div class="container" style="margin-top: 20px">
+    <div class="col-lg-2 col-md-2 sub-title">
+         萨斯卡通地图
+    </div>
+    <div class="col-lg-8 col-md-8 sub-title-line">
+    </div>
+    <div class="col-lg-2 col-md-2">
+        <a class="btn btn-primary with-radius woo-button pull-right" href="/map-submit-form/">我要显示在地图上</a>
     </div>
 </div>
 
 
-<div class="container">
+<div class="container map_container">
     <div class="row">
         <?php echo do_shortcode('[put_wpgm id=1]'); ?>
     </div>

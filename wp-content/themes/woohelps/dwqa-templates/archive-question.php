@@ -6,12 +6,21 @@
  * @since DW Question & Answer 1.4.2
  */
 ?>
+<?php
+$query_url = home_url( add_query_arg( null, null ));
+
+?>
 
 <div class="dwqa-questions-archive">
 	<div class="row">
 		<div class="btn-group pull-right margin-bottom" role="group" aria-label="dw-qa-buttons">
 			<button class="btn btn-default btn-lg" id="askButton"><i class="glyphicon glyphicon-question-sign"></i> 提问</button>
-			<button class="btn btn-default btn-lg" id="answerButton"><i class="glyphicon glyphicon-edit"></i> 回答</button>
+			<?php if(strpos($query_url, 'filter=unanswered') > 0):?>
+				<button class="btn btn-default btn-lg" id="backButton"><i class="glyphicon glyphicon-circle-arrow-left"></i> 返回</button>
+			<?php else: ?>
+				<button class="btn btn-default btn-lg" id="answerButton"><i class="glyphicon glyphicon-edit"></i> 回答</button>
+			<?php endif;?>
+
 		</div>
 	</div>
 		<div class="dwqa-questions-list">

@@ -17,7 +17,9 @@ woohelps Global
 ============================================
 */
 .navbar {
-    background: #616db3;
+    background: #333a5f;
+    font-family: "Hiragino Sans GB","Helvetica Neue",Helvetica,Arial,Verdana,"Microsoft Yahei",sans-serif;
+    font-size: 14px;
 }
 
 .container {
@@ -76,7 +78,7 @@ woohelps Global
 }
 
 .category-list {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .category-list ul li {
@@ -137,14 +139,83 @@ woohelps Global
     text-decoration: none !important;
 }
 
+/* Added by Martin on 10/27 */
+
+.navbar-fixed-top {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.woohelps-item-tag {
+    border: 1px solid #cacaca;
+    background: #eff6fa;
+    padding: 1px 10px 0;
+    border-radius: 30px;
+    text-decoration: none;
+    margin: 0 5px 5px 0;
+    display: inline-block;
+    float: right;
+    white-space: nowrap;
+}
+
+.woohelps-item-tag:hover {
+    background: #259;
+    color: #fff;
+    text-decoration: none;
+}
+
+/*
+============================================
+Home Page
+============================================
+*/
+
+/*.home_navbar-fixed-top {*/
+	/*background: #ffffff;*/
+/*}*/
+
+/*.home_navbar-fixed-top > li > a {*/
+    /*color: #616db3;*/
+/*}*/
+
+/*.home_navbar-fixed-top > li > a:hover{*/
+    /*color: #616db3;*/
+    /*background-color: #e99002;*/
+/*}*/
+
+.navbar .home_navbar-brand {
+	color: #ffffff;
+	font-weight: 400;
+}
+
+header.jumbotron {
+	padding: 130px 0 80px 0;
+}
+
+header.jumbotron .form-group .btn {
+	background-color: #FFAA1B;
+}
+
+
+
 /*
 ============================================
 dw qa layout
 ============================================
 */
 
+.dwqa-home-subtitle-section{
+    background-color: #f7f7f7;
+}
+
+.dwqa-home-subtitle {
+    color: #008cba;
+    padding-top: 5px;
+}
+
 .dwqa-home {
-    margin-top: 30px;
+    margin-top: 0px;
     margin-bottom: 30px;
 }
 
@@ -409,7 +480,7 @@ page sections layout
 */
 
 div.page-content {
-    margin-top: 120px;
+    margin-top: 60px;
     margin-bottom: 40px;
 }
 
@@ -728,4 +799,57 @@ div#calendar ul.dates button {
 
 div.clear {
     clear: both;
+}
+
+/*
+============================================
+Home page Map sections layout
+============================================
+*/
+
+.map_container {
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.sub-title {
+    color: #929292;
+}
+
+.sub-title-line {
+    margin-top: 12px;
+    border-top: 0px solid #ccc;
+}
+
+
+/*
+============================================
+Home page footer sections layout
+============================================
+*/
+
+.woohelps-footer, .woohelps-footer a {
+    color: #999;
+}
+.woohelps-footer {
+    display: block;
+    clear: both;
+    text-align: right;
+}
+
+.woohelps-footer .content {
+    padding: 20px 15px;
+    border-top: 1px solid #ccc;
+}
+.woohelps-wrap {
+    margin: 0 auto;
+    clear: both;
+}
+
+.woohelps-footer .copy {
+    float: left;
+}
+
+.woohelps-footer ul, .woohelps-footer li {
+    display: inline;
 }
