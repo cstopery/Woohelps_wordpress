@@ -11,9 +11,25 @@
 <div class="dwqa-comment">
 	<div class="dwqa-comment-meta">
 		<?php $user = get_user_by( 'id', $comment->user_id ); ?>
-		<a href="<?php echo dwqa_get_author_link( $comment->user_id ); ?>"><?php echo get_avatar( $comment->user_id, 16 ) ?><?php echo get_comment_author() ?></a>
-		<?php dwqa_print_user_badge( $comment->user_id, true ); ?>
-		<?php printf( _x( 'replied %s ago', '%s = human-readable time difference', 'dwqa' ), human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ) ); ?>
+
+		<dl class="dwqa-comment-meta-info">
+			<dt>
+				<a href="<?php echo dwqa_get_author_link( $comment->user_id ); ?>">
+					<?php echo get_avatar( $comment->user_id, 16 ) ?>
+				</a>
+			</dt>
+			<dd>
+				<label>
+					<a href="<?php echo dwqa_get_author_link( $comment->user_id ); ?>">
+						<?php echo get_comment_author() ?>
+					</a>
+					<span><?php dwqa_print_user_badge( $comment->user_id, true ); ?></span>
+				</label>
+				<?php comment_text(); ?>
+				<span><?php echo get_comment_time( 'Y-m-d' ) ?></span>
+			</dd>
+		</dl>
+
 		<div class="dwqa-comment-actions">
 			<?php if ( dwqa_current_user_can( 'edit_comment' ) ) : ?>
 				<a href="<?php echo esc_url( add_query_arg( array( 'comment_edit' => $comment->comment_ID ) ) ) ?>"><?php _e( 'Edit', 'dwqa' ) ?></a>
@@ -23,5 +39,4 @@
 			<?php endif; ?>
 		</div>
 	</div>
-	<?php comment_text(); ?>
 </div>
