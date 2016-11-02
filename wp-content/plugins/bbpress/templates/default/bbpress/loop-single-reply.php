@@ -108,7 +108,7 @@ $meta['attendee_count'] = bbp_get_attendee_count( $topic_id );
 
 				<tr>
 					<td style="width: 70px;"><strong>限制人数</strong></td>
-					<td><?=$meta['attendee_count_limit']?></td>
+					<td><?=$meta['attendee_count_limit']?>（剩余 <?=$meta['attendee_count_limit'] - $meta['attendee_count']?>）</td>
 				</tr>
 
 				<tr>
@@ -128,21 +128,80 @@ $meta['attendee_count'] = bbp_get_attendee_count( $topic_id );
 			</table>
 		</div>
 
-		<?php if (is_page('meetups-list')): ?>
+		<style>
+			#resv {
+				width: 100%;
+				text-align: center;
+			}
+
+			.minus, .plus {
+				margin-top: -3px;
+				font-size: 14px !important;
+			}
+
+			.attendee_count {
+				display: inline !important;
+				max-width: 20%;
+				max-height: 30px;
+			}
+
+			.resv-label {
+				margin-right: 10px;
+			}
+		</style>
+
+		<?php if (is_page('meetups-list')) { ?>
 			<div class="subscription-button">
 				<a href="<?=bbp_get_topic_permalink()?>" class="btn btn-success btn-xs">查看详情</a>
 			</div>
-		<?php else: ?>
-			<?php if (is_user_logged_in()): ?>
+		<?php } else { ?>
+			<?php if (is_user_logged_in()) { ?>
+				<?php
+				$user_id = bbp_get_current_user_id();
+				$is_subscribed = bbp_is_user_subscribed_to_topic( $user_id, $topic_id );
+				if (!$is_subscribed && ($meta['attendee_count_limit'] - $meta['attendee_count'] > 0)) {
+				?>
+					<div id="resv">
+						<strong class="resv-label">预定人数</strong>
+						<button class='btn btn-default minus' id="minus-<?=$topic_id?>">-</button>
+						<input type='text' name='resv' id="resv-<?=$topic_id?>" value='1' class='attendee_count' disabled />
+						<button class='btn btn-default plus' id="plus-<?=$topic_id?>">+</button>
+						<input type="hidden" id="left-<?=$topic_id?>" value="<?=$meta['attendee_count_limit'] - $meta['attendee_count']?>">
+					</div>
+				<?php } ?>
 				<div class="subscription-button">
 					<?php bbp_topic_subscription_link(); ?>
 				</div>
-			<?php else: ?>
+			<?php } else { ?>
 				<div class="subscription-button">
-					<a class="btn btn-success btn-xs" href="#" data-toggle="modal" data-target="#loginModal">报名</a>
+					<a class="btn btn-success with-radius" href="#" data-toggle="modal" data-target="#loginModal">报名</a>
 				</div>
-			<?php endif; ?>
-		<?php endif; ?>
+			<?php } ?>
+		<?php } ?>
 	</div>
 
 </div><!-- .reply -->
+
+<script>
+	if (typeof $ === 'undefined') $ = jQuery;
+	$(function() {
+		var url_<?=$topic_id?> = $('#subscribe-<?=$topic_id?>').find('a').attr('href');
+		$('#minus-<?=$topic_id?>').on('click', function() {
+			if (parseInt($('#resv-<?=$topic_id?>').val()) > 1) {
+				$('#resv-<?=$topic_id?>').val(parseInt($('#resv-<?=$topic_id?>').val()) - 1);
+				updateSubscribeUrl();
+			}
+		});
+
+		$('#plus-<?=$topic_id?>').on('click', function() {
+			if (parseInt($('#resv-<?=$topic_id?>').val()) < $('#left-<?=$topic_id?>').val()) {
+				$('#resv-<?=$topic_id?>').val(parseInt($('#resv-<?=$topic_id?>').val()) + 1);
+				updateSubscribeUrl();
+			}
+		});
+
+		function updateSubscribeUrl() {
+			$('#subscribe-<?=$topic_id?>').find('a').attr('href', url_<?=$topic_id?> + '&resv=' + $('#resv-<?=$topic_id?>').val());
+		}
+	});
+</script>

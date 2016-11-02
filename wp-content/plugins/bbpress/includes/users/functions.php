@@ -1311,7 +1311,7 @@ function bbp_subscriptions_handler( $action = '' ) {
             return;
         }
         elseif ($attendee_count + $resv_count > $limit) {
-            bbp_add_error('bbp_subscription_topic_id', '预定人数不能大于剩余名额！');
+            bbp_add_error('bbp_subscription_topic_id', '预定人数不能超出剩余名额！下次行动要快哦！');
             return;
         }
         else {
