@@ -573,7 +573,14 @@ bp groups sections layout
 }
 
 .attendee-list li {
+    display: block;
+    min-height: 44px;
     list-style: none !important;
+}
+
+.attendee-list .attendee-info {
+    font-size: 12px;
+    line-height: 36px;
 }
 
 .group-button .join-group {

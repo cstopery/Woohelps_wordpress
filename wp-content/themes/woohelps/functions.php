@@ -252,8 +252,9 @@ function bbp_extra_fields() {
             </div>
 
             <?php $value = get_post_meta(bbp_get_topic_id(), 'attendee_count_limit', true); ?>
+            <?php if (strlen($value) == 0) $value = 100; ?>
             <div class="form-group">
-                <label for="bbp_extra_field1">限制人数</label><br>
+                <label for="bbp_extra_field1">限制人数（请填写大于 0 的数字，将用于人数校验）</label><br>
                 <input type='text' name='attendee_count_limit' value='<?=$value ?>'>
             </div>
 
@@ -267,8 +268,9 @@ function bbp_extra_fields() {
             </div>
 
             <?php $value = get_post_meta(bbp_get_topic_id(), 'fee', true); ?>
+            <?php if (strlen($value) == 0) $value = 0; ?>
             <div class="form-group">
-                <label for="bbp_extra_field1">费用</label><br>
+                <label for="bbp_extra_field1">费用（可填写任意内容）</label><br>
                 <input type='text' name='fee' value='<?=$value ?>'>
             </div>
 
@@ -277,6 +279,10 @@ function bbp_extra_fields() {
                 <label for="bbp_extra_field1">地址</label><br>
                 <input type='text' name='location' value='<?=$value ?>'>
             </div>
+
+            <?php $value = get_post_meta(bbp_get_topic_id(), 'attendee_count', true); ?>
+            <?php if (strlen($value) == 0) $value = 0; ?>
+            <input type='hidden' name='attendee_count' value='<?=$value ?>'>
         </div>
     </div>
 
@@ -349,6 +355,54 @@ function bbp_save_extra_fields($topic_id = 0) {
     if (isset($_POST) && $_POST['location'] != '') {
         update_post_meta($topic_id, 'location', $_POST['location']);
     }
+    if (isset($_POST) && $_POST['attendee_count'] != '') {
+        update_post_meta($topic_id, 'attendee_count', $_POST['attendee_count']);
+    }
+}
+
+/*
+ * Methods for attendees counting
+ */
+function bbp_get_attendee_count($topic_id = 0) {
+    if ($topic_id === 0) return false;
+
+    $ret = get_post_meta($topic_id, 'attendee_count', true);
+    if (strlen($ret) == 0) $ret = 0;
+    return $ret;
+}
+
+function bbp_add_attendee_count($topic_id = 0, $count = 0, $user_id = 0) {
+    if ($topic_id === 0 || $count === 0 || !is_user_logged_in()) return false;
+
+    if ($user_id === 0) {
+        global $current_user;
+        $user_id = $current_user->ID;
+        if (!isset($user_id) || strlen($user_id) <= 0) return false;
+    }
+
+    // default to 1 person
+    if (!isset($count) || strlen($count) <= 0) $count = 1;
+
+    update_user_meta($user_id, 'subscribe-' . $topic_id, $count);
+    update_post_meta($topic_id, 'attendee_count', intval(get_post_meta($topic_id, 'attendee_count', true)) + $count);
+}
+
+function bbp_remove_attendee($topic_id = 0, $user_id = 0) {
+    if ($topic_id === 0) return false;
+
+    if ($user_id === 0) {
+        global $current_user;
+        $user_id = $current_user->ID;
+        if (!isset($user_id) || strlen($user_id) <= 0) return false;
+    }
+
+    $resv = intval(get_user_meta($user_id, 'subscribe-' . $topic_id, true));
+    $att_count = intval(get_post_meta($topic_id, 'attendee_count', true));
+    $att_left = $att_count - $resv;
+    if ($att_left < 0) $att_left = 0;
+
+    update_post_meta($topic_id, 'attendee_count', $att_left);
+    delete_user_meta($user_id, 'subscribe-' . $topic_id);
 }
 
 class Calendar {
