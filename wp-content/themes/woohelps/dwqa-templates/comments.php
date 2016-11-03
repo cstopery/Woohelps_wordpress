@@ -30,5 +30,7 @@
 		<?php dwqa_comment_form( $args ); ?>
 	<?php endif; ?>
 	<?php do_action( 'dwqa_after_comments' ); ?>
+
+	<div class="dwqa-comments-arrow<?php if( ! have_comments() ) { echo ' dwqa-comments-arrow-init'; } ?>"></div>
 </div>
 <?php endif; ?>
