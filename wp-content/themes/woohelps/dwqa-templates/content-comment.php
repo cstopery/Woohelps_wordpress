@@ -25,7 +25,7 @@
 					</a>
 				</label>
 				<?php comment_text(); ?>
-				<span><?php echo get_comment_time( 'Y-m-d' ) ?></span>
+				<span class="dwqa-time-style"><?php echo get_comment_time( 'Y-m-d' ) ?></span>
 			</dd>
 		</dl>
 
