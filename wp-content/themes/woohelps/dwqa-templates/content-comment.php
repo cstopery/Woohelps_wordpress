@@ -23,7 +23,6 @@
 					<a href="<?php echo dwqa_get_author_link( $comment->user_id ); ?>">
 						<?php echo get_comment_author() ?>
 					</a>
-					<span><?php dwqa_print_user_badge( $comment->user_id, true ); ?></span>
 				</label>
 				<?php comment_text(); ?>
 				<span><?php echo get_comment_time( 'Y-m-d' ) ?></span>
