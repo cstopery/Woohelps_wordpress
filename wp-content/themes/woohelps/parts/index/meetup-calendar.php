@@ -92,7 +92,7 @@
                                                 <strong>地址：</strong><?=$topics[$key]->meta['location']?>
                                             </p>
                                             <p class="text-muted">
-                                                <strong>参加人数：</strong><?=count($topics[$key]->subscribers)?> 人
+                                                <strong>参加人数：</strong><?=bbp_get_attendee_count( $id )?> 人
                                             </p>
                                         </div>
                                     </div>
