@@ -122,6 +122,7 @@ function docpress_scripts() {
 	wp_enqueue_style( 'docpress_bootstrap_css', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css');
 	wp_enqueue_style( 'docpress_font_awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
 	wp_enqueue_style( 'bootstrap_datetimepicker', '/wp-content/themes/woohelps/css/bootstrap-datetimepicker.min.css');
+	wp_enqueue_style( 'zabuto_calendar', '/wp-content/themes/woohelps/css/zabuto_calendar.min.css');
 	wp_enqueue_style( 'docpress_style', get_stylesheet_uri());
 	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 	wp_enqueue_script( 'docpress_bootstrap_js', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js');
