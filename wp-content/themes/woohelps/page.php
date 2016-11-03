@@ -20,13 +20,20 @@
 				?>
 					<?php if ( have_posts() ) : ?>
 						<?php while ( have_posts() ) : the_post(); ?>
-							<?php get_template_part( 'content', 'page' ); ?>
-							<?php endwhile; ?>
 							<?php
-							if ( comments_open() || get_comments_number() ) :
-								comments_template();
-							endif;
+								$permalink =  get_permalink();
+								if (strpos($permalink,'/question/')):
 							?>
+								<?php get_template_part( 'question', 'page' ); ?>
+							<?php else : ?>
+								<?php get_template_part( 'content', 'page' ); ?>
+							<?php endif;?>
+						<?php endwhile; ?>
+						<?php
+						if ( comments_open() || get_comments_number() ) :
+							comments_template();
+						endif;
+						?>
 						<?php else : ?>
 							<?php get_template_part( 'content', 'none' ); ?>
 					<?php endif; ?>

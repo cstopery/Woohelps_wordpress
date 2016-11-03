@@ -257,6 +257,21 @@ dw qa layout
     top: 40px;
 }
 
+.single-dwqa-question .dwqa-question-item {
+    padding-left: 0px;
+}
+
+.single-dwqa-question .dwqa-question-title {
+    font-size:1.25em;
+    font-weight: 500;
+}
+
+.dwqa-time-style {
+    font-size:0.9em;
+    color:#999;
+    float:right;
+}
+
 /*
 ============================================
 local service grids layout

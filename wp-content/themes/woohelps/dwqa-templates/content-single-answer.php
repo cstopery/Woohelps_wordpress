@@ -20,7 +20,7 @@
 	<?php endif; ?>
 	<div class="dwqa-answer-meta">
 		<?php $user_id = get_post_field( 'post_author', get_the_ID() ) ? get_post_field( 'post_author', get_the_ID() ) : 0 ?>
-		<?php printf( __( '<span><a href="%s">%s%s</a> %s answered %s ago</span>', 'dwqa' ), dwqa_get_author_link( $user_id ), get_avatar( $user_id, 48 ), dwqa_get_author(), dwqa_print_user_badge( $user_id ), human_time_diff( get_post_time( 'U' ) ) ) ?>
+		<?php printf( __( '<span><a href="%s">%s%s</a></span>', 'dwqa' ), dwqa_get_author_link( $user_id ), get_avatar( $user_id, 48 ), dwqa_get_author() ) ?>
 		<?php if ( 'private' == get_post_status() ) : ?>
 			<span><?php _e( '&nbsp;&bull;&nbsp;', 'dwqa' ); ?></span>
 			<span><?php _e( 'Private', 'dwqa' ) ?></span>
@@ -28,5 +28,12 @@
 		<span class="dwqa-answer-actions"><?php dwqa_answer_button_action(); ?></span>
 	</div>
 	<div class="dwqa-answer-content"><?php the_content(); ?></div>
+		<div class="dwqa-time-style">
+		<?php
+			$d = "Y-m-d";
+			$comment_date = get_post_time( $d, $comment_ID );
+			echo "发布于".$comment_date;
+		?>
+	</div>
 	<?php comments_template(); ?>
 </div>
