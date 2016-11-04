@@ -15,7 +15,7 @@
 			</div>
 			<div class="col-md-8">
 				<div style="padding-top:10px;">
-					<a class="btn btn-primary with-radius woo-button pull-right" href="#">我要提问</a>
+					<a class="btn btn-primary with-radius woo-button pull-right" id="askButton" href="#">我要提问</a>
 				</div>
 				<div class="clearfix"></div>
 				<div class="category-list text-right">
@@ -58,7 +58,10 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		var user_logged_in = <?=(is_user_logged_in())? 'true' : 'false' ?>;
-	</script>
-	<script src="<?=get_stylesheet_directory_uri()?>/js/dwqa-util.js"></script>
+
+<?php get_template_part('parts/question/newquestion', 'modal'); ?>
+
+<script>
+	var user_logged_in = <?=(is_user_logged_in())? 'true' : 'false' ?>;
+</script>
+<script src="<?=get_stylesheet_directory_uri()?>/js/dwqa-util.js"></script>
