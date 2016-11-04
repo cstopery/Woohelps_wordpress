@@ -592,3 +592,40 @@ function dd($input) {
     echo '</pre>';
     die;
 }
+
+
+/**
+ * 得到个人用户的一句话描述,微信名和手机号。
+ */
+function getXprofile($user_id) {
+    global $wpdb;
+     $querystr = "
+     select
+        xfield.`name`,
+        xdata.`value`,
+        xmeta.`meta_value`
+        from `woo_bp_xprofile_data` as xdata
+        inner join `woo_bp_xprofile_fields` as xfield on xfield.`id` = xdata.`field_id`
+        inner join `woo_bp_xprofile_meta` as xmeta on xfield.`id` = xmeta.`object_id`
+     where
+         xdata.`user_id` = ". $user_id ."  and
+         xmeta.`meta_key` = 'default_visibility';
+     ";
+
+    $xProfileArr = [];
+    $xprofiles = $wpdb->get_results($querystr,ARRAY_A);
+    $is_friend = bp_is_friend($user_id);
+    $current_user = wp_get_current_user();
+
+    $current_user_id = $current_user->ID;
+    $current_user_role = $current_user->roles[0];
+
+    foreach($xprofiles as $xprofile){
+        if($xprofile['meta_value'] == 'public' || ($xprofile['meta_value'] == 'friends' && $is_friend) || $current_user_id == $user_id || $current_user_role =="administrator" ) {
+            $xProfileArr[$xprofile['name']] = $xprofile ['value'];
+        }
+    };
+
+    return $xProfileArr;
+}
+

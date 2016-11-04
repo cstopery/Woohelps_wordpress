@@ -19,8 +19,15 @@
 		<span class="dwqa-pick-best-answer"><?php _e( 'Best Answer', 'dwqa' ) ?></span>
 	<?php endif; ?>
 	<div class="dwqa-answer-meta">
-		<?php $user_id = get_post_field( 'post_author', get_the_ID() ) ? get_post_field( 'post_author', get_the_ID() ) : 0 ?>
-		<?php printf( __( '<span><a href="%s">%s%s</a></span>', 'dwqa' ), dwqa_get_author_link( $user_id ), get_avatar( $user_id, 48 ), dwqa_get_author() ) ?>
+		<?php
+		$user_id = get_post_field( 'post_author', get_the_ID() ) ? get_post_field( 'post_author', get_the_ID() ) : 0;
+		$xProfileArr = getXprofile($user_id);
+		$xWord = isset($xProfileArr['一句话描述']) ? $xProfileArr['一句话描述'] : '';
+		$author_display_name = dwqa_get_author() . ' ' . $xWord;
+		?>
+		<?php printf( __( '<span class="best-answer-author"><a href="%s">%s%s</a></span>', 'dwqa' ), dwqa_get_author_link( $user_id ), get_avatar( $user_id, 48 ), $author_display_name ) ?>
+		<div class="dwqa-questions-desc"><?php echo isset($xProfileArr['微信显示名']) ? ' 微信显示名: '.$xProfileArr['微信显示名'] : '' ?></div>
+		<div class="dwqa-questions-desc"><?php echo isset($xProfileArr['手机']) ? '手机:'.$xProfileArr['手机'] : '' ?></div>
 		<?php if ( 'private' == get_post_status() ) : ?>
 			<span><?php _e( '&nbsp;&bull;&nbsp;', 'dwqa' ); ?></span>
 			<span><?php _e( 'Private', 'dwqa' ) ?></span>

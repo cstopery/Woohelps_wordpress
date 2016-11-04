@@ -46,7 +46,11 @@ if (is_array($best_answers) && count($best_answers) > 0) {
             <?=dwqa_question_views_count()?>
         </div>
         <?php printf( __( '<span><a href="%s">%s</a>', 'dwqa' ), bp_core_get_user_domain($user_id), get_avatar( $user_id, 48 ) ) ?>
-        <a href="<?=bp_core_get_user_domain($user_id)?>"><span class="best-answer-author"><?=dwqa_get_author($answer_id)?></span></a>
+        <?php $xProfileArr = getXprofile($user_id);?>
+        <a href="<?=bp_core_get_user_domain($user_id)?>">
+            <span class="best-answer-author"><?=dwqa_get_author($answer_id). " " . isset($xProfileArr['一句话描述']) ? $xProfileArr['一句话描述'] : '' ?></span></a>
+            <div class="dwqa-questions-desc"><?php echo isset($xProfileArr['微信显示名']) ? ' 微信显示名: '.$xProfileArr['微信显示名'] : '' ?></div>
+            <div class="dwqa-questions-desc"><?php echo isset($xProfileArr['手机']) ? '手机:'.$xProfileArr['手机'] : '' ?></div>
         <span class="pull-right">
             <?php echo get_the_term_list( get_the_ID(), 'dwqa-question_category', '<span class="dwqa-question-category">' . __( '&nbsp;', 'dwqa' ), ', ', '</span>' ); ?>
         </span>
