@@ -282,6 +282,10 @@ dw qa layout
     border-radius:5px;
 }
 
+.dwqa-answer-item .avatar {
+	border-radius: 5px;
+}
+
 
 /* Added by 郑少阳*/
 /**
@@ -593,6 +597,11 @@ dw qa sections layout
     border-left: none;
     border-right: none;
     padding-right: 0;
+}
+
+.dwqa-questions-list .dwqa-question-item-no-answer {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0px 15px 0px;
 }
 
 .dwqa-questions-list .question-meta .view-count {

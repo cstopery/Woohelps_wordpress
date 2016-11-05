@@ -38,8 +38,11 @@ if (is_array($best_answers) && count($best_answers) > 0) {
     $has_answer = true;
 }
 ?>
-
-<div class="<?php echo dwqa_post_class(); ?>">
+<?php if(!$has_answer) : ?>
+    <div class="dwqa-question-item-no-answer">
+<?php else: ?>
+   <div class="<?php echo dwqa_post_class(); ?>">
+<?php endif ?>
     <?php if ($has_answer && isset($user_id) && isset($answer_id)) {?>
     <div class="question-meta">
         <div class="view-count" title="查看次数">
