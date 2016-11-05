@@ -695,7 +695,8 @@ case 'register' :
 	if ( $http_post ) {
 		$user_login = isset( $_POST['user_login'] ) ? $_POST['user_login'] : '';
 		$user_email = isset( $_POST['user_email'] ) ? $_POST['user_email'] : '';
-		$errors = register_new_user($user_login, $user_email);
+		$user_password = isset( $_POST['user_password'] ) ? $_POST['user_password'] : '';
+		$errors = register_new_user($user_login, $user_email, $user_password);
 		if ( !is_wp_error($errors) ) {
 			$redirect_to = !empty( $_POST['redirect_to'] ) ? $_POST['redirect_to'] : 'wp-login.php?checkemail=registered';
 			wp_safe_redirect( $redirect_to );
@@ -722,6 +723,11 @@ case 'register' :
 	<p>
 		<label for="user_email"><?php _e('Email') ?><br />
 		<input type="email" name="user_email" id="user_email" class="input" value="<?php echo esc_attr( wp_unslash( $user_email ) ); ?>" size="25" /></label>
+	</p>
+	<p>
+		<label for="user_password"><?php _e('Password') ?><br />
+			<input type="password" name="user_password" id="user_password" class="input" value="<?php echo esc_attr( wp_unslash( $user_password ) ); ?>" size="16" />
+		</label>
 	</p>
 	<?php
 	/**
