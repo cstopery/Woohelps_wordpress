@@ -65,7 +65,7 @@ function dwqa_breadcrumb() {
 	echo apply_filters( 'dwqa_breadcrumb', $output );
 }
 add_action( 'dwqa_before_questions_archive', 'dwqa_breadcrumb' );
-add_action( 'dwqa_before_single_question', 'dwqa_breadcrumb' );
+//add_action( 'dwqa_before_single_question', 'dwqa_breadcrumb' );
 
 function dwqa_archive_question_filter_layout() {
 	dwqa_load_template( 'archive', 'question-filter' );
@@ -147,11 +147,7 @@ function dwqa_question_button_action() {
 	$html = '';
 	if ( is_user_logged_in() ) {
 		$followed = dwqa_is_followed() ? 'followed' : 'follow';
-		$text = __( 'Subscribe', 'dwqa' );
-		$html .= '<label for="dwqa-favorites">';
-		$html .= '<input type="checkbox" id="dwqa-favorites" data-post="'. get_the_ID() .'" data-nonce="'. wp_create_nonce( '_dwqa_follow_question' ) .'" value="'. $followed .'" '. checked( $followed, 'followed', false ) .'/>';
-		$html .= '<span>' . $text . '</span>';
-		$html .= '</label>';
+
 		if ( dwqa_current_user_can( 'edit_question' ) ) {
 			$html .= '<a class="dwqa_edit_question" href="'. add_query_arg( array( 'edit' => get_the_ID() ), get_permalink() ) .'">' . __( 'Edit', 'dwqa' ) . '</a> ';
 		}

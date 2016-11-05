@@ -165,6 +165,12 @@ woohelps Global
     text-decoration: none;
 }
 
+.dwqa-questions-desc {
+    font-size: 11px;
+    color: #939393;
+    display:inline;
+}
+
 /*
 ============================================
 Home Page
@@ -186,7 +192,7 @@ Home Page
 
 .navbar .home_navbar-brand {
 	color: #ffffff;
-	font-weight: 400;
+	font-weight: 300;
 }
 
 header.jumbotron {
@@ -256,6 +262,206 @@ dw qa layout
 .dwqa-home .dwqa-questions-list .dwqa-question-item .avatar {
     top: 40px;
 }
+
+.single-dwqa-question .dwqa-question-item {
+    padding-left: 0px;
+}
+
+.single-dwqa-question .dwqa-question-title {
+    font-size:1.25em;
+    font-weight: 500;
+}
+
+.dwqa-time-style {
+    font-size:0.9em;
+    color:#999;
+    float:right;
+}
+
+.dwqa-question-item .avatar {
+    border-radius:5px;
+}
+
+.dwqa-answer-item .avatar {
+	border-radius: 5px;
+}
+
+
+/* Added by 郑少阳*/
+/**
+ * comment skin fixed.
+ */
+.dwqa-comments{
+	position: relative;
+	clear: both;
+	float: left;
+	margin: 0px 0px 20px 0px !important;
+	padding: 0px !important;
+	width: 100%;
+	height: auto;
+	overflow: visible;
+}
+.dwqa-answer-item >.dwqa-comments{
+	margin-top:40px !important;
+}
+.dwqa-comments >.dwqa-comments-arrow{
+	position: absolute;
+	top: -6px;
+	left: 40px;
+	width: 10px;
+	height: 10px;
+	border-width: 1px 1px 0px 0px;
+	border-style: solid;
+	border-color: #ddd;
+	background: #fff;
+	-webkit-transform-origin: 75% 25%;
+	-webkit-transform: rotateZ(-45deg);
+	-webkit-transition: 100ms ease-in .1s;
+	transition: 100ms ease-in .1s;
+}
+.dwqa-comments >.dwqa-comments-arrow-init{
+	background: #f7f7f7 !important;
+}
+.dwqa-comments-list {
+	clear: both;
+	float: left;
+	padding: 0px 12px !important;
+	width: 100%;
+	height: auto;
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-radius: 4px 4px 0px 0px;
+	box-shadow: 1px 1px 2px #ddd;
+	background: #ffffff;
+}
+.dwqa-comments-list >.dwqa-comment{
+	clear: both;
+	float: left;
+	margin: 12px 0px 0px 0px !important;
+	padding: 0px 0px 10px 0px !important;
+	width: 100%;
+	height: auto;
+	background: #ffffff;
+	overflow: hidden;
+}
+.dwqa-comments-list >.dwqa-comment >.dwqa-comment-meta{
+	clear: both;
+	float: left;
+	margin: 0px !important;
+	padding: 0px !important;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.dwqa-comments-list >.dwqa-comment >.dwqa-comment-meta >.dwqa-comment-actions{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: auto;
+	height: auto;
+	overflow: hidden;
+}
+.dwqa-comments >.dwqa-comment-form{
+	clear: both;
+	float: left;
+	width: 100%;
+	padding: 15px !important;
+	background: #f7f7f7;
+	border: 1px solid #ddd;
+	border-radius: 0px 0px 4px 4px;
+	box-shadow: 1px 1px 2px #ddd;
+}
+.dwqa-comments >.dwqa-comment-form form.comment-form textarea {
+	padding:7px;
+	height:40px;
+	line-height:24px;
+	border: 1px solid #ccc;
+	box-shadow: 1px 1px 2px #ccc;
+	outline: none;
+}
+dl.dwqa-comment-meta-info{
+	position: relative;
+	clear: both;
+	float: left;
+	margin: 0px !important;
+	padding: 0px !important;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+dl.dwqa-comment-meta-info >dt{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 24px;
+	height: 24px;
+	overflow: hidden;
+}
+dl.dwqa-comment-meta-info >dt >a{
+	clear: both;
+	float: left;
+	width: 100%;
+	height: 100%;
+	border-radius: 0px !important;
+	overflow: hidden;
+}
+dl.dwqa-comment-meta-info >dt >a >img{
+	width: 100% !important;
+	height: 100% !important;
+	border-radius: 0px !important;
+}
+dl.dwqa-comment-meta-info >dd{
+	clear: both;
+	float: left;
+	padding-left: 40px;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+dl.dwqa-comment-meta-info >dd >label{
+	clear:both;
+	flaot:left;
+	margin: 0px !important;
+	padding: 0px !important;
+	width: auto;
+	height: 24px;
+	line-height: 24px;
+	font-size: 12px;
+	color: #999;
+	overflow:hidden;
+}
+dl.dwqa-comment-meta-info >dd >label >a{
+	color: #008cba;
+	font-size: 14px;
+}
+dl.dwqa-comment-meta-info >dd >label >span{
+	color: #999 !important;
+	font-size: 12px !important;
+}
+dl.dwqa-comment-meta-info >dd >p{
+	clear:both;
+	flaot:left;
+	margin:4px 0px;
+	width: auto;
+	height: auto !important;
+	line-height: 24px !important;
+	font-size: 14px !important;
+	color: #000;
+	overflow:hidden;
+}
+dl.dwqa-comment-meta-info >dd >span{
+	clear:both;
+	flaot:left;
+	margin:0px;
+	width: auto;
+	height: 24px !important;
+	line-height: 24px !important;
+	font-size: 12px !important;
+	color: #999;
+	overflow:hidden;
+}
+
 
 /*
 ============================================
@@ -393,6 +599,11 @@ dw qa sections layout
     padding-right: 0;
 }
 
+.dwqa-questions-list .dwqa-question-item-no-answer {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0px 15px 0px;
+}
+
 .dwqa-questions-list .question-meta .view-count {
     position: absolute;
     left: 0;
@@ -418,7 +629,7 @@ dw qa sections layout
 }
 
 .dwqa-questions-list .best-answer-author {
-    font-size: 10px;
+    font-size: 0.7em;
     background: #1ba1e2;
     color: #fff;
     padding: 2px 5px;
@@ -573,7 +784,14 @@ bp groups sections layout
 }
 
 .attendee-list li {
+    display: block;
+    min-height: 44px;
     list-style: none !important;
+}
+
+.attendee-list .attendee-info {
+    font-size: 12px;
+    line-height: 36px;
 }
 
 .group-button .join-group {

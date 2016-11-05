@@ -21,12 +21,19 @@
 			<dd>
 				<label>
 					<a href="<?php echo dwqa_get_author_link( $comment->user_id ); ?>">
-						<?php echo get_comment_author() ?>
+						<?php
+							$user_id = $comment->user_id;
+							$xProfileArr = getXprofile($user_id);
+							$xWord = isset($xProfileArr['一句话描述']) ? $xProfileArr['一句话描述'] : '';
+							$comment_display_name = dwqa_get_author() . ' ' . $xWord;
+						?>
+					<span class="best-answer-author"><?=$comment_display_name ?></span></a>
+					<div class="dwqa-questions-desc"><?php echo isset($xProfileArr['微信显示名']) ? ' 微信显示名: '.$xProfileArr['微信显示名'] : '' ?></div>
+					<div class="dwqa-questions-desc"><?php echo isset($xProfileArr['手机']) ? '手机:'.$xProfileArr['手机'] : '' ?></div>
 					</a>
-					<span><?php dwqa_print_user_badge( $comment->user_id, true ); ?></span>
 				</label>
 				<?php comment_text(); ?>
-				<span><?php echo get_comment_time( 'Y-m-d' ) ?></span>
+				<span class="dwqa-time-style"><?php echo get_comment_time( 'Y-m-d' ) ?></span>
 			</dd>
 		</dl>
 
@@ -39,4 +46,5 @@
 			<?php endif; ?>
 		</div>
 	</div>
+
 </div>
