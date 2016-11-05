@@ -407,12 +407,14 @@ function wp_login_form( $args = array() ) {
 		'label_username' => __( 'Username or Email' ),
 		'label_password' => __( 'Password' ),
 		'label_remember' => __( 'Remember Me' ),
+		'label_lostpassword' => __('Lost your password?'),
 		'label_log_in' => __( 'Log In' ),
 		'id_username' => 'user_login',
 		'id_password' => 'user_pass',
 		'id_remember' => 'rememberme',
 		'id_submit' => 'wp-submit',
 		'remember' => true,
+		'lostpassword' => true,
 		'value_username' => '',
 		// Set 'value_remember' to true to default the "Remember me" checkbox to checked.
 		'value_remember' => false,
@@ -478,7 +480,10 @@ function wp_login_form( $args = array() ) {
 				<input type="password" name="pwd" id="' . esc_attr( $args['id_password'] ) . '" class="input" value="" size="20" />
 			</p>
 			' . $login_form_middle . '
-			' . ( $args['remember'] ? '<p class="login-remember"><label><input name="rememberme" type="checkbox" id="' . esc_attr( $args['id_remember'] ) . '" value="forever"' . ( $args['value_remember'] ? ' checked="checked"' : '' ) . ' /> ' . esc_html( $args['label_remember'] ) . '</label></p>' : '' ) . '
+			' . ( $args['remember'] || $args['lostpassword'] ? '<p class="login-remember-lostpassword">' : '' ) . '
+			' . ( $args['remember'] ? '<label><input name="rememberme" type="checkbox" id="' . esc_attr( $args['id_remember'] ) . '" value="forever"' . ( $args['value_remember'] ? ' checked="checked"' : '' ) . ' /> ' . esc_html( $args['label_remember'] ) . '</label>' : '' ) . '
+			' . ( $args['lostpassword'] ? '<a style="float:right;margin-top:3px;font-size:12px;" href="' . esc_url( wp_lostpassword_url() ) . '">' . esc_attr( $args['label_lostpassword'] ) . '</a>' : '' ) . '
+			' . ( $args['remember'] || $args['lostpassword'] ? '</p>' : '' ) . '
 			<p class="login-submit">
 				<input type="submit" name="wp-submit" id="' . esc_attr( $args['id_submit'] ) . '" class="button-primary" value="' . esc_attr( $args['label_log_in'] ) . '" />
 				<input type="hidden" name="redirect_to" value="' . esc_url( $args['redirect'] ) . '" />

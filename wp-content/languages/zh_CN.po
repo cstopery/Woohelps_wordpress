@@ -8278,3 +8278,11 @@ msgstr "登出"
 #: wp-includes/class-wp-xmlrpc-server.php:5794
 msgid "You do not have permission to upload files."
 msgstr "您没有上传文件的权限。"
+
+#: wp-includes/user.php:2254
+msgid "<strong>错误</strong>: Please set your account password."
+msgstr "<strong>错误</strong>: 请设置您的账号密码。"
+
+#: wp-includes/user.php:2257
+msgid "<strong>错误</strong>: The account password length must greater than six."
+msgstr "<strong>错误</strong>: 账号密码至少为6位。"

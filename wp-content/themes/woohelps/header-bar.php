@@ -69,12 +69,14 @@
                         'label_username' => __('Username'),
                         'label_password' => __('Password'),
                         'label_remember' => __('Remember Me'),
+	                    'label_lostpassword' => __('Lost your password?'),
                         'label_log_in' => __('Log In'),
                         'id_username' => 'user_login',
                         'id_password' => 'user_pass',
                         'id_remember' => 'rememberme',
                         'id_submit' => 'wp-submit',
                         'remember' => true,
+	                    'lostpassword' => true,
                         'value_username' => NULL,
                         'value_remember' => true
                     );
@@ -111,12 +113,16 @@
 							<label for="confirm_email">Please leave this field empty</label>
 							<input type="text" name="confirm_email" id="confirm_email" value="">
 						</div>
-
 						<div class="form-group">
-							<small>你会收到一封包含初始密码的电子邮件</small>
+							<label for="user_password"><?php echo __('Password'); ?></label>
+							<input type="password" name="user_password" id="user_password" value="">
 						</div>
 
-						<input type="hidden" name="redirect_to" value="/wp-login.php?action=register&success=1" />
+						<!--<div class="form-group">
+							<small>你会收到一封包含初始密码的电子邮件</small>
+						</div>-->
+
+						<input type="hidden" name="redirect_to" value="/wp-login.php" />
 						<div class="form-group">
 							<input type="submit" name="register-submit" id="register-submit" value="<?php echo __('Register'); ?>" />
 						</div>
