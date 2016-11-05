@@ -620,7 +620,7 @@ dw qa sections layout
 }
 
 .dwqa-questions-list .best-answer-author {
-    font-size: 10px;
+    font-size: 0.7em;
     background: #1ba1e2;
     color: #fff;
     padding: 2px 5px;
