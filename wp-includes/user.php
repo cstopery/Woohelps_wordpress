@@ -2224,37 +2224,37 @@ function register_new_user( $user_login, $user_email, $user_password ) {
 
 	// Check the username
 	if ( $sanitized_user_login == '' ) {
-		$errors->add( 'empty_username', __( '<strong>ERROR</strong>: Please enter a username.' ) );
+		$errors->add( 'empty_username', __( 'Please enter a username.' ) );
 	} elseif ( ! validate_username( $user_login ) ) {
-		$errors->add( 'invalid_username', __( '<strong>ERROR</strong>: This username is invalid because it uses illegal characters. Please enter a valid username.' ) );
+		$errors->add( 'invalid_username', __( 'This username is invalid because it uses illegal characters. Please enter a valid username.' ) );
 		$sanitized_user_login = '';
 	} elseif ( username_exists( $sanitized_user_login ) ) {
-		$errors->add( 'username_exists', __( '<strong>ERROR</strong>: This username is already registered. Please choose another one.' ) );
+		$errors->add( 'username_exists', __( 'This username is already registered. Please choose another one.' ) );
 
 	} else {
 		/** This filter is documented in wp-includes/user.php */
 		$illegal_user_logins = array_map( 'strtolower', (array) apply_filters( 'illegal_user_logins', array() ) );
 		if ( in_array( strtolower( $sanitized_user_login ), $illegal_user_logins ) ) {
-			$errors->add( 'invalid_username', __( '<strong>ERROR</strong>: Sorry, that username is not allowed.' ) );
+			$errors->add( 'invalid_username', __( 'Sorry, that username is not allowed.' ) );
 		}
 	}
 
 	// Check the email address
 	if ( $user_email == '' ) {
-		$errors->add( 'empty_email', __( '<strong>ERROR</strong>: Please type your email address.' ) );
+		$errors->add( 'empty_email', __( 'Please type your email address.' ) );
 	} elseif ( ! is_email( $user_email ) ) {
-		$errors->add( 'invalid_email', __( '<strong>ERROR</strong>: The email address isn&#8217;t correct.' ) );
+		$errors->add( 'invalid_email', __( 'The email address isn&#8217;t correct.' ) );
 		$user_email = '';
 	} elseif ( email_exists( $user_email ) ) {
-		$errors->add( 'email_exists', __( '<strong>ERROR</strong>: This email is already registered, please choose another one.' ) );
+		$errors->add( 'email_exists', __( 'This email is already registered, please choose another one.' ) );
 	}
 
 	// Check the user password
 	if ( $user_password == '') {
-		$errors->add( 'empty_password', __( '<strong>ERROR</strong>: Please set your account password.' ) );
+		$errors->add( 'empty_password', __( 'Please set your account password.' ) );
 	} else {
 		if ( strlen($user_password) < 6 ) {
-			$errors->add( 'invalid_password', __( '<strong>ERROR</strong>: The account password length must greater than six.' ) );
+			$errors->add( 'invalid_password', __( 'The account password length must greater than six.' ) );
 		}
 	}
 
