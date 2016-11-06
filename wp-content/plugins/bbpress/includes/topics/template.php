@@ -2501,16 +2501,17 @@ function bbp_topic_edit_link( $args = '' ) {
 			'edit_text'    => esc_html__( 'Edit', 'bbpress' )
 		), 'get_topic_edit_link' );
 
-		$topic = bbp_get_topic( bbp_get_topic_id( (int) $r['id'] ) );
+//		$topic = bbp_get_topic( bbp_get_topic_id( (int) $r['id'] ) );
 
-		// Bypass check if user has caps
-		if ( !current_user_can( 'edit_others_topics' ) ) {
+//		// Bypass check if user has caps
+//		if ( !current_user_can( 'edit_others_topics' ) ) {
+//
+//			// User cannot edit or it is past the lock time
+//			if ( empty( $topic ) || !current_user_can( 'edit_topic', $topic->ID ) || bbp_past_edit_lock( $topic->post_date_gmt ) ) {
+//				return;
+//			}
+//		}
 
-			// User cannot edit or it is past the lock time
-			if ( empty( $topic ) || !current_user_can( 'edit_topic', $topic->ID ) || bbp_past_edit_lock( $topic->post_date_gmt ) ) {
-				return;
-			}
-		}
 
 		// Get uri
 		$uri = bbp_get_topic_edit_url( $r['id'] );
