@@ -23,31 +23,38 @@ $query_url = home_url( add_query_arg( null, null ));
 
 		</div>
 	</div>
-		<div class="dwqa-questions-list">
-		<?php do_action( 'dwqa_before_question_stickies' ); ?>
-		<?php if ( dwqa_has_question_stickies() && 'all' == dwqa_current_filter() ) : ?>
-			<?php while( dwqa_has_question_stickies() ) : dwqa_the_sticky() ?>
-				<?php dwqa_load_template( 'content', 'question' ) ?>
-			<?php endwhile; ?>
-		<?php endif; ?>
-		<?php do_action( 'dwqa_after_question_stickies' ); ?>
 
-		<?php do_action( 'dwqa_before_questions_list' ) ?>
-		<?php if ( dwqa_has_question() ) : ?>
-			<?php while ( dwqa_has_question() ) : dwqa_the_question(); ?>
-				<?php if ( get_post_status() == 'publish' || ( get_post_status() == 'private' && dwqa_current_user_can( 'edit_question', get_the_ID() ) ) ) : ?>
-					<?php dwqa_load_template( 'content', 'question' ) ?>
-				<?php endif; ?>
-			<?php endwhile; ?>
-		<?php else : ?>
-			<?php dwqa_load_template( 'content', 'none' ) ?>
-		<?php endif; ?>
-		<?php do_action( 'dwqa_after_questions_list' ) ?>
+	<div class="row">
+		<div class="col-xs-12">
+			<?=dwqa_search_form();?>
 		</div>
-		<div class="dwqa-questions-footer">
-			<button class="btn btn-default btn-block" id="loadMore">载入更多问题</button>
-			<?php // dwqa_question_paginate_link() ?>
-		</div>
+	</div>
+
+	<div class="dwqa-questions-list">
+	<?php do_action( 'dwqa_before_question_stickies' ); ?>
+	<?php if ( dwqa_has_question_stickies() && 'all' == dwqa_current_filter() ) : ?>
+		<?php while( dwqa_has_question_stickies() ) : dwqa_the_sticky() ?>
+			<?php dwqa_load_template( 'content', 'question' ) ?>
+		<?php endwhile; ?>
+	<?php endif; ?>
+	<?php do_action( 'dwqa_after_question_stickies' ); ?>
+
+	<?php do_action( 'dwqa_before_questions_list' ) ?>
+	<?php if ( dwqa_has_question() ) : ?>
+		<?php while ( dwqa_has_question() ) : dwqa_the_question(); ?>
+			<?php if ( get_post_status() == 'publish' || ( get_post_status() == 'private' && dwqa_current_user_can( 'edit_question', get_the_ID() ) ) ) : ?>
+				<?php dwqa_load_template( 'content', 'question' ) ?>
+			<?php endif; ?>
+		<?php endwhile; ?>
+	<?php else : ?>
+		<?php dwqa_load_template( 'content', 'none' ) ?>
+	<?php endif; ?>
+	<?php do_action( 'dwqa_after_questions_list' ) ?>
+	</div>
+	<div class="dwqa-questions-footer">
+		<button class="btn btn-default btn-block" id="loadMore">载入更多问题</button>
+		<?php // dwqa_question_paginate_link() ?>
+	</div>
 
 	<?php do_action( 'dwqa_after_questions_archive' ); ?>
 </div>
