@@ -382,7 +382,7 @@ if ( isset($_GET['key']) )
 	$action = 'resetpass';
 
 // validate action so as to default to the login screen
-if ( !in_array( $action, array( 'postpass', 'logout', 'lostpassword', 'retrievepassword', 'resetpass', 'rp', 'register', 'login' ), true ) && false === has_filter( 'login_form_' . $action ) )
+if ( !in_array( $action, array( 'postpass', 'logout', 'lostpassword_by_ajax', 'lostpassword', 'retrievepassword', 'resetpass', 'rp', 'register_by_ajax', 'register', 'login_by_ajax', 'login' ), true ) && false === has_filter( 'login_form_' . $action ) )
 	$action = 'login';
 
 nocache_headers();
@@ -483,6 +483,25 @@ case 'logout' :
 	$redirect_to = apply_filters( 'logout_redirect', $redirect_to, $requested_redirect_to, $user );
 	wp_safe_redirect( $redirect_to );
 	exit();
+
+case 'lostpassword_by_ajax' :
+	$errors = retrieve_password();
+
+	if(isset($errors->errors))
+	{
+		$_res['code'] = 1001;
+		$_res['info'] = 'Fail';
+		$_res['error'] = $errors;
+
+		exit(json_encode($_res));
+	}
+
+	$_res['code'] = 1000;
+	$_res['info'] = 'Success';
+
+	exit(json_encode($_res));
+
+break;
 
 case 'lostpassword' :
 case 'retrievepassword' :
@@ -672,6 +691,58 @@ endif;
 login_footer('user_pass');
 break;
 
+case 'register_by_ajax' :
+	$_res = array();
+
+	if ( !get_option('users_can_register') ) {
+		$_res['code'] = 1001;
+		$_res['info'] = 'Forbid register!';
+
+		exit(json_encode($_res));
+	}
+
+	$user_login = isset( $_POST['user_login'] ) ? $_POST['user_login'] : '';
+	$user_email = isset( $_POST['user_email'] ) ? $_POST['user_email'] : '';
+	$user_password = isset( $_POST['user_password'] ) ? $_POST['user_password'] : '';
+	$errors = register_new_user($user_login, $user_email, $user_password);
+
+	if ( is_wp_error($errors) ) {
+		$_res['code'] = 1002;
+		$_res['info'] = 'Success!';
+		$_res['error'] = get_object_vars($errors);
+
+		exit(json_encode($_res));
+	}
+
+	$_POST['log'] = $user_login;
+	$_POST['pwd'] = $user_password;
+	$_POST['remember'] = 'remember';
+
+	$user = wp_signon( '', $secure_cookie );
+
+	if(isset($user->errors))
+	{
+		foreach ($user->errors as $key=>$_errors)
+		{
+			foreach ($_errors as $k=>$v)
+			{
+				$user->errors[$key][$k] = trim(str_ireplace('错误：', '', strip_tags($v)));
+			}
+		}
+
+		$_res['code'] = 1003;
+		$_res['info'] = 'Fail!';
+		$_res['error'] = $user;
+
+		exit(json_encode($_res));
+	}
+
+	$_res['code'] = 1000;
+	$_res['info'] = 'Success!';
+
+	exit(json_encode($_res));
+break;
+
 case 'register' :
 	if ( is_multisite() ) {
 		/**
@@ -750,6 +821,38 @@ case 'register' :
 
 <?php
 login_footer('user_login');
+break;
+
+case 'login_by_ajax' :
+
+	$_res = array();
+	
+	$secure_cookie = '';
+
+	$user = wp_signon( '', $secure_cookie );
+
+	if(isset($user->errors))
+	{
+		foreach ($user->errors as $key=>$_errors)
+		{
+			foreach ($_errors as $k=>$v)
+			{
+				$user->errors[$key][$k] = trim(str_ireplace('错误：', '', strip_tags($v)));
+			}
+		}
+
+		$_res['code'] = 1001;
+		$_res['info'] = 'Fail!';
+		$_res['error'] = $user;
+
+		exit(json_encode($_res));
+	}
+
+	$_res['code'] = 1000;
+	$_res['info'] = 'Success!';
+
+	exit(json_encode($_res));
+	
 break;
 
 case 'login' :
