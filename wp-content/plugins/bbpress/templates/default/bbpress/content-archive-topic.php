@@ -62,7 +62,7 @@
 		    $topics[$key]->forum['name'] = get_the_title($topics[$key]->post_parent);
 		    $topics[$key]->forum['link'] = get_the_permalink($topics[$key]->post_parent);
 
-			$theDate = date('m 月 d 日', $topics[$key]->meta['date_and_time'] / 1000);
+			$theDate = get_date_from_gmt(date('m 月 d 日', $topics[$key]->meta['date_and_time'] / 1000));
 			if ($lastDate != $theDate) {
 				if ($lastDate !== '') {
 					?>
@@ -81,7 +81,7 @@
 				<li class="list-group-item" style="margin-bottom: 1px;">
 					<div class="row">
 						<div class="col-sm-2 col-xs-12">
-							<p><?=date('H:i', $topics[$key]->meta['date_and_time'] / 1000)?></p>
+							<p><?=get_date_from_gmt(date('H:i', $topics[$key]->meta['date_and_time'] / 1000))?></p>
 						</div>
 						<div class="col-sm-10 col-xs-12">
 							<a class="text-muted" href="<?=$topics[$key]->forum['link']?>"><?=$topics[$key]->forum['name']?></a>

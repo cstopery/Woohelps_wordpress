@@ -93,12 +93,12 @@ $meta['attendee_count'] = bbp_get_attendee_count( $topic_id );
 			<table class="table table-hover">
 				<tr>
 					<td style="width: 70px;"><strong>日期</strong></td>
-					<td><?=date('Y 年 m 月 d 日', $meta['date_and_time'] / 1000); ?></td>
+					<td><?=date('Y 年 m 月 d 日', $meta['date_and_time'] / 1000 + get_option( 'gmt_offset' ) * HOUR_IN_SECONDS); ?></td>
 				</tr>
 
 				<tr>
 					<td style="width: 70px;"><strong>时间</strong></td>
-					<td><?=date('H:i', $meta['date_and_time'] / 1000);?></td>
+					<td><?=date('H:i', $meta['date_and_time'] / 1000 + get_option( 'gmt_offset' ) * HOUR_IN_SECONDS);?></td>
 				</tr>
 
 				<tr>
