@@ -57,8 +57,8 @@
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true"><i class="fa fa-close"></i></span></button>
-				<h1>登录Woohelps</h1>
-				<h2>我为人人,人人为我</h2>
+				<h2>登录Woohelps</h2>
+				<h1>我为人人,人人为我</h1>
 			</div>
 
 			<div class="modal-body">
@@ -113,8 +113,8 @@
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true"><i class="fa fa-close"></i></span></button>
-				<h1>加入Woohelps</h1>
-				<h2>我为人人,人人为我</h2>
+				<h2>加入Woohelps</h2>
+				<h1>我为人人,人人为我</h1>
 			</div>
 
 			<div class="modal-body">

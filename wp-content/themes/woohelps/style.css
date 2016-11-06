@@ -171,6 +171,10 @@ woohelps Global
     display:inline;
 }
 
+.modal-dialog-woohelps >.modal-content >.modal-header {
+    color: #787878;
+}
+
 /*
 ============================================
 Home Page
