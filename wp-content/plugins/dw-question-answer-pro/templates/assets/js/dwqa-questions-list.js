@@ -34,14 +34,14 @@ jQuery(function($){
 				return true;
 			}
 		},
-		open: function( e, ui ) {
-			var acData = $(this).data( 'uiAutocomplete' );
-			acData.menu.element.addClass('dwqa-autocomplete').find('li').each(function(){
-				var $self = $(this),
-					keyword = $.trim( acData.term ).split(' ').join('|');
-					$self.html( $self.text().replace( new RegExp( "(" + keyword + ")", "gi" ), '<span class="dwqa-text-highlight">$1</span>' ) );
-			});
-		}
+		// open: function( e, ui ) {
+		// 	var acData = $(this).data( 'uiAutocomplete' );
+		// 	acData.menu.element.addClass('dwqa-autocomplete').find('li').each(function(){
+		// 		var $self = $(this),
+		// 			keyword = $.trim( acData.term ).split(' ').join('|');
+		// 			$self.html( $self.text().replace( new RegExp( "(" + keyword + ")", "gi" ), '<span class="dwqa-text-highlight">$1</span>' ) );
+		// 	});
+		// }
 	});
 	
 });

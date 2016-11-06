@@ -1071,3 +1071,39 @@ Home page footer sections layout
 .woohelps-footer ul, .woohelps-footer li {
     display: inline;
 }
+
+/*
+============================================
+DWQA search sections styles
+============================================
+*/
+
+.dwqa-search {
+    position: relative;
+}
+
+.dwqa-search ul {
+    border: 1px solid #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: #fff;
+}
+
+.dwqa-search li {
+    border-bottom: 1px solid #eee;
+    line-height: 40px;
+    padding: 0 8px;
+    cursor: pointer;
+    background-color: #fff;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+
+.dwqa-search li:hover {
+    background-color: rgba(176, 186, 132, 0.49);
+}
