@@ -1983,6 +1983,29 @@ function bbp_current_user_can_access_create_topic_form() {
 	} elseif ( bbp_is_topic_edit() ) {
 		$retval = current_user_can( 'edit_topic', bbp_get_topic_id() );
 	}
+	global $groups_template;
+	if ( empty( $group ) ) {
+		$group =& $groups_template->group;
+	}
+	$group_admins = groups_get_group_admins( $group->id );
+	$group_mods = groups_get_group_mods( $group->id );
+
+
+	foreach($group_mods as $group_mod){
+		if(((int)$group_mod->user_id === bp_loggedin_user_id())){
+			$retval = true;
+			break;
+		}
+	}
+
+	if($retval == false){
+		foreach($group_admins as $group_admin){
+			if((int)$group_admin->user_id === bp_loggedin_user_id()){
+				$retval = true;
+				break;
+			}
+		}
+	}
 
 	// Allow access to be filtered
 	return (bool) apply_filters( 'bbp_current_user_can_access_create_topic_form', (bool) $retval );

@@ -10,24 +10,7 @@
 ?>
 
 <div id="post-<?php bbp_reply_id(); ?>" class="bbp-reply-header">
-	<?php
-	global $groups_template;
-	if ( empty( $group ) ) {
-		$group =& $groups_template->group;
-	}
-
-	$can_post = 0;
-
-	$group_admins = groups_get_group_admins( $group->id );
-	$group_mods = groups_get_group_mods( $group->id );
-	if ( ( 1 == count( $group_admins ) ) && ( bp_loggedin_user_id() === (int) $group_admins[0]->user_id ) ) {
-		$can_post = 1;
-	}
-	if ( ( 1 == count( $group_mods ) ) && ( bp_loggedin_user_id() === (int) $group_mods[0]->user_id ) ) {
-		$can_post = 1;
-	}
-	?>
-	<?php if (is_user_logged_in() && $can_post === 1): ?>
+	<?php if (is_user_logged_in() && bbp_current_user_can_access_create_topic_form()): ?>
 		<div class="pull-right" style="padding-right: 8px;">
 				<?=bbp_get_topic_edit_link()?>
 		</div>
@@ -93,12 +76,12 @@ $meta['attendee_count'] = bbp_get_attendee_count( $topic_id );
 			<table class="table table-hover">
 				<tr>
 					<td style="width: 70px;"><strong>日期</strong></td>
-					<td><?=date('Y 年 m 月 d 日', $meta['date_and_time'] / 1000); ?></td>
+					<td><?=date('Y 年 m 月 d 日', $meta['date_and_time'] / 1000 + get_option( 'gmt_offset' ) * HOUR_IN_SECONDS); ?></td>
 				</tr>
 
 				<tr>
 					<td style="width: 70px;"><strong>时间</strong></td>
-					<td><?=date('H:i', $meta['date_and_time'] / 1000);?></td>
+					<td><?=date('H:i', $meta['date_and_time'] / 1000 + get_option( 'gmt_offset' ) * HOUR_IN_SECONDS);?></td>
 				</tr>
 
 				<tr>

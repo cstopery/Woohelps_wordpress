@@ -57,7 +57,7 @@ if (is_array($best_answers) && count($best_answers) > 0) {
         <a href="<?=bp_core_get_user_domain($user_id)?>">
             <span class="best-answer-author"><?=$display_name ?></span></a>
             <div class="dwqa-questions-desc"><?php echo isset($xProfileArr['微信显示名']) ? ' 微信显示名: '.$xProfileArr['微信显示名'] : '' ?></div>
-            <div class="dwqa-questions-desc"><?php echo isset($xProfileArr['手机']) ? '手机:'.$xProfileArr['手机'] : '' ?></div>
+            <div class="dwqa-questions-desc"><?php echo isset($xProfileArr['手机号']) ? '手机号:'.$xProfileArr['手机号'] : '' ?></div>
         <span class="pull-right">
             <?php echo get_the_term_list( get_the_ID(), 'dwqa-question_category', '<span class="dwqa-question-category">' . __( '&nbsp;', 'dwqa' ), ', ', '</span>' ); ?>
         </span>
