@@ -3,16 +3,16 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				提问
+				<span class="modal-dialog-title-text" id=":4s" role="heading">提问</span>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			</div>
 			<div class="modal-body">
 				<form method="post" class="dwqa-content-edit-form">
 					<p>
-						<label for="question_title"><?php _e('Title', 'dwqa') ?></label>
 						<?php $title = isset($_POST['question-title']) ? $_POST['question-title'] : ''; ?>
-						<input type="text" data-nonce="<?php echo wp_create_nonce('_dwqa_filter_nonce') ?>" id="question-title" name="question-title" value="<?php echo $title ?>" tabindex="1">
+						<input type="text" placeholder="请输入你的问题" data-nonce="<?php echo wp_create_nonce('_dwqa_filter_nonce') ?>" id="question-title" name="question-title" value="<?php echo $title ?>" tabindex="1">
 					</p>
+					<span style="float:left">问题说明（可选）：</span>
 					<?php $content = isset($_POST['question-content']) ? $_POST['question-content'] : ''; ?>
 					<p><?php dwqa_init_tinymce_editor(array('content' => $content, 'textarea_name' => 'question-content', 'id' => 'question-content')) ?></p>
 					<?php global $dwqa_general_settings; ?>
@@ -28,7 +28,7 @@
 					</p>
 					<?php endif; ?>
 					<p>
-						<label for="question-category"><?php _e('Category', 'dwqa') ?></label>
+						<label for="question-category"><?php _e('City', 'dwqa') ?></label>
 						<?php
 						wp_dropdown_categories(array(
 												   'name' => 'question-category',
@@ -40,11 +40,6 @@
 												   'selected' => isset($_POST['question-category']) ? $_POST['question-category'] : false,
 											   ));
 						?>
-					</p>
-					<p>
-						<label for="question-tag"><?php _e('Tag', 'dwqa') ?></label>
-						<?php $tags = isset($_POST['question-tag']) ? $_POST['question-tag'] : ''; ?>
-						<input type="text" class="" name="question-tag" value="<?php echo $tags ?>">
 					</p>
 					<?php if (dwqa_current_user_can('post_question') && !is_user_logged_in()) : ?>
 						<p>
@@ -60,7 +55,10 @@
 					<?php endif; ?>
 					<?php wp_nonce_field('_dwqa_submit_question') ?>
 					<?php dwqa_load_template('captcha', 'form'); ?>
-					<input type="submit" name="dwqa-question-submit" value="<?php _e('Submit', 'dwqa') ?>">
+					<div>
+					<input type="submit" name="dwqa-question-submit" class="woohelps-btn-blue" value="<?php _e('Submit', 'dwqa') ?>">
+					<input type="button" class="woohelps-btn-cancel" data-dismiss="modal" value="<?php _e('Cancel', 'dwqa') ?>">
+						</div>
 				</form>
 			</div>
 		</div>

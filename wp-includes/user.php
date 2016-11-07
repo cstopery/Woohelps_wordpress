@@ -1990,7 +1990,7 @@ function _wp_get_user_contactmethods( $user = null ) {
  * @return string The password hint text.
  */
 function wp_get_password_hint() {
-	$hint = __( 'Hint: The password should be at least twelve characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ &amp; ).' );
+	$hint = __( 'Hint: The password should be at least 6 characters long.' );
 
 	/**
 	 * Filter the text describing the site's password complexity policy.
@@ -2209,7 +2209,7 @@ function reset_password( $user, $new_pass ) {
  * @param string $user_email User's email address to send password and add
  * @return int|WP_Error Either user's ID or error on failure.
  */
-function register_new_user( $user_login, $user_email ) {
+function register_new_user( $user_login, $user_email, $user_password ) {
 	$errors = new WP_Error();
 
 	$sanitized_user_login = sanitize_user( $user_login );
@@ -2224,29 +2224,38 @@ function register_new_user( $user_login, $user_email ) {
 
 	// Check the username
 	if ( $sanitized_user_login == '' ) {
-		$errors->add( 'empty_username', __( '<strong>ERROR</strong>: Please enter a username.' ) );
+		$errors->add( 'empty_username', __( 'Please enter a username.' ) );
 	} elseif ( ! validate_username( $user_login ) ) {
-		$errors->add( 'invalid_username', __( '<strong>ERROR</strong>: This username is invalid because it uses illegal characters. Please enter a valid username.' ) );
+		$errors->add( 'invalid_username', __( 'This username is invalid because it uses illegal characters. Please enter a valid username.' ) );
 		$sanitized_user_login = '';
 	} elseif ( username_exists( $sanitized_user_login ) ) {
-		$errors->add( 'username_exists', __( '<strong>ERROR</strong>: This username is already registered. Please choose another one.' ) );
+		$errors->add( 'username_exists', __( 'This username is already registered. Please choose another one.' ) );
 
 	} else {
 		/** This filter is documented in wp-includes/user.php */
 		$illegal_user_logins = array_map( 'strtolower', (array) apply_filters( 'illegal_user_logins', array() ) );
 		if ( in_array( strtolower( $sanitized_user_login ), $illegal_user_logins ) ) {
-			$errors->add( 'invalid_username', __( '<strong>ERROR</strong>: Sorry, that username is not allowed.' ) );
+			$errors->add( 'invalid_username', __( 'Sorry, that username is not allowed.' ) );
 		}
 	}
 
 	// Check the email address
 	if ( $user_email == '' ) {
-		$errors->add( 'empty_email', __( '<strong>ERROR</strong>: Please type your email address.' ) );
+		$errors->add( 'empty_email', __( 'Please type your email address.' ) );
 	} elseif ( ! is_email( $user_email ) ) {
-		$errors->add( 'invalid_email', __( '<strong>ERROR</strong>: The email address isn&#8217;t correct.' ) );
+		$errors->add( 'invalid_email', __( 'The email address isn&#8217;t correct.' ) );
 		$user_email = '';
 	} elseif ( email_exists( $user_email ) ) {
-		$errors->add( 'email_exists', __( '<strong>ERROR</strong>: This email is already registered, please choose another one.' ) );
+		$errors->add( 'email_exists', __( 'This email is already registered, please choose another one.' ) );
+	}
+
+	// Check the user password
+	if ( $user_password == '') {
+		$errors->add( 'empty_password', __( 'Please set your account password.' ) );
+	} else {
+		if ( strlen($user_password) < 6 ) {
+			$errors->add( 'invalid_password', __( 'The account password length must greater than six.' ) );
+		}
 	}
 
 	/**
@@ -2283,8 +2292,8 @@ function register_new_user( $user_login, $user_email ) {
 	if ( $errors->get_error_code() )
 		return $errors;
 
-	$user_pass = wp_generate_password( 12, false );
-	$user_id = wp_create_user( $sanitized_user_login, $user_pass, $user_email );
+	// $user_pass = wp_generate_password( 12, false );
+	$user_id = wp_create_user( $sanitized_user_login, $user_password, $user_email );
 	if ( ! $user_id || is_wp_error( $user_id ) ) {
 		$errors->add( 'registerfail', sprintf( __( '<strong>ERROR</strong>: Couldn&#8217;t register you&hellip; please contact the <a href="mailto:%s">webmaster</a> !' ), get_option( 'admin_email' ) ) );
 		return $errors;

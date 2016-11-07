@@ -747,3 +747,244 @@ div.footer .footer-credits a {
 		width: 1020px;
 	}
 }
+
+/**
+ * modal-dialog-woohelps
+ */
+
+.modal-dialog-woohelps{
+	width:300px !important;
+	border: none !important;
+	border-radius: 5px !important;
+	box-shadow: 0 0 15px 0 rgba(0,0,0,.3) !important;
+	background: #ffffff !important;
+}
+
+.modal-dialog-woohelps div{
+	clear: both;
+	float: left;
+	width: 100%;
+	height: auto;
+	margin: 0px !important;
+	padding: 0px !important;
+	overflow: hidden;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-header{
+	padding: 10px !important;
+	border: none !important;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-header >button{
+	width: 16px;
+	height: 16px;
+	background-color: #CECECE;
+	border-radius: 50%;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-header >button >span >i{
+	clear: both;
+	float: left;
+	margin: 0px 0px 0px 4px;
+	font-size: 12px !important;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-header >h1{
+	margin: 5px;
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 700;
+	margin-bottom: 10px;
+	text-align: center !important;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-header >h2{
+	margin: 10px 0px 0px 0px;
+	font-size: 14px;
+	font-weight: 400;
+	text-align: center !important;
+	border-bottom: none !important;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-body{
+	clear: both;
+	float: left;
+	width: 100%;
+	height: auto;
+	margin-top:10px !important;
+	padding: 0px !important;
+	border-top: 1px solid #e5e5e5;
+	overflow: hidden;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-body >form{
+	clear: both;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-body >form >.form-group{
+	position: relative;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-body >form >.form-group >label{
+	display: none !important;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-body >form >.form-group >input[type=text],
+.modal-dialog-woohelps >.modal-content >.modal-body >form >.form-group >input[type=password]{
+	clear: both;
+	float: left;
+	margin: 0px !important;
+	padding: 15px 8px !important;
+	width: 100% !important;
+	height: 48px !important;
+	line-height: 18px !important;
+	border: none !important;
+	outline: none !important;
+	border-radius: 0px;
+	box-shadow: none !important;
+	background: #ffffff;
+	border-bottom: 1px solid #e5e5e5 !important;
+	overflow: hidden;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-body >form >.form-group >input[type=text]:focus,
+.modal-dialog-woohelps >.modal-content >.modal-body >form >.form-group >input[type=password]:focus{
+	border: none !important;
+	border-bottom: 1px solid #e5e5e5 !important;
+	outline: none !important;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-body >form >.form-group >input[type=submit]{
+	margin: 10px !important;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-body >form >.form-group >p.clue{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: auto;
+	max-width: 90%;
+	height: 47px;
+	line-height: 47px;
+	font-size: 12px;
+	color: #ff0000;
+	background: #ffffff;
+	text-align: right;
+	overflow: hidden;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-body >form >.form-group >a.submit{
+	clear: both;
+	float: left;
+	margin: 20px 6%;
+	width: 88%;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	font-size:14px;
+	color: #ffffff;
+	background: #0077d9;
+	border-radius: 5px;
+	text-decoration: none;
+	overflow: hidden;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-body >form >.form-group >p.login{
+	padding: 0px 6%;
+	font-size: 14px;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-body >form >.form-group >input[type=submit]{
+	margin: 10px !important;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-body >form >p.login-username,
+.modal-dialog-woohelps >.modal-content >.modal-body >form >p.login-password
+{
+	position: relative;
+	clear: both;
+	float: left;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-body >form >p.login-username >label,
+.modal-dialog-woohelps >.modal-content >.modal-body >form >p.login-password >label{
+	display: none !important;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-body >form >p.login-username >input[type=text],
+.modal-dialog-woohelps >.modal-content >.modal-body >form >p.login-password >input[type=password]{
+	clear: both;
+	float: left;
+	margin: 0px !important;
+	padding: 15px 8px !important;
+	width: 100% !important;
+	height: 48px !important;
+	line-height: 18px !important;
+	border: none !important;
+	outline: none !important;
+	border-radius: 0px;
+	box-shadow: none !important;
+	background: #ffffff;
+	border-bottom: 1px solid #e5e5e5 !important;
+	overflow: hidden;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-body >form >p.login-username >input[type=text]:focus,
+.modal-dialog-woohelps >.modal-content >.modal-body >form >p.login-password >input[type=password]:focus{
+	border: none !important;
+	border-bottom: 1px solid #e5e5e5 !important;
+	outline: none !important;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-body >form >p.login-submit >a.submit{
+	clear: both;
+	float: left;
+	margin: 20px 6%;
+	width: 88%;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	font-size:14px;
+	color: #ffffff;
+	background: #0077d9;
+	border-radius: 5px;
+	text-decoration: none;
+	overflow: hidden;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-body >form >p.login-remember-lostpassword{
+	clear: both;
+	float: left;
+	margin: 0px 6% 20px 6%;
+	width: 88%;
+	height: 24px;
+	line-height: 24px;
+	vertical-align: middle;
+	font-size:14px;
+	overflow: hidden;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-body >form >p >span.clue{
+	display: inline-block;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: auto;
+	max-width: 90%;
+	height: 47px;
+	line-height: 47px;
+	font-size: 12px;
+	color: #ff0000;
+	background: #ffffff;
+	text-align: right;
+	overflow: hidden;
+}

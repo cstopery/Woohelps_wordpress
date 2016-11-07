@@ -152,7 +152,7 @@ function login_header( $title = 'Log In', $message = '', $wp_error = '' ) {
 	</head>
 	<body class="login <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 	<div id="login">
-		<h1><a href="<?php echo esc_url( $login_header_url ); ?>" title="<?php echo esc_attr( $login_header_title ); ?>" tabindex="-1"><?php bloginfo( 'name' ); ?></a></h1>
+
 	<?php
 
 	unset( $login_header_url, $login_header_title );
@@ -382,7 +382,7 @@ if ( isset($_GET['key']) )
 	$action = 'resetpass';
 
 // validate action so as to default to the login screen
-if ( !in_array( $action, array( 'postpass', 'logout', 'lostpassword', 'retrievepassword', 'resetpass', 'rp', 'register', 'login' ), true ) && false === has_filter( 'login_form_' . $action ) )
+if ( !in_array( $action, array( 'postpass', 'logout', 'lostpassword_by_ajax', 'lostpassword', 'retrievepassword', 'resetpass', 'rp', 'register_by_ajax', 'register', 'login_by_ajax', 'login' ), true ) && false === has_filter( 'login_form_' . $action ) )
 	$action = 'login';
 
 nocache_headers();
@@ -483,6 +483,25 @@ case 'logout' :
 	$redirect_to = apply_filters( 'logout_redirect', $redirect_to, $requested_redirect_to, $user );
 	wp_safe_redirect( $redirect_to );
 	exit();
+
+case 'lostpassword_by_ajax' :
+	$errors = retrieve_password();
+
+	if(isset($errors->errors))
+	{
+		$_res['code'] = 1001;
+		$_res['info'] = 'Fail';
+		$_res['error'] = $errors;
+
+		exit(json_encode($_res));
+	}
+
+	$_res['code'] = 1000;
+	$_res['info'] = 'Success';
+
+	exit(json_encode($_res));
+
+break;
 
 case 'lostpassword' :
 case 'retrievepassword' :
@@ -628,7 +647,7 @@ case 'rp' :
 
 		<div class="wp-pwd">
 			<span class="password-input-wrapper">
-				<input type="password" data-reveal="1" data-pw="<?php echo esc_attr( wp_generate_password( 16 ) ); ?>" name="pass1" id="pass1" class="input" size="20" value="" autocomplete="off" aria-describedby="pass-strength-result" />
+				<input type="password" data-reveal="1" data-pw="" name="pass1" id="pass1" class="input" size="20" value="" autocomplete="off" aria-describedby="pass-strength-result" />
 			</span>
 			<div id="pass-strength-result" class="hide-if-no-js" aria-live="polite"><?php _e( 'Strength indicator' ); ?></div>
 		</div>
@@ -672,6 +691,58 @@ endif;
 login_footer('user_pass');
 break;
 
+case 'register_by_ajax' :
+	$_res = array();
+
+	if ( !get_option('users_can_register') ) {
+		$_res['code'] = 1001;
+		$_res['info'] = 'Forbid register!';
+
+		exit(json_encode($_res));
+	}
+
+	$user_login = isset( $_POST['user_login'] ) ? $_POST['user_login'] : '';
+	$user_email = isset( $_POST['user_email'] ) ? $_POST['user_email'] : '';
+	$user_password = isset( $_POST['user_password'] ) ? $_POST['user_password'] : '';
+	$errors = register_new_user($user_login, $user_email, $user_password);
+
+	if ( is_wp_error($errors) ) {
+		$_res['code'] = 1002;
+		$_res['info'] = 'Success!';
+		$_res['error'] = get_object_vars($errors);
+
+		exit(json_encode($_res));
+	}
+
+	$_POST['log'] = $user_login;
+	$_POST['pwd'] = $user_password;
+	$_POST['remember'] = 'remember';
+
+	$user = wp_signon( '', $secure_cookie );
+
+	if(isset($user->errors))
+	{
+		foreach ($user->errors as $key=>$_errors)
+		{
+			foreach ($_errors as $k=>$v)
+			{
+				$user->errors[$key][$k] = trim(str_ireplace('错误：', '', strip_tags($v)));
+			}
+		}
+
+		$_res['code'] = 1003;
+		$_res['info'] = 'Fail!';
+		$_res['error'] = $user;
+
+		exit(json_encode($_res));
+	}
+
+	$_res['code'] = 1000;
+	$_res['info'] = 'Success!';
+
+	exit(json_encode($_res));
+break;
+
 case 'register' :
 	if ( is_multisite() ) {
 		/**
@@ -695,7 +766,8 @@ case 'register' :
 	if ( $http_post ) {
 		$user_login = isset( $_POST['user_login'] ) ? $_POST['user_login'] : '';
 		$user_email = isset( $_POST['user_email'] ) ? $_POST['user_email'] : '';
-		$errors = register_new_user($user_login, $user_email);
+		$user_password = isset( $_POST['user_password'] ) ? $_POST['user_password'] : '';
+		$errors = register_new_user($user_login, $user_email, $user_password);
 		if ( !is_wp_error($errors) ) {
 			$redirect_to = !empty( $_POST['redirect_to'] ) ? $_POST['redirect_to'] : 'wp-login.php?checkemail=registered';
 			wp_safe_redirect( $redirect_to );
@@ -723,6 +795,11 @@ case 'register' :
 		<label for="user_email"><?php _e('Email') ?><br />
 		<input type="email" name="user_email" id="user_email" class="input" value="<?php echo esc_attr( wp_unslash( $user_email ) ); ?>" size="25" /></label>
 	</p>
+	<p>
+		<label for="user_password"><?php _e('Password') ?><br />
+			<input type="password" name="user_password" id="user_password" class="input" value="<?php echo esc_attr( wp_unslash( $user_password ) ); ?>" size="16" />
+		</label>
+	</p>
 	<?php
 	/**
 	 * Fires following the 'Email' field in the user registration form.
@@ -744,6 +821,38 @@ case 'register' :
 
 <?php
 login_footer('user_login');
+break;
+
+case 'login_by_ajax' :
+
+	$_res = array();
+	
+	$secure_cookie = '';
+
+	$user = wp_signon( '', $secure_cookie );
+
+	if(isset($user->errors))
+	{
+		foreach ($user->errors as $key=>$_errors)
+		{
+			foreach ($_errors as $k=>$v)
+			{
+				$user->errors[$key][$k] = trim(str_ireplace('错误：', '', strip_tags($v)));
+			}
+		}
+
+		$_res['code'] = 1001;
+		$_res['info'] = 'Fail!';
+		$_res['error'] = $user;
+
+		exit(json_encode($_res));
+	}
+
+	$_res['code'] = 1000;
+	$_res['info'] = 'Success!';
+
+	exit(json_encode($_res));
+	
 break;
 
 case 'login' :

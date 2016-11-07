@@ -16,6 +16,10 @@
 woohelps Global
 ============================================
 */
+body {
+	font-size: 13px;
+}
+
 .navbar {
     background: #333a5f;
     font-family: "Hiragino Sans GB","Helvetica Neue",Helvetica,Arial,Verdana,"Microsoft Yahei",sans-serif;
@@ -169,6 +173,77 @@ woohelps Global
     font-size: 11px;
     color: #939393;
     display:inline;
+}
+
+.woohelps-btn-blue {
+    color: #fff!important;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    background: #1472cf!important;;
+    background: -webkit-linear-gradient(top,#1d7fe2,#0865c2)!important;
+    background: linear-gradient(to bottom,#1d7fe2,#0865c2);
+    border: 1px solid #0D6EB8!important;
+    box-shadow: 0 1px 0 rgba(255,255,255,.2) inset,0 1px 0 rgba(0,0,0,.2);
+    padding: 4px 10px!important;
+    max-width:15%!important;
+    display:inline!important;
+}
+
+.woohelps-btn-cancel {
+    max-width:15%!important;
+    display:inline!important;
+    padding: 4px 10px!important;
+    border: none!important;
+    background: none;!important;
+    color:#259;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.modal-dialog-woohelps >.modal-content >.modal-header {
+    color: #787878;
+}
+
+.modal-content {
+    border-radius: 8px;
+    margin-top: 14vh;
+}
+
+.modal-header {
+    position: relative;
+    margin: -1px -1px 0;
+    padding: 10px 15px;
+    line-height: 14px;
+    background: #1D7FE2;
+    background: -webkit-linear-gradient(top,#1D7FE2,#0865C2);
+    background: linear-gradient(to bottom,#1D7FE2,#0865C2);
+    border: 1px solid #0D6EB8;
+    border-radius: 6px 6px 0 0;
+    box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,0 1px 1px rgba(0,0,0,.2);
+}
+
+.modal-dialog-title-text {
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.modal-dialog-title-close {
+    position: absolute;
+    top: 50%;
+    _top: 20px;
+    right: 3px;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    text-indent: -9999px;
+    cursor: pointer;
+    background-position: -60px -53px;
+}
+
+.modal .close {
+    color:#ffffff;
 }
 
 /*
