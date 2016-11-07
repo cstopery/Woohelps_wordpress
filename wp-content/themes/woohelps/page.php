@@ -57,7 +57,7 @@
 								$topic_id = bbp_get_topic_id();
 
 								array_push($topics, [
-									'date' => date('Y-m-d', get_post_meta( $topic_id, 'date_and_time', true) / 1000),
+									'date' => date('Y-m-d', get_post_meta( $topic_id, 'date_and_time', true) / 1000 + get_option( 'gmt_offset' ) * HOUR_IN_SECONDS ),
 									'badge' => true,
 									'title' => '活动详情预览',
 									'body' => '<h4>' . bbp_get_topic_title() . '</h4><br><p>' . bbp_get_reply_content() . '</p>',
