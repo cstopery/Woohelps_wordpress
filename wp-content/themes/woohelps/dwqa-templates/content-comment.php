@@ -29,7 +29,7 @@
 						?>
 					<span class="best-answer-author"><?=$comment_display_name ?></span></a>
 					<div class="dwqa-questions-desc"><?php echo isset($xProfileArr['微信显示名']) ? ' 微信显示名: '.$xProfileArr['微信显示名'] : '' ?></div>
-					<div class="dwqa-questions-desc"><?php echo isset($xProfileArr['手机']) ? '手机:'.$xProfileArr['手机'] : '' ?></div>
+					<div class="dwqa-questions-desc"><?php echo isset($xProfileArr['手机号']) ? '手机号:'.$xProfileArr['手机号'] : '' ?></div>
 					</a>
 				</label>
 				<?php comment_text(); ?>
