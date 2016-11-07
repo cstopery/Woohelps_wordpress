@@ -20,9 +20,9 @@
                             )
                 );
                 ?>
-                <form class="navbar-form navbar-left" role="search">
+                <form class="navbar-form navbar-left" role="search" action="/dwqa-questions/" method="get">
 					<div class="form-group">
-						<input type="text" class="form-control with-radius" placeholder="试试我知道什么">
+						<input type="text" class="form-control with-radius" name="qs" value="<?php echo isset( $_GET['qs'] ) ? $_GET['qs'] : '' ?>" placeholder="试试我知道什么">
 					</div>
 				</form>
 
