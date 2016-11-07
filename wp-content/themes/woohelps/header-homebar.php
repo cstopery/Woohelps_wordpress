@@ -1,25 +1,30 @@
 <nav class="navbar navbar-default navbar-fixed-top home_navbar-fixed-top">
-	<div class="container">
-		<div class="navbar-header page-scroll">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#docpress-navbar-collapse">
-				<span class="sr-only"><?php _e('Toggle navigation', 'docpress') ?></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<h1 class="site-title">
-				<a class="home_navbar-brand" href="<?php echo esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('title'); ?></a>
-			</h1>
-		</div>
-		<div class="collapse navbar-collapse" id="docpress-navbar-collapse">
-			<?php
-			wp_nav_menu(array('menu' => 'main_menu', 'theme_location' => 'main_menu', 'menu_class' => 'nav navbar-nav navbar-left', 'fallback_cb' => 'wp_bootstrap_navwalker::fallback', 'walker' => new wp_bootstrap_navwalker()));
-			?>
-			<form class="navbar-form navbar-left" role="search">
-				<div class="form-group">
-					<input type="text" class="form-control with-radius" placeholder="试试我知道什么">
-				</div>
-			</form>
+		<div class="container">
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#docpress-navbar-collapse">
+					<span class="sr-only"><?php _e('Toggle navigation', 'docpress') ?></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<h1 class="site-title"><a class="home_navbar-brand" href="<?php echo esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('title'); ?></a></h1>
+			</div>
+			<div class="collapse navbar-collapse" id="docpress-navbar-collapse">
+				<?php
+                wp_nav_menu(array(
+                                'menu' => 'main_menu',
+                                'theme_location' => 'main_menu',
+                                'menu_class' => 'nav navbar-nav navbar-left',
+                                'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+                                'walker' => new wp_bootstrap_navwalker()
+                            )
+                );
+                ?>
+                <form class="navbar-form navbar-left" role="search" action="/dwqa-questions/" method="get">
+					<div class="form-group">
+						<input type="text" class="form-control with-radius" name="qs" value="<?php echo isset( $_GET['qs'] ) ? $_GET['qs'] : '' ?>" placeholder="试试我知道什么">
+					</div>
+				</form>
 
 			<?php if (!is_user_logged_in()): ?>
 				<ul class="nav navbar-nav navbar-right">

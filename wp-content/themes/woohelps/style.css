@@ -949,6 +949,10 @@ div.bbp-forum-header, div.bbp-topic-header, div.bbp-reply-header, li.bbp-body di
     padding: 20px 8px;
 }
 
+.hentry {
+    padding: 20px 8px 0 14px !important;
+}
+
 /*
 ============================================
 calendar sections layout

@@ -6,11 +6,12 @@
  * @package bbPress
  * @subpackage Theme
  */
+$class = bbp_get_reply_class();
 
 ?>
 
 <div id="post-<?php bbp_reply_id(); ?>" class="bbp-reply-header">
-	<?php if (is_user_logged_in() && bbp_current_user_can_access_create_topic_form()): ?>
+	<?php if (is_user_logged_in() && bbp_current_user_can_access_create_topic_form() && (strpos($class, 'bbp-reply-position-1') || strpos($class, 'type-topic'))): ?>
 		<div class="pull-right" style="padding-right: 8px;">
 				<?=bbp_get_topic_edit_link()?>
 		</div>
@@ -30,11 +31,17 @@ $meta['attendee_count'] = bbp_get_attendee_count( $topic_id );
 
 <div <?php bbp_reply_class(); ?>>
 
-	<div class="bbp-reply-content">
+	<div class="<?= (strpos($class, 'bbp-reply-position-1') || strpos($class, 'type-topic')) ? 'bbp-reply-content' : '';?>">
 
 		<h4 class="bbp-reply-title">
-			<?= bbp_get_topic_title(); ?>
+			<?= (strpos($class, 'bbp-reply-position-1') || strpos($class, 'type-topic')) ? '<a href="' . bbp_get_topic_permalink() . '">' . bbp_get_topic_title() . '</a>': ''; ?>
 		</h4>
+
+		<div class="bbp-reply-inner-content">
+			<h5>
+				<?= (!strpos($class, 'bbp-reply-position-1') && !strpos($class, 'type-topic')) ? bbp_get_reply_author_link() : ''; ?>
+			</h5>
+		</div>
 
 		<?php do_action( 'bbp_theme_before_reply_content' ); ?>
 
@@ -43,6 +50,10 @@ $meta['attendee_count'] = bbp_get_attendee_count( $topic_id );
 		</div>
 
 		<?php do_action( 'bbp_theme_after_reply_content' ); ?>
+
+		<?php
+		if (strpos($class, 'bbp-reply-position-1') || strpos($class, 'type-topic')) :
+		?>
 
 		<hr>
 
@@ -162,6 +173,8 @@ $meta['attendee_count'] = bbp_get_attendee_count( $topic_id );
 			<?php } ?>
 		<?php } ?>
 	</div>
+
+	<?php endif; ?>
 
 </div><!-- .reply -->
 

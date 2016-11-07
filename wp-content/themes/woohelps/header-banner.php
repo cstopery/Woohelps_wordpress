@@ -14,7 +14,11 @@
 			<h3><?php echo esc_html($docpress_header_subtitle); ?></h3>
 		<?php endif; ?>
 		<?php if( isset($docpress_header_search_display) && $docpress_header_search_display != 1 ): ?>
-			<?php get_search_form(); ?>
+			<form action="/dwqa-questions/" method="get">
+				<div class="form-group">
+					<input type="text" class="form-control with-radius" name="qs" value="<?php echo isset( $_GET['qs'] ) ? $_GET['qs'] : '' ?>" placeholder="试试我知道什么">
+				</div>
+			</form>
 		<?php endif; ?>
 		</div>
 	</header>
