@@ -152,7 +152,7 @@ function login_header( $title = 'Log In', $message = '', $wp_error = '' ) {
 	</head>
 	<body class="login <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 	<div id="login">
-		<h1><a href="<?php echo esc_url( $login_header_url ); ?>" title="<?php echo esc_attr( $login_header_title ); ?>" tabindex="-1"><?php bloginfo( 'name' ); ?></a></h1>
+
 	<?php
 
 	unset( $login_header_url, $login_header_title );
@@ -647,7 +647,7 @@ case 'rp' :
 
 		<div class="wp-pwd">
 			<span class="password-input-wrapper">
-				<input type="password" data-reveal="1" data-pw="<?php echo esc_attr( wp_generate_password( 16 ) ); ?>" name="pass1" id="pass1" class="input" size="20" value="" autocomplete="off" aria-describedby="pass-strength-result" />
+				<input type="password" data-reveal="1" data-pw="" name="pass1" id="pass1" class="input" size="20" value="" autocomplete="off" aria-describedby="pass-strength-result" />
 			</span>
 			<div id="pass-strength-result" class="hide-if-no-js" aria-live="polite"><?php _e( 'Strength indicator' ); ?></div>
 		</div>
