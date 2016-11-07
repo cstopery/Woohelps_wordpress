@@ -175,6 +175,31 @@ body {
     display:inline;
 }
 
+.woohelps-btn-blue {
+    color: #fff!important;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    background: #1472cf!important;;
+    background: -webkit-linear-gradient(top,#1d7fe2,#0865c2)!important;
+    background: linear-gradient(to bottom,#1d7fe2,#0865c2);
+    border: 1px solid #0D6EB8!important;
+    box-shadow: 0 1px 0 rgba(255,255,255,.2) inset,0 1px 0 rgba(0,0,0,.2);
+    padding: 4px 10px!important;
+    max-width:15%!important;
+    display:inline!important;
+}
+
+.woohelps-btn-cancel {
+    max-width:15%!important;
+    display:inline!important;
+    padding: 4px 10px!important;
+    border: none!important;
+    background: none;!important;
+    color:#259;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
 .modal-dialog-woohelps >.modal-content >.modal-header {
     color: #787878;
 }

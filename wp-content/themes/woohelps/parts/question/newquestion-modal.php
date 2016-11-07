@@ -55,7 +55,10 @@
 					<?php endif; ?>
 					<?php wp_nonce_field('_dwqa_submit_question') ?>
 					<?php dwqa_load_template('captcha', 'form'); ?>
-					<input type="submit" name="dwqa-question-submit" value="<?php _e('Submit', 'dwqa') ?>">
+					<div>
+					<input type="submit" name="dwqa-question-submit" class="woohelps-btn-blue" value="<?php _e('Submit', 'dwqa') ?>">
+					<input type="button" class="woohelps-btn-cancel" data-dismiss="modal" value="<?php _e('Cancel', 'dwqa') ?>">
+						</div>
 				</form>
 			</div>
 		</div>
