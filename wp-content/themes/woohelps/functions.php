@@ -280,6 +280,14 @@ function bbp_extra_fields() {
                 <input type='text' name='location' value='<?=$value ?>'>
             </div>
 
+            <?php $value = get_post_meta(bbp_get_topic_id(), 'enroll_way', true); ?>
+            <div class="form-group">
+                <label for="bbp_extra_field1">报名方式</label><br>
+                <label class="radio-inline"><input type="radio" name="enroll_way" value='1' <?=($value=='1') ? 'checked="checked"' : ''?>>通过网站:</label>
+                <label class="radio-inline"><input type="radio" name="enroll_way" value='2' <?=($value=='2') ? 'checked="checked"' : ''?>>在活动描述中提供报名方式:</label>
+                <label class="radio-inline"><input type="radio" name="enroll_way" value='3' <?=($value=='3') ? 'checked="checked"' : ''?>>无需报名:</label>
+            </div>
+
             <?php $value = get_post_meta(bbp_get_topic_id(), 'attendee_count', true); ?>
             <?php if (strlen($value) == 0) $value = 0; ?>
             <input type='hidden' name='attendee_count' value='<?=$value ?>'>
@@ -354,6 +362,9 @@ function bbp_save_extra_fields($topic_id = 0) {
     }
     if (isset($_POST) && $_POST['location'] != '') {
         update_post_meta($topic_id, 'location', $_POST['location']);
+    }
+    if (isset($_POST) && $_POST['enroll_way'] != '') {
+        update_post_meta($topic_id, 'enroll_way', $_POST['enroll_way']);
     }
     if (isset($_POST) && $_POST['attendee_count'] != '') {
         update_post_meta($topic_id, 'attendee_count', $_POST['attendee_count']);
